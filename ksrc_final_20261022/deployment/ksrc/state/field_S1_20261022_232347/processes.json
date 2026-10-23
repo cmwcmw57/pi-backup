@@ -1,0 +1,130 @@
+{
+  "runner": {
+    "pid": 127039,
+    "starttime": "835276",
+    "command": [
+      "taskset",
+      "-c",
+      "0",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runner.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_232347",
+      "--plan-cpu",
+      "0"
+    ]
+  },
+  "gateway": {
+    "pid": 127040,
+    "starttime": "835276",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py",
+      "--runner",
+      "127.0.0.1:5010"
+    ]
+  },
+  "camera": {
+    "pid": 127041,
+    "starttime": "835276",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "/opt/ros/jazzy/lib/realsense2_camera/realsense2_camera_node",
+      "--ros-args",
+      "-r",
+      "__ns:=/camera",
+      "-r",
+      "__node:=camera",
+      "-p",
+      "enable_color:=false",
+      "-p",
+      "enable_depth:=false",
+      "-p",
+      "enable_infra1:=true",
+      "-p",
+      "enable_infra2:=true",
+      "-p",
+      "depth_module.infra_profile:=640,480,15",
+      "-p",
+      "depth_module.infra1_format:=Y8",
+      "-p",
+      "depth_module.infra2_format:=Y8",
+      "-p",
+      "depth_module.emitter_enabled:=0",
+      "-p",
+      "enable_sync:=true"
+    ]
+  },
+  "inputs": {
+    "pid": 127042,
+    "starttime": "835277",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_inputs.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json"
+    ]
+  },
+  "policy": {
+    "pid": 127045,
+    "starttime": "835277",
+    "command": [
+      "taskset",
+      "-c",
+      "3",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/policy_telemetry.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json",
+      "--policy-script",
+      "/home/pi/ksrc/pi/policy/run_policy.py",
+      "--real",
+      "--",
+      "--policy",
+      "/home/pi/ksrc/pi/policy/res8_mlp_v3vo_rc4000",
+      "--cmd-udp",
+      "5005",
+      "--vo-port",
+      "5600",
+      "--seconds",
+      "3600.0",
+      "--rt",
+      "50",
+      "--gc-off",
+      "--log",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_232347/policy.npz"
+    ]
+  },
+  "orb": {
+    "pid": 127050,
+    "starttime": "835277",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "taskset",
+      "-c",
+      "1,2",
+      "/home/pi/handheld_mapping/ros2_ws/install/orbslam3_ros2/lib/orbslam3_ros2/orbslam3_stereo_inertial",
+      "--ros-args",
+      "-p",
+      "vocabulary_path:=/home/pi/handheld_mapping/runtime/ORBvoc.txt",
+      "-p",
+      "settings_path:=/home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml",
+      "-p",
+      "trajectory_dir:=/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_232347/orb_001",
+      "-p",
+      "sensor_mode:=stereo",
+      "-p",
+      "use_sim_time:=false",
+      "-p",
+      "left_topic:=/camera/camera/infra1/image_rect_raw",
+      "-p",
+      "right_topic:=/camera/camera/infra2/image_rect_raw"
+    ]
+  }
+}

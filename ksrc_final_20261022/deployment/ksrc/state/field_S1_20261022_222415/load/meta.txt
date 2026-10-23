@@ -1,0 +1,9 @@
+2026-10-22T22:24:17+09:00
+Linux raspberrypi 6.8.0-1065-raspi #69-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep  8 18:10:10 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+4
+ 22:24:17 up  1:19,  5 users,  load average: 2.06, 2.43, 1.58
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk0p2   29G   21G  6.6G  76% /
+04a7eaaaf3abef95c5a86ffb03d88fba3511a9164b097f41fedc08e36ca9f688  /home/pi/ksrc_final_20261022/deployment/ksrc/cli.py
+0e37273a947c0338f705d1f532c761c8f3712f063ac6da396fbbede15033e0a0  /home/pi/ksrc_final_20261022/deployment/ksrc/runner.py
+c9cab277636f0707e97229054e0be0064131bf6c7ee32a8ba284a14bcad4bb4d  /home/pi/ksrc_final_20261022/deployment/ksrc/record_load.sh

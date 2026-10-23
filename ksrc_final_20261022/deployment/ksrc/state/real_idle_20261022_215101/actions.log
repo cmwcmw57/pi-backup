@@ -1,0 +1,5 @@
+2026-10-22T21:51:01+09:00
+collector_pid=10102
+status unavailable; see supervisor.log
+2026-10-22T21:54:22+09:00
+{"stopped": true, "time": 1792673664.6602402}

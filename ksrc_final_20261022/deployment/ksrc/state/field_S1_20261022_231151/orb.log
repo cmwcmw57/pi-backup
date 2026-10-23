@@ -1,0 +1,2526 @@
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[INFO] [1792678328.102088360] [orbslam3_stereo_inertial]: waiting for exact stereo on /camera/camera/infra1/image_rect_raw and /camera/camera/infra2/image_rect_raw; mode=stereo; IMU=disabled
+First KF:0; Map init KF:0
+New Map created with 327 points
+TRACK_REF_KF: Less than 15 matches!!
+Fail to track local map!
+LM: Active map reset recieved
+LM: Active map reset, waiting...
+LM: Reseting current map in Local Mapping...
+LM: End reseting Local Mapping...
+LM: Reset free the mutex
+LM: Active map reset, Done!!!
+mnFirstFrameId = 0
+mnInitialFrameId = 0
+1100 Frames set to lost
+First KF:9; Map init KF:0
+New Map created with 51 points
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+Fail to track local map!
+[INFO] [1792678403.539439770] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Shutdown
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678411.819380762] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678413.110567170] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678421.351076244] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678422.722393487] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678430.931278222] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678432.310382525] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678440.511076676] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678441.904238706] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678450.144363552] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678451.675032434] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678459.923175214] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678461.481915679] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678469.704797677] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678471.190932862] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678479.435605572] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678480.741539106] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678488.965719104] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678490.522934176] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678498.746526814] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678500.266723264] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678508.476890110] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678509.944085441] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678518.158924820] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678519.640083654] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678527.889694344] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678529.206711579] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678537.422664363] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678538.835258774] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678547.053006455] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678548.411033761] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678556.633148674] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678558.162275959] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678566.413988717] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678567.842856091] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678576.043726911] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678577.933427706] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678586.175666509] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678587.402481093] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678595.657139766] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678597.055870212] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678605.287537729] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678606.746084339] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678614.967666928] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678616.366047629] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678624.597905315] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678626.103162136] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678634.328299704] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678635.662027298] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678643.908021435] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678645.081321782] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678653.337670127] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678654.783512290] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678663.017863699] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678664.342600178] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678672.546896438] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678673.960873906] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678682.179783104] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678683.605659860] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678691.861713701] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678693.333708807] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678701.542720803] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678702.881685586] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678711.122731020] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678712.665985181] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678720.906494199] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678722.122819647] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678730.337007979] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678731.800309122] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678740.016479854] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678741.341405133] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678749.599818028] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678750.918041947] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678759.133543429] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678760.761660940] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678768.964120506] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678770.078987672] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678778.293566677] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678779.612722166] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678787.822447599] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678789.206432697] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678797.454273176] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678798.962019348] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678807.184479933] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678808.574142040] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678816.815822799] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678818.425187902] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678826.647158054] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678828.138874803] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+[INFO] [1792678836.382365551] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[FATAL] [1792678837.751868953] [orbslam3_stereo_inertial]: could not create publisher: rcl node's context is invalid, at ./src/rcl/node.c:404

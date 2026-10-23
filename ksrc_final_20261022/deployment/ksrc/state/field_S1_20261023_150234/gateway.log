@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py", line 247, in <module>
+    main()
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py", line 242, in main
+    serve(open_sockets(args.host, tuple(args.ports)), addr(args.policy), threading.Event(),
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py", line 231, in serve
+    out.sendto(json.dumps(gateway.snapshot(now)).encode(), gui)
+OSError: [Errno 101] Network is unreachable

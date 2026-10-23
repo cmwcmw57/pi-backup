@@ -1,0 +1,22 @@
+{
+  "status": "incomplete",
+  "pose_output": "base",
+  "atlas_reuse_verified": false,
+  "atlas_load_verified": false,
+  "invalid_map_drops": 3,
+  "snapshot_skips": 1,
+  "image_pairs": 5951,
+  "accepted_imu_samples": 0,
+  "rejected_imu_samples": 0,
+  "empty_imu_interval_drops": 0,
+  "conversion_failures": 0,
+  "tracking_failures": 0,
+  "published_poses": 5458,
+  "tracking_state_counts": {
+    "0": 3,
+    "1": 197,
+    "2": 5461,
+    "3": 281,
+    "4": 9
+  }
+}

@@ -1,0 +1,1328 @@
+{
+  "robot_name": "rover",
+  "units": "m, kg, rad",
+  "source": "rover.f3z (2026-10-04 22:28 upload), plus separate sensor STLs",
+  "source_sha256": "37538ab9ba88be323a2c6730aa29ba94c4c93a62cf039c8bd78a378f6374a9cf",
+  "links": [
+    {
+      "name": "base_link",
+      "mesh": "meshes/base_link.stl",
+      "mass_kg": 0.7918999999999999,
+      "com_m": [
+        0.006449673295915172,
+        0.00024324220953914714,
+        -0.03394741250330704
+      ],
+      "inertia_kg_m2": [
+        [
+          0.001909431615532285,
+          -1.9881943002105715e-05,
+          9.94823399427369e-05
+        ],
+        [
+          -1.9881943002105715e-05,
+          0.0032101804416144707,
+          1.4959653956675958e-05
+        ],
+        [
+          9.94823399427369e-05,
+          1.4959653956675958e-05,
+          0.004528382075789804
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            -0.0049999999999999906,
+            0.0,
+            -0.02399999976158143
+          ],
+          "size": [
+            0.22999999999999995,
+            0.16999999999999996,
+            0.08799999952316284
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.024437745856121185,
+            -0.014875000119209282,
+            -0.048800002491951
+          ],
+          "size": [
+            0.11322451362386346,
+            0.06314999938011169,
+            0.028400000333786007
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.007730000019073487,
+            0.05416999816894531,
+            -0.03225000039386751
+          ],
+          "size": [
+            0.04826000213623047,
+            0.04165999889373779,
+            0.01149999976158142
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.05091000080108643,
+            0.05416999816894531,
+            -0.018749996579170244
+          ],
+          "size": [
+            0.04826000213623047,
+            0.04165999889373779,
+            0.01149999976158142
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.07340500116348316,
+            0.027630000114440813,
+            -0.028151084340095445
+          ],
+          "size": [
+            0.057189998626709156,
+            0.08903999805450492,
+            0.033787420988082795
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.026859998703002926,
+            -0.037500000000000006,
+            -0.0300000004272461
+          ],
+          "size": [
+            0.08249999999999999,
+            0.07,
+            0.020000000000000018
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.021589999198913575,
+            -0.044710001945495605,
+            -0.025750004208564756
+          ],
+          "size": [
+            0.048260002136230475,
+            0.041659998893737796,
+            0.01149999976158142
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.04254900008440018,
+            -0.02633999824523926,
+            -0.0024400027160644544
+          ],
+          "size": [
+            0.015849999785423285,
+            0.06730999946594239,
+            0.03886199951171876
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "left_rocker_link",
+      "mesh": "meshes/left_rocker_link.stl",
+      "mass_kg": 0.1862,
+      "com_m": [
+        -1.9651235875415325e-06,
+        0.04041270097876143,
+        -0.022139072393364247
+      ],
+      "inertia_kg_m2": [
+        [
+          8.666660545120629e-05,
+          3.2713165345640206e-09,
+          -1.6017981258213376e-09
+        ],
+        [
+          3.2713165345640206e-09,
+          0.0011983101518448112,
+          2.4807897206100384e-05
+        ],
+        [
+          -1.6017981258213376e-09,
+          2.4807897206100384e-05,
+          0.0012067950674906668
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            0.0,
+            0.02749999999999999,
+            -0.01246530965614319
+          ],
+          "size": [
+            0.23586278915405273,
+            0.075,
+            0.06471041440963746
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.08993139266967773,
+            0.0475,
+            -0.026443997180938726
+          ],
+          "size": [
+            0.045223407745361335,
+            0.024723408222198484,
+            0.04243149280548096
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.08993139266967773,
+            0.0475,
+            -0.026443997180938726
+          ],
+          "size": [
+            0.045223407745361335,
+            0.024723408222198484,
+            0.04243149280548096
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "right_rocker_link",
+      "mesh": "meshes/right_rocker_link.stl",
+      "mass_kg": 0.1862,
+      "com_m": [
+        1.9431641491424436e-06,
+        -0.040428301701826264,
+        -0.02208237707537452
+      ],
+      "inertia_kg_m2": [
+        [
+          8.650089899194938e-05,
+          3.2952114428350772e-09,
+          1.6044542867014414e-09
+        ],
+        [
+          3.2952114428350772e-09,
+          0.0011965483799196736,
+          -2.471970044671573e-05
+        ],
+        [
+          1.6044542867014414e-09,
+          -2.471970044671573e-05,
+          0.0012046835159321599
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            0.0,
+            -0.02749999999999999,
+            -0.01246530965614319
+          ],
+          "size": [
+            0.23586278915405273,
+            0.075,
+            0.06471041440963746
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.08993139266967773,
+            -0.0475,
+            -0.026443997180938726
+          ],
+          "size": [
+            0.045223407745361335,
+            0.024723408222198484,
+            0.04243149280548096
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.08993139266967773,
+            -0.0475,
+            -0.026443997180938726
+          ],
+          "size": [
+            0.045223407745361335,
+            0.024723408222198484,
+            0.04243149280548096
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "fl_steering_link",
+      "mesh": "meshes/fl_steering_link.stl",
+      "mass_kg": 0.2248,
+      "com_m": [
+        -0.0067005657489594165,
+        -0.038463189797223386,
+        -0.0654837671093977
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0001226757368000996,
+          1.5756607719618126e-08,
+          -5.337243072904947e-06
+        ],
+        [
+          1.5756607719618126e-08,
+          7.724551971910217e-05,
+          -8.331574215117048e-06
+        ],
+        [
+          -5.337243072904947e-06,
+          -8.331574215117048e-06,
+          8.334267425727737e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            -0.006999475955963133,
+            -0.01725946724414825,
+            -0.04512487844276429
+          ],
+          "size": [
+            0.04249903678894043,
+            0.05442105650901795,
+            0.09024975061416626
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.007000000476837159,
+            -0.033620004653930675,
+            -0.06900000349330902
+          ],
+          "size": [
+            0.03700000286102295,
+            0.08630000114440918,
+            0.036999999284744255
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "fl_wheel_link",
+      "mesh": "meshes/fl_wheel_link.stl",
+      "mass_kg": 0.0471,
+      "com_m": [
+        1.3534365063182682e-08,
+        1.1917175736975658e-08,
+        -0.0045908978838137115
+      ],
+      "inertia_kg_m2": [
+        [
+          3.199444361048369e-05,
+          2.3586900959527922e-12,
+          1.1558987979295715e-11
+        ],
+        [
+          2.3586900959527922e-12,
+          3.1994437039815096e-05,
+          3.1864596805634047e-12
+        ],
+        [
+          1.1558987979295715e-11,
+          3.1864596805634047e-12,
+          5.5452185502320546e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "cylinder",
+          "xyz": [
+            0.0,
+            0.0,
+            -0.009531247615814205
+          ],
+          "radius": 0.047503017451047395,
+          "length": 0.0371875
+        }
+      ],
+      "color": [
+        0.18,
+        0.2,
+        0.22,
+        1
+      ]
+    },
+    {
+      "name": "fr_steering_link",
+      "mesh": "meshes/fr_steering_link.stl",
+      "mass_kg": 0.2248,
+      "com_m": [
+        -0.006700564394795185,
+        0.0384631918851025,
+        -0.06548361288654375
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00012267563539099382,
+          -1.5754924350360554e-08,
+          -5.3369663779219846e-06
+        ],
+        [
+          -1.5754924350360554e-08,
+          7.724543161738496e-05,
+          8.330564060356987e-06
+        ],
+        [
+          -5.3369663779219846e-06,
+          8.330564060356987e-06,
+          8.334268289595729e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            -0.0069994807243347265,
+            0.01725946724414825,
+            -0.04512487844276429
+          ],
+          "size": [
+            0.04249902725219727,
+            0.05442105650901795,
+            0.09024975061416626
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            -0.007000000476837159,
+            0.033620004653930675,
+            -0.06900000587749483
+          ],
+          "size": [
+            0.03700000286102295,
+            0.08630000114440918,
+            0.03699999928474424
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "fr_wheel_link",
+      "mesh": "meshes/fr_wheel_link.stl",
+      "mass_kg": 0.0471,
+      "com_m": [
+        -1.3534365063182682e-08,
+        1.1917175736975658e-08,
+        0.0045908978838137115
+      ],
+      "inertia_kg_m2": [
+        [
+          3.199444361048369e-05,
+          -2.3586900959527922e-12,
+          1.1558987979295715e-11
+        ],
+        [
+          -2.3586900959527922e-12,
+          3.1994437039815096e-05,
+          -3.1864596805634047e-12
+        ],
+        [
+          1.1558987979295715e-11,
+          -3.1864596805634047e-12,
+          5.5452185502320546e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "cylinder",
+          "xyz": [
+            0.0,
+            0.0,
+            0.009531247615814198
+          ],
+          "radius": 0.047503017451047395,
+          "length": 0.03718750000000004
+        }
+      ],
+      "color": [
+        0.18,
+        0.2,
+        0.22,
+        1
+      ]
+    },
+    {
+      "name": "rl_steering_link",
+      "mesh": "meshes/rl_steering_link.stl",
+      "mass_kg": 0.2248,
+      "com_m": [
+        0.006700564394795183,
+        -0.0384631918851025,
+        -0.06548361288654371
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00012267563539099436,
+          -1.575492435035473e-08,
+          5.336966377922043e-06
+        ],
+        [
+          -1.575492435035473e-08,
+          7.72454316173857e-05,
+          -8.330564060357184e-06
+        ],
+        [
+          5.336966377922043e-06,
+          -8.330564060357184e-06,
+          8.334268289595731e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            0.00699948072433472,
+            -0.01725946724414825,
+            -0.04512487844276429
+          ],
+          "size": [
+            0.04249902725219726,
+            0.05442105650901795,
+            0.09024975061416626
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.007000000476837159,
+            -0.03362000465393067,
+            -0.06900000587749483
+          ],
+          "size": [
+            0.03700000286102295,
+            0.08630000114440917,
+            0.03699999928474424
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "rl_wheel_link",
+      "mesh": "meshes/rl_wheel_link.stl",
+      "mass_kg": 0.0471,
+      "com_m": [
+        1.3534365063182682e-08,
+        1.1917175736975658e-08,
+        -0.0045908978838137115
+      ],
+      "inertia_kg_m2": [
+        [
+          3.199444361048369e-05,
+          2.3586900959527922e-12,
+          1.1558987979295715e-11
+        ],
+        [
+          2.3586900959527922e-12,
+          3.1994437039815096e-05,
+          3.1864596805634047e-12
+        ],
+        [
+          1.1558987979295715e-11,
+          3.1864596805634047e-12,
+          5.5452185502320546e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "cylinder",
+          "xyz": [
+            0.0,
+            0.0,
+            -0.009531247615814205
+          ],
+          "radius": 0.047503017451047395,
+          "length": 0.0371875
+        }
+      ],
+      "color": [
+        0.18,
+        0.2,
+        0.22,
+        1
+      ]
+    },
+    {
+      "name": "rr_steering_link",
+      "mesh": "meshes/rr_steering_link.stl",
+      "mass_kg": 0.2248,
+      "com_m": [
+        0.0067005657489594165,
+        0.03846318979722338,
+        -0.06548376710939768
+      ],
+      "inertia_kg_m2": [
+        [
+          0.00012267573680009998,
+          1.575660771961241e-08,
+          5.33724307290501e-06
+        ],
+        [
+          1.575660771961241e-08,
+          7.724551971910256e-05,
+          8.331574215117345e-06
+        ],
+        [
+          5.33724307290501e-06,
+          8.331574215117345e-06,
+          8.334267425727752e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            0.006999475955963133,
+            0.01725946724414825,
+            -0.04512487844276429
+          ],
+          "size": [
+            0.04249903678894043,
+            0.05442105650901795,
+            0.09024975061416626
+          ]
+        },
+        {
+          "type": "box",
+          "xyz": [
+            0.007000000476837159,
+            0.033620004653930675,
+            -0.06900000349330902
+          ],
+          "size": [
+            0.03700000286102295,
+            0.08630000114440918,
+            0.036999999284744255
+          ]
+        }
+      ],
+      "color": [
+        0.7,
+        0.73,
+        0.76,
+        1
+      ]
+    },
+    {
+      "name": "rr_wheel_link",
+      "mesh": "meshes/rr_wheel_link.stl",
+      "mass_kg": 0.0471,
+      "com_m": [
+        -1.3534365063182682e-08,
+        1.1917175736975658e-08,
+        0.0045908978838137115
+      ],
+      "inertia_kg_m2": [
+        [
+          3.199444361048369e-05,
+          -2.3586900959527922e-12,
+          1.1558987979295715e-11
+        ],
+        [
+          -2.3586900959527922e-12,
+          3.1994437039815096e-05,
+          -3.1864596805634047e-12
+        ],
+        [
+          1.1558987979295715e-11,
+          -3.1864596805634047e-12,
+          5.5452185502320546e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "cylinder",
+          "xyz": [
+            0.0,
+            0.0,
+            0.009531247615814212
+          ],
+          "radius": 0.047503017451047395,
+          "length": 0.03718750000000001
+        }
+      ],
+      "color": [
+        0.18,
+        0.2,
+        0.22,
+        1
+      ]
+    },
+    {
+      "name": "camera_link",
+      "mesh": "meshes/camera_link.stl",
+      "mass_kg": 0.072,
+      "com_m": [
+        -0.01286942497011691,
+        0.007499938459487054,
+        -0.00011143299622946062
+      ],
+      "inertia_kg_m2": [
+        [
+          4.514190213443471e-05,
+          6.827631166437737e-11,
+          2.839270239439878e-08
+        ],
+        [
+          6.827631166437737e-11,
+          6.753472319053048e-06,
+          -4.6046756940200406e-11
+        ],
+        [
+          2.839270239439878e-08,
+          -4.6046756940200406e-11,
+          4.552680228004904e-05
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            -0.012499999999999995,
+            0.00750000381469727,
+            2.8848648070834565e-07
+          ],
+          "size": [
+            0.025000000000000026,
+            0.08999999237060546,
+            0.025000702857971194
+          ]
+        }
+      ],
+      "color": [
+        0.45,
+        0.5,
+        0.55,
+        1
+      ]
+    },
+    {
+      "name": "imu_link",
+      "mesh": "meshes/imu_link.stl",
+      "mass_kg": 0.0024,
+      "com_m": [
+        -0.006458225547000631,
+        0.010199938328182657,
+        0.0011149498809886382
+      ],
+      "inertia_kg_m2": [
+        [
+          1.366030785264021e-07,
+          1.5071233702173367e-10,
+          5.50310477147598e-12
+        ],
+        [
+          1.5071233702173367e-10,
+          5.6100279484841645e-08,
+          -1.1488906387481262e-10
+        ],
+        [
+          5.50310477147598e-12,
+          -1.1488906387481262e-10,
+          1.8858762229909324e-07
+        ]
+      ],
+      "collisions": [
+        {
+          "type": "box",
+          "xyz": [
+            -0.006349999904632569,
+            0.010160000324249267,
+            0.002367500066757202
+          ],
+          "size": [
+            0.017779999732971192,
+            0.02540000057220459,
+            0.004735000133514404
+          ]
+        }
+      ],
+      "color": [
+        0.45,
+        0.5,
+        0.55,
+        1
+      ]
+    },
+    {
+      "name": "camera_depth_frame"
+    },
+    {
+      "name": "camera_infra1_frame"
+    },
+    {
+      "name": "camera_infra2_frame"
+    },
+    {
+      "name": "camera_stereo_center_frame"
+    },
+    {
+      "name": "imu_sensor_frame"
+    },
+    {
+      "name": "camera_depth_optical_frame"
+    },
+    {
+      "name": "camera_infra1_optical_frame"
+    },
+    {
+      "name": "camera_infra2_optical_frame"
+    },
+    {
+      "name": "camera_stereo_center_optical_frame"
+    }
+  ],
+  "joints": [
+    {
+      "name": "left_rocker_joint",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "left_rocker_link",
+      "xyz": [
+        -5.224578958875574e-19,
+        0.085,
+        0.0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "lower": -0.5235987755982988,
+      "upper": 0.5235987755982988,
+      "effort": 0,
+      "velocity": 3,
+      "damping": 0.01,
+      "actuated": false
+    },
+    {
+      "name": "right_rocker_joint",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "right_rocker_link",
+      "xyz": [
+        -5.224578958875574e-19,
+        -0.085,
+        0.0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "lower": -0.5235987755982988,
+      "upper": 0.5235987755982988,
+      "effort": 0,
+      "velocity": 3,
+      "damping": 0.01,
+      "actuated": false,
+      "mimic": {
+        "joint": "left_rocker_joint",
+        "multiplier": -1,
+        "offset": 0
+      }
+    },
+    {
+      "name": "fl_steering_joint",
+      "type": "revolute",
+      "parent": "left_rocker_link",
+      "child": "fl_steering_link",
+      "xyz": [
+        0.10243139266967774,
+        0.0475,
+        -0.045313243865966794
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "lower": -1.5707963267948966,
+      "upper": 1.5707963267948966,
+      "effort": 2.942,
+      "velocity": 4.0,
+      "damping": 0.01,
+      "actuated": true
+    },
+    {
+      "name": "fl_wheel_joint",
+      "type": "continuous",
+      "parent": "fl_steering_link",
+      "child": "fl_wheel_link",
+      "xyz": [
+        0.0,
+        0.009530000686645501,
+        -0.06899999618530273
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "effort": 1.0,
+      "velocity": 8.0,
+      "damping": 0.001,
+      "actuated": true
+    },
+    {
+      "name": "fr_steering_joint",
+      "type": "revolute",
+      "parent": "right_rocker_link",
+      "child": "fr_steering_link",
+      "xyz": [
+        0.10243139266967774,
+        -0.0475,
+        -0.045313243865966794
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "lower": -1.5707963267948966,
+      "upper": 1.5707963267948966,
+      "effort": 2.942,
+      "velocity": 4.0,
+      "damping": 0.01,
+      "actuated": true
+    },
+    {
+      "name": "fr_wheel_joint",
+      "type": "continuous",
+      "parent": "fr_steering_link",
+      "child": "fr_wheel_link",
+      "xyz": [
+        0.0,
+        -0.009530000686645501,
+        -0.06899999618530273
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "effort": 1.0,
+      "velocity": 8.0,
+      "damping": 0.001,
+      "actuated": true
+    },
+    {
+      "name": "rl_steering_joint",
+      "type": "revolute",
+      "parent": "left_rocker_link",
+      "child": "rl_steering_link",
+      "xyz": [
+        -0.10243139266967774,
+        0.0475,
+        -0.045313243865966794
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "lower": -1.5707963267948966,
+      "upper": 1.5707963267948966,
+      "effort": 2.942,
+      "velocity": 4.0,
+      "damping": 0.01,
+      "actuated": true
+    },
+    {
+      "name": "rl_wheel_joint",
+      "type": "continuous",
+      "parent": "rl_steering_link",
+      "child": "rl_wheel_link",
+      "xyz": [
+        0.0,
+        0.009530000686645501,
+        -0.06899999618530273
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "effort": 1.0,
+      "velocity": 8.0,
+      "damping": 0.001,
+      "actuated": true
+    },
+    {
+      "name": "rr_steering_joint",
+      "type": "revolute",
+      "parent": "right_rocker_link",
+      "child": "rr_steering_link",
+      "xyz": [
+        -0.10243139266967774,
+        -0.0475,
+        -0.045313243865966794
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "lower": -1.5707963267948966,
+      "upper": 1.5707963267948966,
+      "effort": 2.942,
+      "velocity": 4.0,
+      "damping": 0.01,
+      "actuated": true
+    },
+    {
+      "name": "rr_wheel_joint",
+      "type": "continuous",
+      "parent": "rr_steering_link",
+      "child": "rr_wheel_link",
+      "xyz": [
+        0.0,
+        -0.009530000686645501,
+        -0.06899999618530273
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "effort": 1.0,
+      "velocity": 8.0,
+      "damping": 0.001,
+      "actuated": true
+    },
+    {
+      "name": "camera_link_joint",
+      "type": "fixed",
+      "parent": "base_link",
+      "child": "camera_link",
+      "xyz": [
+        0.116619,
+        0.0,
+        -0.0041220000000000145
+      ],
+      "rpy": [
+        0,
+        0.6108652381980153,
+        0
+      ]
+    },
+    {
+      "name": "imu_link_joint",
+      "type": "fixed",
+      "parent": "base_link",
+      "child": "imu_link",
+      "xyz": [
+        0.0,
+        0.0,
+        -0.02460000000000001
+      ],
+      "rpy": [
+        0,
+        0,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "name": "camera_depth_frame_joint",
+      "type": "fixed",
+      "parent": "camera_link",
+      "child": "camera_depth_frame",
+      "xyz": [
+        -0.0043,
+        0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "camera_infra1_frame_joint",
+      "type": "fixed",
+      "parent": "camera_link",
+      "child": "camera_infra1_frame",
+      "xyz": [
+        -0.0043,
+        0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "camera_infra2_frame_joint",
+      "type": "fixed",
+      "parent": "camera_link",
+      "child": "camera_infra2_frame",
+      "xyz": [
+        -0.0043,
+        -0.025,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "camera_stereo_center_frame_joint",
+      "type": "fixed",
+      "parent": "camera_link",
+      "child": "camera_stereo_center_frame",
+      "xyz": [
+        -0.0043,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "imu_sensor_frame_joint",
+      "type": "fixed",
+      "parent": "imu_link",
+      "child": "imu_sensor_frame",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "camera_depth_optical_frame_joint",
+      "type": "fixed",
+      "parent": "camera_depth_frame",
+      "child": "camera_depth_optical_frame",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "name": "camera_infra1_optical_frame_joint",
+      "type": "fixed",
+      "parent": "camera_infra1_frame",
+      "child": "camera_infra1_optical_frame",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "name": "camera_infra2_optical_frame_joint",
+      "type": "fixed",
+      "parent": "camera_infra2_frame",
+      "child": "camera_infra2_optical_frame",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "name": "camera_stereo_center_optical_frame_joint",
+      "type": "fixed",
+      "parent": "camera_stereo_center_frame",
+      "child": "camera_stereo_center_optical_frame",
+      "xyz": [
+        0,
+        0,
+        0
+      ],
+      "rpy": [
+        -1.5707963267948966,
+        0,
+        -1.5707963267948966
+      ]
+    }
+  ],
+  "assumptions": {
+    "front": "Positive Y of the Fusion assembly is positive X of the URDF.",
+    "base_frame": "Midpoint of the two rocker pivots; X forward, Y left, Z up.",
+    "mass_and_inertia": "Measured total 2.3263 kg; all 28 available component meshes use prepared STL volume COM/inertia, uniform density within each component normalized to measured mass; repaired and proxy geometry is recorded; 3 gears retain lumped approximations; parallel-axis aggregation; wires/connectors/additional mounts omitted.",
+    "rocker_limits": "Assumed +/-30 degrees; replace with actual mechanical stops.",
+    "steering_limits": "Assumed +/-90 degrees; replace with actual wire/mechanical limits.",
+    "actuator_effort_velocity": "Initial estimates; replace with measured/driver limits.",
+    "collisions": "Per-component boxes; wheel cylinders including grousers. Rigid terrain only; not a deformable sand model.",
+    "physics": "URDF mimic expresses kinematics; verify passive mechanical coupling in target physics engine.",
+    "gear_inertia": "Gear geometry omitted. Large gear mass on base, two small gears on rocker pivots; exact gear inertia/attachment remains approximate.",
+    "camera": "Passive monochrome stereo, emitter off; 50 mm nominal baseline and 4.3 mm nominal zero-depth offset; camera pitched 35 degrees downward about the unchanged camera STL origin (ROS +Y rotation). Calibrated extrinsics take precedence.",
+    "imu": "STL origin at CAD (0,0,137.213) mm; native STL axes retained; measurement site at STL origin is an approximation.",
+    "electronics": "MDD3A occurrences 5293/5516 are drive drivers at 20 g each; occurrence 6734 is steering-driver substitute at 12.9 g.",
+    "stm_visual": "F411RE CAD proxy for actual F446RE; simplified MB1136 box because source has no display tessellation."
+  },
+  "sensor_parameters": {
+    "camera_origin_cad_mm": [
+      0,
+      116.619,
+      157.691
+    ],
+    "imu_origin_cad_mm": [
+      0,
+      0,
+      137.213
+    ],
+    "stereo_baseline_m": 0.05,
+    "front_plate_to_depth_plane_m": 0.0043,
+    "camera_forward": "+CAD Y / +ROS X projected heading; 35 degrees downward about camera STL origin",
+    "camera_mesh_rpy": [
+      1.5707963267948966,
+      0,
+      1.5707963267948966
+    ],
+    "imu_rpy_ros": [
+      0,
+      0,
+      -1.5707963267948966
+    ],
+    "imu_measurement_origin": "STL origin; chip-specific offset not measured"
+  }
+}

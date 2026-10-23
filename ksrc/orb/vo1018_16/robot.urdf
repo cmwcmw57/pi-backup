@@ -1,0 +1,525 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rover">
+  <!-- Measured masses; approximate inertia, collision, limits and motor ratings. See config/model.json. -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00644967329592 0.000243242209539 -0.0339474125033" rpy="0 0 0" />
+      <mass value="0.7918999999999999" />
+      <inertia ixx="0.001909431615532285" iyy="0.0032101804416144707" izz="0.004528382075789804" ixy="-1.9881943002105715e-05" ixz="9.94823399427369e-05" iyz="1.4959653956675958e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/base_link.stl" />
+      </geometry>
+      <material name="base_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="base_link_collision_0">
+      <origin xyz="-0.005 0 -0.0239999997616" rpy="0 0 0" />
+      <geometry>
+        <box size="0.23 0.17 0.0879999995232" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_1">
+      <origin xyz="0.0244377458561 -0.0148750001192 -0.048800002492" rpy="0 0 0" />
+      <geometry>
+        <box size="0.113224513624 0.0631499993801 0.0284000003338" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_2">
+      <origin xyz="-0.00773000001907 0.0541699981689 -0.0322500003939" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0482600021362 0.0416599988937 0.0114999997616" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_3">
+      <origin xyz="-0.0509100008011 0.0541699981689 -0.0187499965792" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0482600021362 0.0416599988937 0.0114999997616" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_4">
+      <origin xyz="0.0734050011635 0.0276300001144 -0.0281510843401" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0571899986267 0.0890399980545 0.0337874209881" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_5">
+      <origin xyz="-0.026859998703 -0.0375 -0.0300000004272" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0825 0.07 0.02" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_6">
+      <origin xyz="-0.0215899991989 -0.0447100019455 -0.0257500042086" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0482600021362 0.0416599988937 0.0114999997616" />
+      </geometry>
+    </collision>
+    <collision name="base_link_collision_7">
+      <origin xyz="0.0425490000844 -0.0263399982452 -0.00244000271606" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0158499997854 0.0673099994659 0.0388619995117" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_rocker_link">
+    <inertial>
+      <origin xyz="-1.96512358754e-06 0.0404127009788 -0.0221390723934" rpy="0 0 0" />
+      <mass value="0.1862" />
+      <inertia ixx="8.666660545120629e-05" iyy="0.0011983101518448112" izz="0.0012067950674906668" ixy="3.2713165345640206e-09" ixz="-1.6017981258213376e-09" iyz="2.4807897206100384e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/left_rocker_link.stl" />
+      </geometry>
+      <material name="left_rocker_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="left_rocker_link_collision_0">
+      <origin xyz="0 0.0275 -0.0124653096561" rpy="0 0 0" />
+      <geometry>
+        <box size="0.235862789154 0.075 0.0647104144096" />
+      </geometry>
+    </collision>
+    <collision name="left_rocker_link_collision_1">
+      <origin xyz="-0.0899313926697 0.0475 -0.0264439971809" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0452234077454 0.0247234082222 0.0424314928055" />
+      </geometry>
+    </collision>
+    <collision name="left_rocker_link_collision_2">
+      <origin xyz="0.0899313926697 0.0475 -0.0264439971809" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0452234077454 0.0247234082222 0.0424314928055" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_rocker_link">
+    <inertial>
+      <origin xyz="1.94316414914e-06 -0.0404283017018 -0.0220823770754" rpy="0 0 0" />
+      <mass value="0.1862" />
+      <inertia ixx="8.650089899194938e-05" iyy="0.0011965483799196736" izz="0.0012046835159321599" ixy="3.2952114428350772e-09" ixz="1.6044542867014414e-09" iyz="-2.471970044671573e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/right_rocker_link.stl" />
+      </geometry>
+      <material name="right_rocker_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="right_rocker_link_collision_0">
+      <origin xyz="0 -0.0275 -0.0124653096561" rpy="0 0 0" />
+      <geometry>
+        <box size="0.235862789154 0.075 0.0647104144096" />
+      </geometry>
+    </collision>
+    <collision name="right_rocker_link_collision_1">
+      <origin xyz="-0.0899313926697 -0.0475 -0.0264439971809" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0452234077454 0.0247234082222 0.0424314928055" />
+      </geometry>
+    </collision>
+    <collision name="right_rocker_link_collision_2">
+      <origin xyz="0.0899313926697 -0.0475 -0.0264439971809" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0452234077454 0.0247234082222 0.0424314928055" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fl_steering_link">
+    <inertial>
+      <origin xyz="-0.00670056574896 -0.0384631897972 -0.0654837671094" rpy="0 0 0" />
+      <mass value="0.2248" />
+      <inertia ixx="0.0001226757368000996" iyy="7.724551971910217e-05" izz="8.334267425727737e-05" ixy="1.5756607719618126e-08" ixz="-5.337243072904947e-06" iyz="-8.331574215117048e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/fl_steering_link.stl" />
+      </geometry>
+      <material name="fl_steering_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="fl_steering_link_collision_0">
+      <origin xyz="-0.00699947595596 -0.0172594672441 -0.0451248784428" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0424990367889 0.054421056509 0.0902497506142" />
+      </geometry>
+    </collision>
+    <collision name="fl_steering_link_collision_1">
+      <origin xyz="-0.00700000047684 -0.0336200046539 -0.0690000034933" rpy="0 0 0" />
+      <geometry>
+        <box size="0.037000002861 0.0863000011444 0.0369999992847" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fl_wheel_link">
+    <inertial>
+      <origin xyz="1.35343650632e-08 1.1917175737e-08 -0.00459089788381" rpy="0 0 0" />
+      <mass value="0.0471" />
+      <inertia ixx="3.199444361048369e-05" iyy="3.1994437039815096e-05" izz="5.5452185502320546e-05" ixy="2.3586900959527922e-12" ixz="1.1558987979295715e-11" iyz="3.1864596805634047e-12" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/fl_wheel_link.stl" />
+      </geometry>
+      <material name="fl_wheel_link_material">
+        <color rgba="0.18 0.2 0.22 1" />
+      </material>
+    </visual>
+    <collision name="fl_wheel_link_collision_0">
+      <origin xyz="0 0 -0.00953124761581" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.047503017451047395" length="0.0371875" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fr_steering_link">
+    <inertial>
+      <origin xyz="-0.0067005643948 0.0384631918851 -0.0654836128865" rpy="0 0 0" />
+      <mass value="0.2248" />
+      <inertia ixx="0.00012267563539099382" iyy="7.724543161738496e-05" izz="8.334268289595729e-05" ixy="-1.5754924350360554e-08" ixz="-5.3369663779219846e-06" iyz="8.330564060356987e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/fr_steering_link.stl" />
+      </geometry>
+      <material name="fr_steering_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="fr_steering_link_collision_0">
+      <origin xyz="-0.00699948072433 0.0172594672441 -0.0451248784428" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0424990272522 0.054421056509 0.0902497506142" />
+      </geometry>
+    </collision>
+    <collision name="fr_steering_link_collision_1">
+      <origin xyz="-0.00700000047684 0.0336200046539 -0.0690000058775" rpy="0 0 0" />
+      <geometry>
+        <box size="0.037000002861 0.0863000011444 0.0369999992847" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fr_wheel_link">
+    <inertial>
+      <origin xyz="-1.35343650632e-08 1.1917175737e-08 0.00459089788381" rpy="0 0 0" />
+      <mass value="0.0471" />
+      <inertia ixx="3.199444361048369e-05" iyy="3.1994437039815096e-05" izz="5.5452185502320546e-05" ixy="-2.3586900959527922e-12" ixz="1.1558987979295715e-11" iyz="-3.1864596805634047e-12" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/fr_wheel_link.stl" />
+      </geometry>
+      <material name="fr_wheel_link_material">
+        <color rgba="0.18 0.2 0.22 1" />
+      </material>
+    </visual>
+    <collision name="fr_wheel_link_collision_0">
+      <origin xyz="0 0 0.00953124761581" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.047503017451047395" length="0.03718750000000004" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rl_steering_link">
+    <inertial>
+      <origin xyz="0.0067005643948 -0.0384631918851 -0.0654836128865" rpy="0 0 0" />
+      <mass value="0.2248" />
+      <inertia ixx="0.00012267563539099436" iyy="7.72454316173857e-05" izz="8.334268289595731e-05" ixy="-1.575492435035473e-08" ixz="5.336966377922043e-06" iyz="-8.330564060357184e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/rl_steering_link.stl" />
+      </geometry>
+      <material name="rl_steering_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="rl_steering_link_collision_0">
+      <origin xyz="0.00699948072433 -0.0172594672441 -0.0451248784428" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0424990272522 0.054421056509 0.0902497506142" />
+      </geometry>
+    </collision>
+    <collision name="rl_steering_link_collision_1">
+      <origin xyz="0.00700000047684 -0.0336200046539 -0.0690000058775" rpy="0 0 0" />
+      <geometry>
+        <box size="0.037000002861 0.0863000011444 0.0369999992847" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rl_wheel_link">
+    <inertial>
+      <origin xyz="1.35343650632e-08 1.1917175737e-08 -0.00459089788381" rpy="0 0 0" />
+      <mass value="0.0471" />
+      <inertia ixx="3.199444361048369e-05" iyy="3.1994437039815096e-05" izz="5.5452185502320546e-05" ixy="2.3586900959527922e-12" ixz="1.1558987979295715e-11" iyz="3.1864596805634047e-12" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/rl_wheel_link.stl" />
+      </geometry>
+      <material name="rl_wheel_link_material">
+        <color rgba="0.18 0.2 0.22 1" />
+      </material>
+    </visual>
+    <collision name="rl_wheel_link_collision_0">
+      <origin xyz="0 0 -0.00953124761581" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.047503017451047395" length="0.0371875" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rr_steering_link">
+    <inertial>
+      <origin xyz="0.00670056574896 0.0384631897972 -0.0654837671094" rpy="0 0 0" />
+      <mass value="0.2248" />
+      <inertia ixx="0.00012267573680009998" iyy="7.724551971910256e-05" izz="8.334267425727752e-05" ixy="1.575660771961241e-08" ixz="5.33724307290501e-06" iyz="8.331574215117345e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/rr_steering_link.stl" />
+      </geometry>
+      <material name="rr_steering_link_material">
+        <color rgba="0.7 0.73 0.76 1" />
+      </material>
+    </visual>
+    <collision name="rr_steering_link_collision_0">
+      <origin xyz="0.00699947595596 0.0172594672441 -0.0451248784428" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0424990367889 0.054421056509 0.0902497506142" />
+      </geometry>
+    </collision>
+    <collision name="rr_steering_link_collision_1">
+      <origin xyz="0.00700000047684 0.0336200046539 -0.0690000034933" rpy="0 0 0" />
+      <geometry>
+        <box size="0.037000002861 0.0863000011444 0.0369999992847" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rr_wheel_link">
+    <inertial>
+      <origin xyz="-1.35343650632e-08 1.1917175737e-08 0.00459089788381" rpy="0 0 0" />
+      <mass value="0.0471" />
+      <inertia ixx="3.199444361048369e-05" iyy="3.1994437039815096e-05" izz="5.5452185502320546e-05" ixy="-2.3586900959527922e-12" ixz="1.1558987979295715e-11" iyz="-3.1864596805634047e-12" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/rr_wheel_link.stl" />
+      </geometry>
+      <material name="rr_wheel_link_material">
+        <color rgba="0.18 0.2 0.22 1" />
+      </material>
+    </visual>
+    <collision name="rr_wheel_link_collision_0">
+      <origin xyz="0 0 0.00953124761581" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.047503017451047395" length="0.03718750000000001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="-0.0128694249701 0.00749993845949 -0.000111432996229" rpy="0 0 0" />
+      <mass value="0.072" />
+      <inertia ixx="4.514190213443471e-05" iyy="6.753472319053048e-06" izz="4.552680228004904e-05" ixy="6.827631166437737e-11" ixz="2.839270239439878e-08" iyz="-4.6046756940200406e-11" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/camera_link.stl" />
+      </geometry>
+      <material name="camera_link_material">
+        <color rgba="0.45 0.5 0.55 1" />
+      </material>
+    </visual>
+    <collision name="camera_link_collision_0">
+      <origin xyz="-0.0125 0.0075000038147 2.88486480708e-07" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.0899999923706 0.025000702858" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="-0.006458225547 0.0101999383282 0.00111494988099" rpy="0 0 0" />
+      <mass value="0.0024" />
+      <inertia ixx="1.366030785264021e-07" iyy="5.6100279484841645e-08" izz="1.8858762229909324e-07" ixy="1.5071233702173367e-10" ixz="5.50310477147598e-12" iyz="-1.1488906387481262e-10" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_description/meshes/imu_link.stl" />
+      </geometry>
+      <material name="imu_link_material">
+        <color rgba="0.45 0.5 0.55 1" />
+      </material>
+    </visual>
+    <collision name="imu_link_collision_0">
+      <origin xyz="-0.00634999990463 0.0101600003242 0.00236750006676" rpy="0 0 0" />
+      <geometry>
+        <box size="0.017779999733 0.0254000005722 0.00473500013351" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_depth_frame" />
+  <link name="camera_infra1_frame" />
+  <link name="camera_infra2_frame" />
+  <link name="camera_stereo_center_frame" />
+  <link name="imu_sensor_frame" />
+  <link name="camera_depth_optical_frame" />
+  <link name="camera_infra1_optical_frame" />
+  <link name="camera_infra2_optical_frame" />
+  <link name="camera_stereo_center_optical_frame" />
+  <joint name="left_rocker_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="left_rocker_link" />
+    <origin xyz="-5.22457895888e-19 0.085 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" velocity="3" lower="-0.5235987755982988" upper="0.5235987755982988" />
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <joint name="right_rocker_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="right_rocker_link" />
+    <origin xyz="-5.22457895888e-19 -0.085 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" velocity="3" lower="-0.5235987755982988" upper="0.5235987755982988" />
+    <dynamics damping="0.01" friction="0" />
+    <mimic joint="left_rocker_joint" multiplier="-1" offset="0" />
+  </joint>
+  <joint name="fl_steering_joint" type="revolute">
+    <parent link="left_rocker_link" />
+    <child link="fl_steering_link" />
+    <origin xyz="0.10243139267 0.0475 -0.045313243866" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2.942" velocity="4.0" lower="-1.5707963267948966" upper="1.5707963267948966" />
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <joint name="fl_wheel_joint" type="continuous">
+    <parent link="fl_steering_link" />
+    <child link="fl_wheel_link" />
+    <origin xyz="0 0.00953000068665 -0.0689999961853" rpy="-1.57079632679 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1.0" velocity="8.0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="fr_steering_joint" type="revolute">
+    <parent link="right_rocker_link" />
+    <child link="fr_steering_link" />
+    <origin xyz="0.10243139267 -0.0475 -0.045313243866" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2.942" velocity="4.0" lower="-1.5707963267948966" upper="1.5707963267948966" />
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <joint name="fr_wheel_joint" type="continuous">
+    <parent link="fr_steering_link" />
+    <child link="fr_wheel_link" />
+    <origin xyz="0 -0.00953000068665 -0.0689999961853" rpy="-1.57079632679 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1.0" velocity="8.0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="rl_steering_joint" type="revolute">
+    <parent link="left_rocker_link" />
+    <child link="rl_steering_link" />
+    <origin xyz="-0.10243139267 0.0475 -0.045313243866" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2.942" velocity="4.0" lower="-1.5707963267948966" upper="1.5707963267948966" />
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <joint name="rl_wheel_joint" type="continuous">
+    <parent link="rl_steering_link" />
+    <child link="rl_wheel_link" />
+    <origin xyz="0 0.00953000068665 -0.0689999961853" rpy="-1.57079632679 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1.0" velocity="8.0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="rr_steering_joint" type="revolute">
+    <parent link="right_rocker_link" />
+    <child link="rr_steering_link" />
+    <origin xyz="-0.10243139267 -0.0475 -0.045313243866" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2.942" velocity="4.0" lower="-1.5707963267948966" upper="1.5707963267948966" />
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <joint name="rr_wheel_joint" type="continuous">
+    <parent link="rr_steering_link" />
+    <child link="rr_wheel_link" />
+    <origin xyz="0 -0.00953000068665 -0.0689999961853" rpy="-1.57079632679 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1.0" velocity="8.0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="camera_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_link" />
+    <origin xyz="0.116619 0 -0.004122" rpy="0 0.610865238198 0" />
+  </joint>
+  <joint name="imu_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0 0 -0.0246" rpy="0 0 -1.57079632679" />
+  </joint>
+  <joint name="camera_depth_frame_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_depth_frame" />
+    <origin xyz="-0.0043 0.025 0" rpy="0 0 0" />
+  </joint>
+  <joint name="camera_infra1_frame_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_infra1_frame" />
+    <origin xyz="-0.0043 0.025 0" rpy="0 0 0" />
+  </joint>
+  <joint name="camera_infra2_frame_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_infra2_frame" />
+    <origin xyz="-0.0043 -0.025 0" rpy="0 0 0" />
+  </joint>
+  <joint name="camera_stereo_center_frame_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_stereo_center_frame" />
+    <origin xyz="-0.0043 0 0" rpy="0 0 0" />
+  </joint>
+  <joint name="imu_sensor_frame_joint" type="fixed">
+    <parent link="imu_link" />
+    <child link="imu_sensor_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <joint name="camera_depth_optical_frame_joint" type="fixed">
+    <parent link="camera_depth_frame" />
+    <child link="camera_depth_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <joint name="camera_infra1_optical_frame_joint" type="fixed">
+    <parent link="camera_infra1_frame" />
+    <child link="camera_infra1_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <joint name="camera_infra2_optical_frame_joint" type="fixed">
+    <parent link="camera_infra2_frame" />
+    <child link="camera_infra2_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <joint name="camera_stereo_center_optical_frame_joint" type="fixed">
+    <parent link="camera_stereo_center_frame" />
+    <child link="camera_stereo_center_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+</robot>

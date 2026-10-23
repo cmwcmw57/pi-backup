@@ -1,0 +1,119 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+    Tree Height: 620
+  - Class: nav2_rviz_plugins/Navigation 2
+    Name: Navigation 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Cell Size: 0.5
+      Plane Cell Count: 12
+      Color: 160; 160; 164
+      Reference Frame: map
+    - Class: rviz_default_plugins/Map
+      Name: Map (주행가능)
+      Enabled: true
+      Topic:
+        Value: /map
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+      Color Scheme: map
+      Alpha: 0.75
+    - Class: rviz_default_plugins/Map
+      Name: Global Costmap
+      Enabled: false
+      Topic:
+        Value: /global_costmap/costmap
+        Durability Policy: Transient Local
+      Color Scheme: costmap
+      Alpha: 0.5
+    - Class: rviz_default_plugins/Map
+      Name: Local Costmap
+      Enabled: true
+      Topic:
+        Value: /local_costmap/costmap
+        Durability Policy: Transient Local
+      Color Scheme: costmap
+      Alpha: 0.6
+    - Class: rviz_default_plugins/Path
+      Name: Global Plan
+      Enabled: true
+      Topic:
+        Value: /plan
+      Color: 0; 200; 255
+      Line Style: Lines
+    - Class: rviz_default_plugins/Path
+      Name: Local Plan
+      Enabled: true
+      Topic:
+        Value: /local_plan
+      Color: 255; 220; 0
+      Line Style: Lines
+    - Class: rviz_default_plugins/MarkerArray
+      Name: MPPI 후보 궤적
+      Enabled: true
+      Topic:
+        Value: /trajectories
+    - Class: rviz_default_plugins/Polygon
+      Name: 로버 풋프린트
+      Enabled: true
+      Topic:
+        Value: /local_costmap/published_footprint
+      Color: 25; 255; 0
+    - Class: rviz_default_plugins/Odometry
+      Name: Odometry
+      Enabled: true
+      Topic:
+        Value: /odom
+      Keep: 1
+      Shape:
+        Alpha: 1
+        Color: 255; 25; 0
+        Shaft Length: 0.2
+        Shaft Radius: 0.02
+        Head Length: 0.08
+        Head Radius: 0.05
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
+      Marker Scale: 0.3
+      Show Names: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/SetInitialPose
+      Topic:
+        Value: /initialpose
+    - Class: rviz_default_plugins/SetGoal
+      Topic:
+        Value: /goal_pose
+    - Class: rviz_default_plugins/PublishPoint
+      Topic:
+        Value: /clicked_point
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Distance: 6.5
+      Pitch: 1.3
+      Yaw: 1.57
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Target Frame: map
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 900
+  Width: 1500

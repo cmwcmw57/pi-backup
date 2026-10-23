@@ -1,0 +1,39 @@
+--- a/pi/policy/run_policy.py
++++ b/pi/policy/run_policy.py
+@@ -153,6 +153,7 @@
+                     help="실시간 우선순위 (SCHED_FIFO, 예: 50). 권한 필요: sudo 또는 'sudo setcap cap_sys_nice+ep $(readlink -f $(which python3))'")
+     ap.add_argument("--cpu", type=int, default=None, help="이 코어에만 (예: 3. ORB-SLAM 등과 코어 나누기)")
+     ap.add_argument("--gc-off", action="store_true", help="루프 동안 파이썬 GC 끄기 (가끔 수 ms 멈춤 방지)")
++    ap.add_argument("--tlm-socket", default=None, help="SPI 텔레메트리를 이 UNIX datagram 경로로 비차단 복사 (run_real --tlm-socket 이 수신)")
+     args = ap.parse_args()
+     if args.log:                     # 10-18: 폴더가 없어 주행 끝에 저장 실패한 적 있음 -> 시작 전에 만들고 확인
+         d = os.path.dirname(os.path.abspath(args.log))
+@@ -216,6 +217,10 @@
+         cmd_rx = CmdReceiver(args.cmd_udp, args.max_lin, args.max_ang)
+         print(f"[run] 텔레옵 명령 UDP :{args.cmd_udp} (상한 {args.max_lin} m/s, {args.max_ang} rad/s, "
+               f"{CmdReceiver.STALE_S} s 끊기면 0). 최대 {args.seconds:.0f} s, Ctrl+C 로 끝", flush=True)
++    tee = None
++    if args.tlm_socket:
++        from telemetry_tee import TelemetryTee
++        tee = TelemetryTee(args.tlm_socket)
+     ik = FirmwareIK()
+     link = FakeLink() if args.fake else nl.SpiLink()
+ 
+@@ -276,6 +281,8 @@
+             if cmd_rx is not None:
+                 vx, vy, w = cmd_rx.poll(t0)
+                 cmd_rx.reply(t0, tlm)
++            if tee is not None:
++                tee.emit({"host_receipt_ns": tlm_ns, "telemetry": tlm})
+             vo = vo_rx.poll() if vo_rx is not None else None
+             slip = slip_estimate(vo, math.radians(tlm.get("gyro_dps", (0, 0, 0))[2]) - bias[2], tlm["steer_meas_rad"], tlm["wheel_mps"])
+             obs = obs_b.push(obs_b.frame((vx, vy, w), tlm, bias, applied, vo))
+@@ -361,6 +368,8 @@
+         if cmd_rx is not None:
+             print(f"[run] 텔레옵 패킷 {cmd_rx.n_rx} 개 (버림 {cmd_rx.n_drop}), 끊겨서 0 명령 {cmd_rx.n_stale} 스텝", flush=True)
+             cmd_rx.close()
++        if tee is not None:
++            tee.close()
+     if args.gc_off:
+         gc.enable()
+     print(f"[run] 끝. 텔레메트리 실패 {n_bad} 회", flush=True)

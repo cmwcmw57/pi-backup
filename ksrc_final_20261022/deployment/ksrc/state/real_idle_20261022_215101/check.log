@@ -1,0 +1,3 @@
+OK: YW16 + YW17 / f; ESKF + RegionMission + MPPI imports; grid hash; runtime hashes
+mode default=FAKE; SPI unopened; network unnecessary; Python 3.12.3
+RT priority limit: (50, 50)

@@ -1,0 +1,1 @@
+"""Rover asset configuration."""

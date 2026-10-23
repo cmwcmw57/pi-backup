@@ -1,0 +1,16 @@
+{
+  "ksrc_repository": "https://github.com/YunBeeeen/ksrc",
+  "ksrc_commit": "07161349eb1cfd765d3efff1da43a5cbac57e24f",
+  "sha256": {
+    "firmware/common/spi_link.c": "b9c167c5af6421885b878078b76d105544d1127f14f1e6a6bb612ebaae696a5f",
+    "firmware/common/spi_link.h": "f5f4d62a29c9e95ed47e806a5d05d44d4f1a34032efd2bb229f732716f1b8584",
+    "firmware/src2026-rover-firmware/Core/Inc/imu_ism330.h": "784a2e8a69814ee71ed4390493befcff3ccd3859324dcb9d035297c22f8e6cfa",
+    "firmware/src2026-rover-firmware/Core/Src/imu_ism330.c": "e64de598d3a671fe42c2bf9a205f5dfee6d90273d6ae7b8f74040c99d735d5b8",
+    "firmware/src2026-rover-firmware/Core/Src/main.c": "6056f4ed025ea0ac67e0a6b3088a0417ae379d1dea03ad983978b96d7f1b0787",
+    "pi/common/nucleo_link.py": "d4273872d489fceade644167b91780e07afbd9030dbf09fee5d7fbf3da039064",
+    "firmware/src2026-rover-firmware/Core/Src/spi_link.c": "b9c167c5af6421885b878078b76d105544d1127f14f1e6a6bb612ebaae696a5f",
+    "firmware/src2026-rover-firmware/Core/Inc/spi_link.h": "f5f4d62a29c9e95ed47e806a5d05d44d4f1a34032efd2bb229f732716f1b8584",
+    "pi/common/fake_nucleo.py": "b7db7f95a90bcfba4fdc27b403e2fb32ebae3807c778ce5c62a46cadf198ce44",
+    "pi/common/test_spi_link.py": "94595e7570db3edabb32c8ca39182aa5961fa0655c542f0b06dce122a064810e"
+  }
+}

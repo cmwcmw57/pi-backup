@@ -1,0 +1,207 @@
+{
+ "comment": "새 경기장(KSRC final board-level sand)용 단계 좌표. 구역 번호는 regions.json(Codex 10-22)과 같다. 좌표 단위 m, 지도 좌표계.",
+ "regions_file": "regions.json",
+ "start_region": 1,
+ "goals": {
+  "entry30": {
+   "target": [
+    2.8,
+    2.75
+   ],
+   "regions": [
+    1
+   ],
+   "edge": [
+    1,
+    2
+   ]
+  },
+  "retreat30": {
+   "target": [
+    2.8,
+    2.85
+   ],
+   "regions": [
+    1,
+    2
+   ],
+   "edge": [
+    2,
+    1
+   ],
+   "reverse": true,
+   "arrive_m": 0.08
+  },
+  "entry15": {
+   "target": [
+    3.6,
+    2.75
+   ],
+   "regions": [
+    1
+   ],
+   "edge": [
+    1,
+    3
+   ]
+  },
+  "retreat15": {
+   "target": [
+    3.6,
+    2.75
+   ],
+   "regions": [
+    1,
+    3,
+    4
+   ],
+   "edge": [
+    3,
+    1
+   ],
+   "reverse": true
+  },
+  "look_go": {
+   "target": [
+    2.8,
+    1.3
+   ],
+   "regions": [
+    4
+   ],
+   "edge": null,
+   "arrive_m": 0.06
+  },
+  "return10": {
+   "target": [
+    1.9,
+    0.4
+   ],
+   "regions": [
+    4,
+    10
+   ],
+   "edge": [
+    4,
+    10
+   ]
+  },
+  "return9": {
+   "target": [
+    1.0,
+    0.43
+   ],
+   "regions": [
+    10,
+    9
+   ],
+   "edge": [
+    10,
+    9
+   ]
+  },
+  "return8": {
+   "target": [
+    1.0,
+    1.29
+   ],
+   "regions": [
+    9,
+    8
+   ],
+   "edge": [
+    9,
+    8
+   ]
+  },
+  "return7": {
+   "target": [
+    1.0,
+    2.75
+   ],
+   "regions": [
+    8,
+    7
+   ],
+   "edge": [
+    8,
+    7
+   ]
+  },
+  "return6": {
+   "target": [
+    1.9,
+    2.75
+   ],
+   "regions": [
+    7,
+    6
+   ],
+   "edge": [
+    7,
+    6
+   ]
+  },
+  "return1": {
+   "target": [
+    3.6,
+    2.82
+   ],
+   "regions": [
+    6,
+    1
+   ],
+   "edge": [
+    6,
+    1
+   ]
+  },
+  "look_exit": {
+   "target": [
+    2.8,
+    0.45
+   ],
+   "regions": [
+    4
+   ],
+   "edge": null
+  }
+ },
+ "corner_gate": {
+  "return9": {
+   "prev": [
+    1.9,
+    0.4
+   ],
+   "target": [
+    1.0,
+    0.43
+   ]
+  },
+  "return7": {
+   "prev": [
+    1.0,
+    1.29
+   ],
+   "target": [
+    1.0,
+    2.75
+   ]
+  }
+ },
+ "look": {
+  "stand": [
+   2.8,
+   1.3
+  ],
+  "face": [
+   2.8,
+   1.635
+  ],
+  "hold_s": 4.0,
+  "turn_rate_rad_s": 0.1,
+  "tol_deg": 3.0,
+  "back_heading_rad": -1.5707963267948966
+ },
+ "steep_pitch_deg": 22.0
+}

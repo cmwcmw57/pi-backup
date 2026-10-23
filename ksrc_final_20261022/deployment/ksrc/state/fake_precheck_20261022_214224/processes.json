@@ -1,0 +1,64 @@
+{
+  "runner": {
+    "pid": 8793,
+    "starttime": "227240",
+    "command": [
+      "taskset",
+      "-c",
+      "0",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runner.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/fake_precheck_20261022_214224/fake.json",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/fake_precheck_20261022_214224",
+      "--plan-cpu",
+      "0"
+    ]
+  },
+  "gateway": {
+    "pid": 8794,
+    "starttime": "227241",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py",
+      "--runner",
+      "127.0.0.1:5010"
+    ]
+  },
+  "inputs": {
+    "pid": 8795,
+    "starttime": "227241",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/fake_inputs.py",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/fake_precheck_20261022_214224"
+    ]
+  },
+  "policy": {
+    "pid": 8796,
+    "starttime": "227241",
+    "command": [
+      "taskset",
+      "-c",
+      "3",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc/pi/policy/run_policy.py",
+      "--fake",
+      "--policy",
+      "/home/pi/ksrc/pi/policy/res8_mlp_v3vo_rc4000",
+      "--cmd-udp",
+      "5005",
+      "--vo-port",
+      "5600",
+      "--seconds",
+      "600.0",
+      "--rt",
+      "50",
+      "--gc-off",
+      "--log",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/fake_precheck_20261022_214224/policy.npz"
+    ]
+  }
+}

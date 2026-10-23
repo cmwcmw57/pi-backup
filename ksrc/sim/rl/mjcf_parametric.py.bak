@@ -1,0 +1,191 @@
+"""RoverCfg -> MJCF XML.
+
+토폴로지 (확정):
+    chassis ── rocker_L ─┬─ steer_FL ── wheel_FL
+              (hinge y)  └─ steer_RL ── wheel_RL
+              rocker_R ─┬─ steer_FR ── wheel_FR
+                        └─ steer_RR ── wheel_RR
+    + equality(joint): rock_L = -rock_R     <- 중앙 베벨 디퍼렌셜
+
+좌표계는 펌웨어와 동일: x=전진, y=좌측, z=위.
+"""
+from config import RoverCfg
+
+CORNERS = [  # (이름, 전후부호, 좌우부호)
+    ("fl", +1, +1), ("rl", -1, +1),
+    ("fr", +1, -1), ("rr", -1, -1),
+]
+
+
+def _rocker(c: RoverCfg, side: str, sy: int) -> str:
+    """로커 1개 + 그 위의 조향/바퀴 2세트."""
+    # 암 실측 프로파일: 피벗(0,0) -> 무릎(knee_x, knee_z) -> 끝단 박스(수평)
+    end_cx = 0.5 * (c.arm_knee_x + c.arm_end_x)
+    end_hx = 0.5 * (c.arm_end_x - c.arm_knee_x)
+    end_cz = 0.5 * (c.arm_bot_z + c.arm_knee_z)
+    end_hz = 0.5 * (c.arm_knee_z - c.arm_bot_z)
+    # 다리 하우징: 실측 단면에 맞춘 3단.  leg_segs 는 이미 조향 바디 원점 기준이라
+    # 그대로 쓴다 (바퀴가 커지면 축과 함께 올라간다 -- 고정 부착이므로).
+    legs, boxes, kids = [], [], []
+    for fb in (+1, -1):
+        legs.append(f'<geom class="arm" type="capsule" mass="{0.20*c.m_rocker:.5f}" '
+                    f'fromto="0 0 0 {fb*c.arm_knee_x:.5f} 0 {c.arm_knee_z:.5f}" size="0.009"/>')
+        boxes.append(f'<geom class="arm" type="box" mass="{0.225*c.m_rocker:.5f}" '
+                     f'pos="{fb*end_cx:.5f} 0 {end_cz:.5f}" '
+                     f'size="{end_hx:.5f} {c.arm_w/2:.5f} {max(end_hz,0.004):.5f}"/>')
+        nm = ("f" if fb > 0 else "r") + ("l" if sy > 0 else "r")
+        legs_xml = "\n        ".join(
+            f'<geom name="leg{si}_{nm}" class="leg" type="box" '
+            f'mass="{0.25*c.m_steer/len(c.leg_segs):.5f}" '
+            f'pos="0 {-sy*c.leg_y_in:.5f} {0.5*(z0+z1):.5f}" '
+            f'size="{lx/2:.5f} {ly/2:.5f} {(z1-z0)/2:.5f}"/>'
+            for si, (z0, z1, lx, ly) in enumerate(c.leg_segs))
+        kids.append(f"""
+      <body name="steer_{nm}" pos="{fb*c.axle_x:.5f} 0 {c.axle_z:.5f}">
+        <joint name="st_{nm}" class="steer" range="{c.steer_range_rad(nm)[0]:.4f} {c.steer_range_rad(nm)[1]:.4f}"/>
+        <geom class="steer" type="box" size="0.016 0.014 0.016"/>
+        <!-- 다리/모터 하우징. 조립 STL 기준 지상고 9.6mm 로 **로버의 최저점**이다.
+             아래로 갈수록 가늘어지므로 3단으로 나눈다 (경계상자 하나로 채우면
+             바닥 단면이 실제의 3.3배가 되어 배접촉이 과대평가된다). -->
+        {legs_xml}
+        <body name="wheel_{nm}" pos="{c.scrub_x:.5f} {sy*c.wheel_y_off:.5f} {c.scrub_z:.5f}">
+          <joint name="wh_{nm}" class="wheel"/>
+          <geom class="tyre" type="cylinder" zaxis="0 1 0"
+                size="{c.wheel_r:.5f} {c.wheel_w/2:.5f}" mass="{c.m_wheel:.4f}"/>
+          <!-- SPG30E: 바퀴 샤프트에 직결되므로 동축. 조향과 함께 돈다. -->
+          <geom class="motor" type="cylinder" zaxis="0 1 0" mass="{c.m_motor:.4f}"
+                pos="0 {c.motor_y_dir*sy*(c.wheel_w/2 + c.motor_len/2):.5f} 0"
+                size="{c.motor_dia/2:.5f} {c.motor_len/2:.5f}"/>
+        </body>
+      </body>""")
+    return f"""
+    <body name="rocker_{side}" pos="0 {sy*(c.track/2 - c.wheel_y_off):.5f} {c.pivot_z:.5f}">
+      <joint name="rock_{side}" class="rocker"/>
+      <geom class="arm" type="cylinder" zaxis="0 1 0" size="0.011 {c.arm_w/2:.5f}"
+            mass="{0.15*c.m_rocker:.5f}"/>
+      {' '.join(legs)}
+      {' '.join(boxes)}{''.join(kids)}
+    </body>"""
+
+
+def build(c: RoverCfg, terrain: str = "plane", hfield_n: int = 384,
+          hfield_size=(1.5, 2.5), hfield_z: float = 1.0) -> str:
+    """terrain="hfield" 면 빈 높이맵을 만들어 둔다.  실제 데이터는 런타임에
+    m.hfield_data 로 덮어쓴다 -- 리셋마다 XML 을 다시 컴파일할 필요가 없다."""
+    if terrain == "hfield":
+        ground = (f'<asset><hfield name="arena" nrow="{hfield_n}" ncol="{hfield_n}" '
+                  f'size="{hfield_size[0]} {hfield_size[1]} {hfield_z} 0.5"/></asset>',
+                  '<geom name="ground" type="hfield" hfield="arena" class="terrain"/>')
+    else:
+        ground = ("", '<geom name="ground" type="plane" size="20 20 0.1" class="terrain"/>')
+
+    acts = "\n".join(
+        f'    <position name="a_st_{n}" joint="st_{n}" kp="{c.steer_kp}" kv="{c.steer_kv}" '
+        f'ctrlrange="{c.steer_range_rad(n)[0]:.4f} {c.steer_range_rad(n)[1]:.4f}" '
+        f'forcerange="{-c.steer_tau} {c.steer_tau}"/>'
+        for n, _, _ in CORNERS)
+    acts += "\n" + "\n".join(
+        # gear = 정지토크. ctrl in [-1,1] -> 인가토크. 속도 droop 은 joint damping 이 담당.
+        # forcerange 는 안전 상한이지만 **실제로는 한 번도 물리지 않는다**
+        # (|duty*gear| <= gear 이 자동으로 성립).  MuJoCo 의 forcerange 는
+        # 액추에이터 힘만 자르고 조인트 감쇠(passive)는 안 건드리므로, 진짜
+        # 전류 제한을 모델링하려면 감쇠까지 포함한 **순 관절토크**를 서브스텝에서
+        # 직접 계산해 걸어야 한다 (미구현).
+        # 실측 순 관절토크: 99분위 0.605, 최대 0.945 N*m -- 정지토크 1.96 은 안 넘는다.
+        f'    <motor name="a_wh_{n}" joint="wh_{n}" gear="{c.mot_tau_stall}" '
+        f'ctrlrange="-1 1" forcerange="{-c.mot_tau_stall} {c.mot_tau_stall}"/>'
+        for n, _, _ in CORNERS)
+
+    excl = "\n".join(
+        f'    <exclude body1="wheel_{n}" body2="rocker_{n[1]}"/>\n'
+        f'    <exclude body1="wheel_{n}" body2="chassis"/>\n'
+        f'    <exclude body1="wheel_{n}" body2="steer_{n}"/>\n'
+        # 다리 하우징(조향 바디에 붙음)은 암 바로 아래라 기구적으로 겹친다.
+        # 제외를 안 걸면 로커가 잠겨서 디퍼렌셜이 안 움직이고(로커각 0.03도),
+        # 조향도 9.7도 정상상태 오차를 남긴다.
+        f'    <exclude body1="steer_{n}" body2="rocker_{n[1]}"/>\n'
+        f'    <exclude body1="steer_{n}" body2="chassis"/>' for n, _, _ in CORNERS)
+
+    sens = "\n".join(
+        f'    <jointpos name="s_st_{n}" joint="st_{n}"/>\n'
+        f'    <jointvel name="s_wh_{n}" joint="wh_{n}"/>' for n, _, _ in CORNERS)
+
+    return f"""<mujoco model="ksrc_swerve_rover">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic"/>
+  {ground[0]}
+  <default>
+    <default class="arm">
+      <geom rgba="0.80 0.45 0.15 1" friction="0.7 0.01 0.001"/>
+    </default>
+    <default class="steer">
+      <geom rgba="0.30 0.35 0.45 1" mass="{c.m_steer:.4f}" friction="0.7 0.01 0.001"/>
+      <!-- range 는 바퀴마다 다르므로 각 st_* 조인트에 따로 준다 (config.steer_*_deg) -->
+      <joint type="hinge" axis="0 0 1" limited="true"
+             damping="0.02" armature="0.002"/>
+    </default>
+    <default class="leg">
+      <geom rgba="0.35 0.38 0.42 1" friction="0.7 0.01 0.001"/>
+    </default>
+    <default class="motor">
+      <geom rgba="0.55 0.55 0.58 1" friction="0.7 0.01 0.001"/>
+    </default>
+    <default class="tyre">
+      <!-- 종방향 마찰은 뒤에서 커스텀 슬립모델이 담당한다. 지금은 표준값. -->
+      <geom rgba="0.15 0.15 0.18 1" friction="1.0 0.02 0.002" condim="4"/>
+    </default>
+    <default class="wheel">
+      <joint type="hinge" axis="0 1 0" damping="{c.wheel_damping:.4f}" armature="0.0015"/>
+    </default>
+    <default class="rocker">
+      <joint type="hinge" axis="0 1 0" range="{-c.rocker_lim:.4f} {c.rocker_lim:.4f}"
+             damping="0.05" armature="0.001"/>
+    </default>
+    <default class="terrain">
+      <geom rgba="0.55 0.52 0.48 1" friction="1.0 0.02 0.002" condim="4"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
+    {ground[1]}
+    <body name="chassis" pos="0 0 {c.pivot_z + c.wheel_r:.5f}">
+      <freejoint name="root"/>
+      <geom name="base" type="box" pos="0 0 {c.base_h/2:.5f}"
+            size="{c.base_l/2:.5f} {c.base_w/2:.5f} {c.base_h/2:.5f}"
+            mass="{c.m_base:.4f}" rgba="0.25 0.50 0.75 1"/>
+      <!-- 배터리를 플레이트 바닥면에 매단다.  질량을 차체에 녹이지 않고 따로
+           두는 이유: 60g 이 플레이트 중심이 아니라 **바닥 아래** 에 달리면 CG 가
+           내려가고, 지형에 닿는 순서도 달라진다. -->
+      <geom name="batt" type="box" pos="0 0 {-c.batt_h/2:.5f}"
+            size="{c.batt_l/2:.5f} {c.batt_w/2:.5f} {c.batt_h/2:.5f}"
+            mass="{c.m_batt:.4f}" rgba="0.12 0.12 0.14 1"/>
+      <site name="imu" pos="0 0 {c.base_h/2:.5f}" size="0.006"/>
+{_rocker(c, 'l', +1)}
+{_rocker(c, 'r', -1)}
+    </body>
+  </worldbody>
+
+  <contact>
+{excl}
+  </contact>
+
+  <equality>
+    <!-- 중앙 베벨 디퍼렌셜: 좌우 로커 1:1 역방향. 사이드기어가 동일 부품이므로
+         가운데 피니언 크기와 무관하게 비는 정확히 1:1 이다. -->
+    <joint joint1="rock_l" joint2="rock_r" polycoef="0 {c.diff_ratio} 0 0 0" solimp="0.99 0.999 0.001"/>
+  </equality>
+
+  <actuator>
+{acts}
+  </actuator>
+
+  <sensor>
+    <framequat name="s_quat" objtype="site" objname="imu"/>
+    <gyro name="s_gyro" site="imu"/>
+    <accelerometer name="s_acc" site="imu"/>
+    <velocimeter name="s_vel" site="imu"/>
+{sens}
+  </sensor>
+</mujoco>
+"""

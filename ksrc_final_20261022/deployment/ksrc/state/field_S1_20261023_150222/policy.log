@@ -1,0 +1,24 @@
+[run] 실시간 우선순위 SCHED_FIFO 50
+/home/pi/venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+[run] 잔차 후처리: 변화율 제한 없음/스텝, 정지 명령 잔차 0, EMA α 끔, 조향 잔차 폭 30°
+[run] VO 수신 UDP :5600 (vo_relay.py)
+[run] 텔레옵 명령 UDP :5005 (상한 0.2 m/s, 0.8 rad/s, 0.3 s 끊기면 0). 최대 3600 s, Ctrl+C 로 끝
+[run] 자이로 바이어스 [-0.0123  0.0058  0.0088] rad/s (93 샘플)
+[run] IK 시작 조향각 = Nucleo 유지값 [0. 0. 0. 0.] deg
+[run] t=2999758 잔차 off 게이트 - 주기 최대 0.0 ms  계산 16.6 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO 없음
+[run] t=3000378 잔차 off 게이트 - 주기 최대 20.0 ms  계산 3.4 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO 없음
+[run] t=3000878 잔차 off 게이트 - 주기 최대 20.0 ms  계산 4.2 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO 없음
+[run] t=3001378 잔차 off 게이트 - 주기 최대 20.0 ms  계산 3.6 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO 없음
+[run] t=3001878 잔차 off 게이트 - 주기 최대 20.0 ms  계산 4.0 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO 없음
+[run] t=3002378 잔차 off 게이트 - 주기 최대 20.1 ms  계산 3.7 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO (+0.00, -0.00) 113 ms 헛돎 [-1  0 -1  0]%
+[run] t=3002878 잔차 off 게이트 - 주기 최대 20.1 ms  계산 6.2 ms  a=[0. 0. 0. 0. 0. 0. 0. 0.] duty=(0, 0, 0, 0) VO (-0.00, +0.00) 213 ms 헛돎 [0 0 0 0]%
+
+[run] Ctrl+C -- 멈추고 저장
+[run] VO 패킷 273 개 (깨짐 0), 유효 15.1 Hz
+[run] VO 나이 [ms]: 평균 147  p95 206  최대 213  VO 없음 74.3% 스텝
+[run] 텔레옵 패킷 336 개 (버림 0), 끊겨서 0 명령 0 스텝
+[run] 끝. 텔레메트리 실패 0 회
+[run] 루프 주기 [ms] (목표 20): 평균 20.00  중앙 20.00  p95 20.03  p99 20.08  최대 20.09  |  25 ms 넘음 0회, 40 ms 넘음 0회 / 166
+[run] 한 주기 계산 (관측+정책+SPI) [ms]: 중앙 3.89  p99 6.93  최대 16.65  |  5 ms 넘게 늦게 시작 0회, 한 주기 넘게 밀려 재정렬 0회
+[run] 저장 /home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261023_150222/policy.npz

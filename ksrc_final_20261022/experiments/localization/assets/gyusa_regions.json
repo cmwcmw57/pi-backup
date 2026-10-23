@@ -1,0 +1,375 @@
+{
+  "proposal_only": true,
+  "source_map": "gyusa simulation map; not Yeouido measured STL",
+  "source_mesh_sha256": "f8953e10b0d89ac3d9c1e62416f11fd5bd49497254a55cc3371cdb04358a29f0",
+  "boundary_overlap_m": 0.125,
+  "slope_statistics": "interior surface normals of current map; not a physical sensor measurement",
+  "regions": [
+    {
+      "id": 1,
+      "name": "입구·분기 평지",
+      "polygon_xy_m": [
+        [
+          2.5,
+          0.8
+        ],
+        [
+          3.3,
+          0.8
+        ],
+        [
+          3.3,
+          0
+        ],
+        [
+          4.1,
+          0
+        ],
+        [
+          4.1,
+          1.6
+        ],
+        [
+          2.5,
+          1.6
+        ]
+      ],
+      "label_xy_m": [
+        3.42,
+        1.2
+      ],
+      "color": "#61b8ef",
+      "recognition_hint": "낮은 평지 + 분기 모양",
+      "median_mesh_slope_deg": 0.0,
+      "height_m_p10_p50_p90": [
+        0.23991870880126953,
+        0.24000155925750732,
+        0.24000155925750732
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 2,
+      "name": "30° 경사면",
+      "polygon_xy_m": [
+        [
+          4.1,
+          0
+        ],
+        [
+          4.9,
+          0
+        ],
+        [
+          4.9,
+          0.8
+        ],
+        [
+          4.1,
+          0.8
+        ]
+      ],
+      "label_xy_m": [
+        4.5,
+        0.4
+      ],
+      "color": "#ec7963",
+      "recognition_hint": "급한 경사 + 짧은 오르막",
+      "median_mesh_slope_deg": 29.821675300598145,
+      "height_m_p10_p50_p90": [
+        0.31858426332473755,
+        0.4684678912162781,
+        0.6200193762779236
+      ],
+      "nominal_route_grade_deg": 30
+    },
+    {
+      "id": 3,
+      "name": "15° 경사면",
+      "polygon_xy_m": [
+        [
+          4.1,
+          0.8
+        ],
+        [
+          5.78,
+          0.8
+        ],
+        [
+          5.78,
+          1.6
+        ],
+        [
+          4.1,
+          1.6
+        ]
+      ],
+      "label_xy_m": [
+        4.9,
+        1.2
+      ],
+      "color": "#eab74e",
+      "recognition_hint": "완만한 경사 + 긴 오르막",
+      "median_mesh_slope_deg": 14.999950408935547,
+      "height_m_p10_p50_p90": [
+        0.29560112953186035,
+        0.46306920051574707,
+        0.6238386631011963
+      ],
+      "nominal_route_grade_deg": 15
+    },
+    {
+      "id": 4,
+      "name": "정상 평탄부",
+      "polygon_xy_m": [
+        [
+          4.9,
+          0
+        ],
+        [
+          6.5,
+          0
+        ],
+        [
+          6.5,
+          1.6
+        ],
+        [
+          5.78,
+          1.6
+        ],
+        [
+          5.78,
+          0.8
+        ],
+        [
+          4.9,
+          0.8
+        ]
+      ],
+      "label_xy_m": [
+        5.65,
+        0.42
+      ],
+      "color": "#b59adf",
+      "recognition_hint": "높은 평지 + 경사 종료",
+      "median_mesh_slope_deg": 0.0,
+      "height_m_p10_p50_p90": [
+        0.6899936199188232,
+        0.689995288848877,
+        0.6899985074996948
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 5,
+      "name": "중앙 낮은 평지",
+      "polygon_xy_m": [
+        [
+          3.3,
+          -0.8
+        ],
+        [
+          5.7,
+          -0.8
+        ],
+        [
+          5.7,
+          0
+        ],
+        [
+          3.3,
+          0
+        ]
+      ],
+      "label_xy_m": [
+        4.45,
+        -0.4
+      ],
+      "color": "#6ac9be",
+      "recognition_hint": "낮은 평지 + 안쪽 벽 배치",
+      "median_mesh_slope_deg": 0.0,
+      "height_m_p10_p50_p90": [
+        0.2399455189704895,
+        0.23999595642089844,
+        0.23999762535095215
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 6,
+      "name": "왼쪽 연결 경사",
+      "polygon_xy_m": [
+        [
+          2.5,
+          -0.8
+        ],
+        [
+          3.3,
+          -0.8
+        ],
+        [
+          3.3,
+          0.8
+        ],
+        [
+          2.5,
+          0.8
+        ]
+      ],
+      "label_xy_m": [
+        2.9,
+        0.02
+      ],
+      "color": "#8fb270",
+      "recognition_hint": "경사 방향: 아래쪽",
+      "median_mesh_slope_deg": 5.000063419342041,
+      "height_m_p10_p50_p90": [
+        0.2581554651260376,
+        0.30846118927001953,
+        0.36095343828201293
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 7,
+      "name": "왼쪽 회전 평탄부",
+      "polygon_xy_m": [
+        [
+          2.5,
+          -1.6
+        ],
+        [
+          3.3,
+          -1.6
+        ],
+        [
+          3.3,
+          -0.8
+        ],
+        [
+          2.5,
+          -0.8
+        ]
+      ],
+      "label_xy_m": [
+        2.9,
+        -1.2
+      ],
+      "color": "#c5a484",
+      "recognition_hint": "중간 높이 + 왼쪽 코너",
+      "median_mesh_slope_deg": 0.0,
+      "height_m_p10_p50_p90": [
+        0.37993717193603516,
+        0.3799734115600586,
+        0.3799835443496704
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 8,
+      "name": "하단 연결 경사",
+      "polygon_xy_m": [
+        [
+          3.3,
+          -1.6
+        ],
+        [
+          5.7,
+          -1.6
+        ],
+        [
+          5.7,
+          -0.8
+        ],
+        [
+          3.3,
+          -0.8
+        ]
+      ],
+      "label_xy_m": [
+        4.5,
+        -1.2
+      ],
+      "color": "#96a4d7",
+      "recognition_hint": "경사 방향: 오른쪽",
+      "median_mesh_slope_deg": 5.000024318695068,
+      "height_m_p10_p50_p90": [
+        0.4066482901573181,
+        0.4845088720321655,
+        0.5623973250389097
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 9,
+      "name": "오른쪽 회전 평탄부",
+      "polygon_xy_m": [
+        [
+          5.7,
+          -1.6
+        ],
+        [
+          6.5,
+          -1.6
+        ],
+        [
+          6.5,
+          -0.8
+        ],
+        [
+          5.7,
+          -0.8
+        ]
+      ],
+      "label_xy_m": [
+        6.1,
+        -1.2
+      ],
+      "color": "#cc97ac",
+      "recognition_hint": "높은 중간 평지 + 코너",
+      "median_mesh_slope_deg": 0.0,
+      "height_m_p10_p50_p90": [
+        0.5899561643600464,
+        0.5899561643600464,
+        0.5899562835693359
+      ],
+      "nominal_route_grade_deg": null
+    },
+    {
+      "id": 10,
+      "name": "오른쪽 연결 경사",
+      "polygon_xy_m": [
+        [
+          5.7,
+          -0.8
+        ],
+        [
+          6.5,
+          -0.8
+        ],
+        [
+          6.5,
+          0
+        ],
+        [
+          5.7,
+          0
+        ]
+      ],
+      "label_xy_m": [
+        6.1,
+        -0.4
+      ],
+      "color": "#91cdb3",
+      "recognition_hint": "경사 방향: 위쪽",
+      "median_mesh_slope_deg": 7.000032424926758,
+      "height_m_p10_p50_p90": [
+        0.6074531078338623,
+        0.639682948589325,
+        0.6719149351119995
+      ],
+      "nominal_route_grade_deg": null
+    }
+  ]
+}

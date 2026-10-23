@@ -1,0 +1,73 @@
+2026-10-22T20:52:01+09:00
+Linux raspberrypi 6.8.0-1065-raspi #69-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep  8 18:10:10 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+4
+ 20:52:01 up  6:36, 26 users,  load average: 0.26, 0.15, 0.11
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk0p2   29G   21G  6.7G  76% /
+2e1f2a0a7797baa61c1b1196a85455eda586a6140983b4853f76f50ca6c21d49  /home/pi/ksrc_final_20261022/deployment/ksrc/cli.py
+0e37273a947c0338f705d1f532c761c8f3712f063ac6da396fbbede15033e0a0  /home/pi/ksrc_final_20261022/deployment/ksrc/runner.py
+c9cab277636f0707e97229054e0be0064131bf6c7ee32a8ba284a14bcad4bb4d  /home/pi/ksrc_final_20261022/deployment/ksrc/record_load.sh
+{"pid": 445482, "starttime": "2372016"}{
+  "runner": {
+    "pid": 445483,
+    "starttime": "2372032",
+    "command": [
+      "taskset",
+      "-c",
+      "0",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runner.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify2_20261022/fake.json",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify2_20261022",
+      "--plan-cpu",
+      "0"
+    ]
+  },
+  "gateway": {
+    "pid": 445484,
+    "starttime": "2372032",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py",
+      "--runner",
+      "127.0.0.1:5010"
+    ]
+  },
+  "inputs": {
+    "pid": 445485,
+    "starttime": "2372032",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/fake_inputs.py",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify2_20261022"
+    ]
+  },
+  "policy": {
+    "pid": 445486,
+    "starttime": "2372032",
+    "command": [
+      "taskset",
+      "-c",
+      "3",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc/pi/policy/run_policy.py",
+      "--fake",
+      "--policy",
+      "/home/pi/ksrc/pi/policy/res8_mlp_v3vo_rc4000",
+      "--cmd-udp",
+      "5005",
+      "--vo-port",
+      "5600",
+      "--seconds",
+      "90.0",
+      "--rt",
+      "50",
+      "--gc-off",
+      "--log",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify2_20261022/policy.npz"
+    ]
+  }
+}

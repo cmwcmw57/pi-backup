@@ -1,0 +1,15 @@
+started runner 1345
+started gateway 1346
+started camera 1347
+started inputs 1349
+started policy 1356
+started orb 1360
+stopped owned processes
+Traceback (most recent call last):
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 401, in <module>
+    main()
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 356, in main
+    supervise(args)
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 276, in supervise
+    raise RuntimeError('process exited: ' + ', '.join(dead))
+RuntimeError: process exited: policy

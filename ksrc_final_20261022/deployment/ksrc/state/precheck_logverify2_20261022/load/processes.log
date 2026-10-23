@@ -1,0 +1,223 @@
+2026-10-22T20:52:01+09:00
+    PID    PPID     LWP PSR CLS RTPRIO %CPU %MEM   RSS COMMAND
+      1       0       1   3  TS      -  0.0  0.1 13200 systemd
+      2       0       2   2  TS      -  0.0  0.0     0 kthreadd
+      3       2       3   0  TS      -  0.0  0.0     0 pool_workqueue_release
+      4       2       4   0  TS      -  0.0  0.0     0 kworker/R-rcu_g
+      5       2       5   0  TS      -  0.0  0.0     0 kworker/R-rcu_p
+      6       2       6   0  TS      -  0.0  0.0     0 kworker/R-slub_
+      7       2       7   0  TS      -  0.0  0.0     0 kworker/R-netns
+     12       2      12   0  TS      -  0.0  0.0     0 kworker/R-mm_pe
+     13       2      13   0  TS      -  0.0  0.0     0 rcu_tasks_kthread
+     14       2      14   0  TS      -  0.0  0.0     0 rcu_tasks_rude_kthread
+     15       2      15   0  TS      -  0.0  0.0     0 rcu_tasks_trace_kthread
+     16       2      16   0  TS      -  0.0  0.0     0 ksoftirqd/0
+     17       2      17   1  TS      -  0.0  0.0     0 rcu_preempt
+     18       2      18   0  FF     99  0.0  0.0     0 migration/0
+     19       2      19   0  TS      -  0.0  0.0     0 cpuhp/0
+     20       2      20   1  TS      -  0.0  0.0     0 cpuhp/1
+     21       2      21   1  FF     99  0.0  0.0     0 migration/1
+     22       2      22   1  TS      -  0.0  0.0     0 ksoftirqd/1
+     25       2      25   2  TS      -  0.0  0.0     0 cpuhp/2
+     26       2      26   2  FF     99  0.0  0.0     0 migration/2
+     27       2      27   2  TS      -  0.0  0.0     0 ksoftirqd/2
+     30       2      30   3  TS      -  0.0  0.0     0 cpuhp/3
+     31       2      31   3  FF     99  0.0  0.0     0 migration/3
+     32       2      32   3  TS      -  0.0  0.0     0 ksoftirqd/3
+     35       2      35   0  TS      -  0.0  0.0     0 kdevtmpfs
+     36       2      36   2  TS      -  0.0  0.0     0 kworker/R-inet_
+     37       2      37   0  TS      -  0.0  0.0     0 kauditd
+     39       2      39   2  TS      -  0.0  0.0     0 khungtaskd
+     40       2      40   1  TS      -  0.0  0.0     0 oom_reaper
+     42       2      42   3  TS      -  0.0  0.0     0 kworker/R-write
+     43       2      43   3  TS      -  0.0  0.0     0 kcompactd0
+     44       2      44   0  TS      -  0.0  0.0     0 khugepaged
+     45       2      45   3  TS      -  0.0  0.0     0 kworker/R-kinte
+     46       2      46   2  TS      -  0.0  0.0     0 kworker/R-kbloc
+     47       2      47   3  TS      -  0.0  0.0     0 kworker/R-blkcg
+     50       2      50   3  TS      -  0.0  0.0     0 kworker/R-tpm_d
+     51       2      51   3  TS      -  0.0  0.0     0 kworker/R-edac-
+     52       2      52   3  TS      -  0.0  0.0     0 kworker/R-devfr
+     53       2      53   2  FF     50  0.0  0.0     0 watchdogd
+     55       2      55   1  TS      -  0.0  0.0     0 kworker/R-quota
+     57       2      57   1  TS      -  0.0  0.0     0 kswapd0
+     58       2      58   1  TS      -  0.0  0.0     0 kworker/R-kthro
+     62       2      62   2  TS      -  0.0  0.0     0 hwrng
+     63       2      63   1  TS      -  0.0  0.0     0 kworker/R-mld
+     64       2      64   1  TS      -  0.0  0.0     0 kworker/R-ipv6_
+     73       2      73   1  TS      -  0.0  0.0     0 kworker/R-kstrp
+    102       2     102   1  TS      -  0.0  0.0     0 kworker/1:1H-kblockd
+    106       2     106   2  TS      -  0.0  0.0     0 kworker/2:1H-kblockd
+    128       2     128   3  TS      -  0.0  0.0     0 kworker/3:1H-kblockd
+    153       2     153   0  FF     50  0.0  0.0     0 irq/40-aerdrv
+    154       2     154   0  FF     50  0.0  0.0     0 irq/42-aerdrv
+    158       2     158   1  TS      -  0.0  0.0     0 spi0
+    159       2     159   3  TS      -  0.0  0.0     0 spi10
+    160       2     160   1  TS      -  0.0  0.0     0 kworker/R-sdhci
+    161       2     161   0  FF     50  0.0  0.0     0 irq/166-mmc0
+    162       2     162   2  TS      -  0.0  0.0     0 kworker/R-sdhci
+    163       2     163   0  FF     50  0.0  0.0     0 irq/168-mmc1
+    164       2     164   2  TS      -  0.0  0.0     0 kworker/R-mmc_c
+    189       2     189   1  TS      -  0.0  0.0     0 kworker/R-md
+    190       2     190   2  TS      -  0.0  0.0     0 kworker/R-md_bi
+    195       2     195   3  TS      -  0.0  0.0     0 kworker/R-raid5
+    250       2     250   0  TS      -  0.0  0.0     0 jbd2/mmcblk0p2-8
+    251       2     251   1  TS      -  0.0  0.0     0 kworker/R-ext4-
+    323       2     323   1  FF      1  0.0  0.0     0 psimon
+    328       1     328   1  TS      -  0.0  0.3 27668 systemd-journal
+    350       2     350   0  TS      -  0.0  0.0     0 kworker/R-kmpat
+    351       2     351   3  TS      -  0.0  0.0     0 kworker/R-kmpat
+    390       1     390   1  TS      -  0.0  0.0  8080 systemd-udevd
+    397       2     397   2  FF      1  0.0  0.0     0 psimon
+    456       2     456   0  TS      -  0.0  0.0     0 kworker/R-cfg80
+    459       2     459   3  TS      -  0.0  0.0     0 kworker/R-brcmf
+    460       2     460   0  TS      -  0.0  0.0     0 brcmf_wdog/mmc1:0001:1
+    484       2     484   0  FF     50  0.0  0.0     0 irq/172-1000800000.codec
+    556       1     556   0  TS      -  0.0  0.1 12412 systemd-resolve
+    562       1     562   3  TS      -  0.0  0.0  7184 systemd-timesyn
+    562       1     637   0  TS      -  0.0  0.0  7184 sd-resolve
+    571       2     571   0  TS      -  0.0  0.0     0 kworker/u9:3-uvcvideo
+    589       2     589   3  FF     50  0.0  0.0     0 irq/176-vc4 hdmi hpd connected
+    590       2     590   0  FF     50  0.0  0.0     0 irq/177-vc4 hdmi hpd disconnected
+    591       2     591   0  TS      -  0.0  0.0     0 cec-vc4-hdmi-0
+    592       2     592   0  FF     50  0.0  0.0     0 irq/178-vc4 hdmi cec rx
+    593       2     593   3  FF     50  0.0  0.0     0 irq/179-vc4 hdmi cec tx
+    600       2     600   0  FF     50  0.0  0.0     0 irq/180-vc4 hdmi hpd connected
+    601       2     601   0  FF     50  0.0  0.0     0 irq/181-vc4 hdmi hpd disconnected
+    602       2     602   0  TS      -  0.0  0.0     0 cec-vc4-hdmi-1
+    603       2     603   0  FF     50  0.0  0.0     0 irq/182-vc4 hdmi cec rx
+    604       2     604   0  FF     50  0.0  0.0     0 irq/183-vc4 hdmi cec tx
+    614       2     614   1  FF     50  0.0  0.0     0 card1-crtc0
+    615       2     615   0  FF     50  0.0  0.0     0 card1-crtc1
+    616       2     616   2  FF     50  0.0  0.0     0 card1-crtc2
+    617       2     617   0  FF     50  0.0  0.0     0 card1-crtc3
+    667       1     667   1  TS      -  0.0  0.1 10232 wpa_supplicant
+    710       1     710   2  TS      -  0.0  0.1  8776 systemd-network
+    724       1     724   0  TS      -  0.0  0.0  3748 avahi-daemon
+    725       1     725   2  TS      -  0.0  0.0  4876 dbus-daemon
+    728       1     728   2  TS      -  0.0  0.1 10400 lttng-sessiond
+    728       1     761   2  TS      -  0.0  0.1 10400 HT cleanup
+    728       1     772   2  TS      -  0.0  0.1 10400 lttng-sessiond
+    728       1     784   0  TS      -  0.0  0.1 10400 Health manageme
+    728       1     785   3  TS      -  0.0  0.1 10400 Notification
+    728       1     786   3  TS      -  0.0  0.1 10400 Action Executor
+    728       1     787   0  TS      -  0.0  0.1 10400 Timer
+    728       1     788   3  TS      -  0.0  0.1 10400 Rotation
+    728       1     789   1  TS      -  0.0  0.1 10400 Client manageme
+    728       1     790   3  TS      -  0.0  0.1 10400 UST registratio
+    728       1     791   3  TS      -  0.0  0.1 10400 UST application
+    728       1     792   2  TS      -  0.0  0.1 10400 UST application
+    728       1     793   3  TS      -  0.0  0.1 10400 Application not
+    728       1     794   1  TS      -  0.0  0.1 10400 Agent managemen
+    728       1     795   0  TS      -  0.0  0.1 10400 Kernel manageme
+    728       1   11299   1  TS      -  0.0  0.1 10400 UST application
+    729       1     729   0  TS      -  0.0  0.1  9452 polkitd
+    729       1     762   0  TS      -  0.0  0.1  9452 gmain
+    729       1     770   3  TS      -  0.0  0.1  9452 pool-spawner
+    729       1     783   3  TS      -  0.0  0.1  9452 gdbus
+    733       1     733   2  TS      -  0.0  0.5 41392 snapd
+    733       1     891   2  TS      -  0.0  0.5 41392 snapd
+    733       1     893   1  TS      -  0.0  0.5 41392 snapd
+    733       1     895   2  TS      -  0.0  0.5 41392 snapd
+    733       1     896   3  TS      -  0.0  0.5 41392 snapd
+    733       1     898   3  TS      -  0.0  0.5 41392 snapd
+    733       1     921   3  TS      -  0.0  0.5 41392 snapd
+    733       1     932   1  TS      -  0.0  0.5 41392 snapd
+    733       1     964   0  TS      -  0.0  0.5 41392 snapd
+    733       1     965   1  TS      -  0.0  0.5 41392 snapd
+    733       1    1234   3  TS      -  0.0  0.5 41392 snapd
+    737       1     737   0  TS      -  0.0  0.0  7980 systemd-logind
+    738       1     738   3  TS      -  0.0  0.1 12572 udisksd
+    738       1     756   2  TS      -  0.0  0.1 12572 gmain
+    738       1     758   3  TS      -  0.0  0.1 12572 pool-spawner
+    738       1     782   2  TS      -  0.0  0.1 12572 gdbus
+    738       1     872   3  TS      -  0.0  0.1 12572 probing-thread
+    738       1     873   3  TS      -  0.0  0.1 12572 cleanup
+    739     724     739   1  TS      -  0.0  0.0  1556 avahi-daemon
+    749       1     749   3  TS      -  0.0  0.0  5280 rsyslogd
+    749       1     829   1  TS      -  0.0  0.0  5280 in:imuxsock
+    749       1     830   3  TS      -  0.0  0.0  5280 in:imklog
+    749       1     831   2  TS      -  0.0  0.0  5280 rs:main Q:Reg
+    760     728     760   1  TS      -  0.0  0.0  1940 lttng-runas
+    781       1     781   0  TS      -  0.0  0.0  5832 wpa_supplicant
+    817       1     817   1  TS      -  0.0  0.0  2664 cron
+    823       1     823   3  TS      -  0.0  0.2 22340 unattended-upgr
+    823       1     880   0  TS      -  0.0  0.2 22340 gmain
+    824       1     824   3  TS      -  0.0  0.5 47460 containerd
+    824       1     874   3  TS      -  0.0  0.5 47460 containerd
+    824       1     875   2  TS      -  0.0  0.5 47460 containerd
+    824       1     876   2  TS      -  0.0  0.5 47460 containerd
+    824       1     877   3  TS      -  0.0  0.5 47460 containerd
+    824       1     878   2  TS      -  0.0  0.5 47460 containerd
+    824       1     889   3  TS      -  0.0  0.5 47460 containerd
+    824       1     900   3  TS      -  0.0  0.5 47460 containerd
+    824       1     901   2  TS      -  0.0  0.5 47460 containerd
+    824       1    1009   3  TS      -  0.0  0.5 47460 containerd
+    828       1     828   3  TS      -  0.0  0.1 13372 ModemManager
+    828       1     864   3  TS      -  0.0  0.1 13372 gmain
+    828       1     868   2  TS      -  0.0  0.1 13372 pool-spawner
+    828       1     870   3  TS      -  0.0  0.1 13372 gdbus
+    844       1     844   2  TS      -  0.0  0.0  1948 agetty
+    853       1     853   1  TS      -  0.0  0.0  1760 agetty
+    858       1     858   2  TS      -  0.0  0.0  7328 sshd
+    916       1     916   1  TS      -  0.0  0.9 77556 dockerd
+    916       1     922   0  TS      -  0.0  0.9 77556 dockerd
+    916       1     923   1  TS      -  0.0  0.9 77556 dockerd
+    916       1     924   0  TS      -  0.0  0.9 77556 dockerd
+    916       1     925   0  TS      -  0.0  0.9 77556 dockerd
+    916       1     926   3  TS      -  0.0  0.9 77556 dockerd
+    916       1     990   3  TS      -  0.0  0.9 77556 dockerd
+    916       1     992   1  TS      -  0.0  0.9 77556 dockerd
+    916       1     991   3  TS      -  0.0  0.9 77556 dockerd
+    916       1     993   1  TS      -  0.0  0.9 77556 dockerd
+    916       1    1013   0  TS      -  0.0  0.9 77556 dockerd
+   1302       1    1302   1  TS      -  0.0  0.1 11728 systemd
+   1303    1302    1303   3  TS      -  0.0  0.0  3424 (sd-pam)
+  94950       1   94950   0  TS      -  0.0  0.5 46304 fwupd
+  94950       1   94951   3  TS      -  0.0  0.5 46304 gmain
+  94950       1   94952   1  TS      -  0.0  0.5 46304 pool-spawner
+  94950       1   94953   2  TS      -  0.0  0.5 46304 gdbus
+  96033       1   96033   1  TS      -  0.0  0.0  3304 bash
+  98990    1302   98990   2  TS      -  0.0  0.0  4292 dbus-daemon
+ 124821       1  124821   3  TS      -  0.0  0.2 17176 code-6d62b1d5da
+ 124821       1  124822   0  TS      -  0.0  0.2 17176 tokio-rt-worker
+ 124821       1  124823   3  TS      -  0.0  0.2 17176 tokio-rt-worker
+ 124821       1  124824   1  TS      -  0.0  0.2 17176 tokio-rt-worker
+ 124821       1  124825   1  TS      -  0.0  0.2 17176 tokio-rt-worker
+ 174397       2  174397   1  TS      -  0.1  0.0     0 kworker/u9:2-brcmf_wq/mmc1:0001:1
+ 420278       2  420278   0  TS      -  0.0  0.0     0 kworker/0:0H-mmc_complete
+ 423701       2  423701   1  TS      -  0.0  0.0     0 kworker/u8:1-events_power_efficient
+ 432378       2  432378   1  TS      -  0.0  0.0     0 kworker/u8:2-events_power_efficient
+ 435571       2  435571   1  TS      -  0.0  0.0     0 kworker/1:3-cgroup_free
+ 436617       2  436617   2  TS      -  0.0  0.0     0 kworker/2:3-cgroup_free
+ 438942       2  438942   1  TS      -  0.0  0.0     0 kworker/u8:3-thermal_events
+ 439312       2  439312   0  TS      -  0.0  0.0     0 kworker/0:3-events
+ 440001       2  440001   3  TS      -  0.0  0.0     0 kworker/3:3-cgroup_free
+ 440553       2  440553   3  TS      -  0.0  0.0     0 kworker/3:4-events_freezable
+ 440988       2  440988   3  TS      -  0.0  0.0     0 kworker/3:2H
+ 442240       2  442240   2  TS      -  0.0  0.0     0 kworker/2:0-mm_percpu_wq
+ 442271       2  442271   0  TS      -  0.0  0.0     0 kworker/u8:0-writeback
+ 442408       2  442408   1  TS      -  0.0  0.0     0 kworker/1:2-cgroup_release
+ 442580       2  442580   0  TS      -  0.0  0.0     0 kworker/0:2H-kblockd
+ 442702       2  442702   0  TS      -  0.0  0.0     0 kworker/0:2-events
+ 443164       2  443164   3  TS      -  0.1  0.0     0 kworker/3:0-events
+ 443241       2  443241   2  TS      -  0.0  0.0     0 kworker/2:4-cgroup_free
+ 443498       2  443498   1  TS      -  0.0  0.0     0 kworker/1:0H-kblockd
+ 443640       2  443640   3  TS      -  0.0  0.0     0 kworker/3:1-cgroup_free
+ 443656       2  443656   2  TS      -  0.0  0.0     0 kworker/2:2H
+ 443903       2  443903   1  TS      -  0.0  0.0     0 kworker/1:0-events
+ 444055       2  444055   1  TS      -  0.0  0.0     0 kworker/1:1-events
+ 444176       2  444176   3  TS      -  0.0  0.0     0 kworker/3:2-events
+ 444267       2  444267   0  TS      -  0.0  0.0     0 kworker/0:0-events
+ 444484       2  444484   0  TS      -  0.0  0.0     0 kworker/u8:4-flush-179:0
+ 444485       2  444485   0  TS      -  0.0  0.0     0 kworker/0:1H
+ 444766       2  444766   2  TS      -  0.0  0.0     0 kworker/2:1-cgroup_free
+ 445265       2  445265   3  TS      -  0.0  0.0     0 kworker/3:0H
+ 445751   96033  445751   1  TS      -  0.0  0.0  1916 sleep
+ 445804     858  445804   0  TS      -  8.1  0.1  8936 sshd
+ 445853  445804  445853   1  TS      -  0.0  0.0  6492 sshd
+ 445854  445853  445854   2  TS      -  0.0  0.0  3284 bash
+ 445855  445854  445855   2  TS      -  0.0  0.0  3348 bash
+ 445868  445855  445868   2  TS      -  0.0  0.0  2928 top
+ 445869  445855  445869   0  TS      -  0.0  0.0  2572 vmstat
+ 445875  445855  445875   0  TS      -  0.0  0.0  3568 ps

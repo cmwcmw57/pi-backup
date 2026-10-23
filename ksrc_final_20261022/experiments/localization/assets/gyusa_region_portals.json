@@ -1,0 +1,18 @@
+{
+  "proposal_only": true,
+  "source": "Existing sim_map_regions boundary drawing; explicit openings, not polygon adjacency or GT route",
+  "source_mesh_sha256": "f8953e10b0d89ac3d9c1e62416f11fd5bd49497254a55cc3371cdb04358a29f0",
+  "isolated_region_ids": [5],
+  "portals": [
+    {"regions": [1, 2], "segment_xy_m": [[4.1, 0.0], [4.1, 0.8]]},
+    {"regions": [1, 3], "segment_xy_m": [[4.1, 0.8], [4.1, 1.6]]},
+    {"regions": [2, 4], "segment_xy_m": [[4.9, 0.0], [4.9, 0.8]]},
+    {"regions": [3, 4], "segment_xy_m": [[5.78, 0.8], [5.78, 1.6]]},
+    {"regions": [4, 10], "segment_xy_m": [[5.7, 0.0], [6.5, 0.0]]},
+    {"regions": [10, 9], "segment_xy_m": [[5.7, -0.8], [6.5, -0.8]]},
+    {"regions": [9, 8], "segment_xy_m": [[5.7, -1.6], [5.7, -0.8]]},
+    {"regions": [8, 7], "segment_xy_m": [[3.3, -1.6], [3.3, -0.8]]},
+    {"regions": [7, 6], "segment_xy_m": [[2.5, -0.8], [3.3, -0.8]]},
+    {"regions": [6, 1], "segment_xy_m": [[2.5, 0.8], [3.3, 0.8]]}
+  ]
+}

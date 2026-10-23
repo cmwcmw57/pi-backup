@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "mujoco_version": "3.14.0",
+  "total_mass_kg": 2.3263,
+  "limitations": [
+    "Rigid ground; no deformable sand or calibrated soil slip.",
+    "Robot self-collision disabled in MJCF because collisions are primitive approximations.",
+    "Actuator limits and gains are initial estimates; tests do not establish hardware performance.",
+    "Camera frames and ideal simulated cameras are present; stereo image matching and real depth error are not validated.",
+    "IMU site is at STL origin, not a measured sensing-die position.",
+    "Gear masses are lumped into base/rockers with approximate inertia.",
+    "Component meshes use uniform effective density; repaired open shells, STM/Pi proxies and omitted gear geometry are documented in mesh preparation audits."
+  ],
+  "flat_ground": {
+    "settle_s": 2.0,
+    "wheel_normal_loads_N": {
+      "fl": 6.024514082342,
+      "fr": 5.997271009773854,
+      "rl": 5.413265543708093,
+      "rr": 5.385952364159838
+    },
+    "drive_s": 1.5,
+    "wheel_velocity_command_rad_s": 2.0,
+    "displacement_m": [
+      0.141054222830229,
+      1.3731197429303165e-06,
+      1.8735013540549517e-14
+    ],
+    "maximum_rocker_sum_error_rad": 0.0002892907398583145,
+    "numerical_warnings": 0
+  },
+  "passive_coupling": {
+    "left_torque_Nm": 0.02,
+    "left_rad": 0.037886591655183086,
+    "right_rad": -0.03788486845501606,
+    "maximum_rocker_sum_error_rad": 1.795589790741384e-06,
+    "actuator_on_rockers": false
+  },
+  "asymmetric_15mm_step": {
+    "left_rad": -0.03670931156396443,
+    "right_rad": 0.036633504073146875,
+    "maximum_rocker_sum_error_rad": 0.00038985935688631845,
+    "base_z_m": 0.16579771104398972
+  },
+  "rigid_30deg_slope": {
+    "friction": 1.0,
+    "uphill_displacement_m": 0.06495570959387673,
+    "maximum_rocker_sum_error_rad": 0.00027985898802313175,
+    "meaning": "Smoke test under assumed rigid-ground friction and actuator settings; not validation of 30 degree sand ascent."
+  },
+  "quasistatic_estimates": {
+    "zero_pose_com_cad_mm": [
+      -0.32034301745056365,
+      5.487217042500968,
+      94.70624048783081
+    ],
+    "flat_support_polygon_contact_centers_ros_m": [
+      [
+        0.10243139266967774,
+        0.1324987530708313
+      ],
+      [
+        0.10243139266967774,
+        -0.1324987530708313
+      ],
+      [
+        -0.10243139266967774,
+        0.1324987530708313
+      ],
+      [
+        -0.10243139266967774,
+        -0.1324987530708313
+      ]
+    ],
+    "forward_tip_deg": 45.66902234453861,
+    "backward_tip_deg": 48.730750817898155,
+    "lateral_tip_deg": 54.3782848111007,
+    "wheel_radius_m": 0.047503017451047395,
+    "per_wheel_gravity_only_torque_30deg_Nm": 0.13550831296992563,
+    "caveat": "Level rocker posture, rigid ground, contact-center support polygon, approximate component COM; no acceleration, sinkage or soil rolling resistance."
+  },
+  "size_check": {
+    "length_mm": 297.71885722875595,
+    "width_mm": 302.1850064396858,
+    "height_mm": 181.81325018405914,
+    "limit_mm": [
+      300,
+      300,
+      200
+    ],
+    "within_limit": false,
+    "width_excess_mm": 2.1850064396858215,
+    "scope": "Zero steering/rocker pose only; not the full steering swept envelope."
+  },
+  "camera_downward_pitch_deg": 35,
+  "requirements_and_import_tests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "mass_units": {
+    "mass": "kg (measured g divided by 1000)",
+    "length": "m",
+    "inertia": "kg*m^2"
+  },
+  "gravity_m_s2": 9.81,
+  "component_mesh_inertia": {
+    "count": 28,
+    "original_closed_parts": 15,
+    "prepared_parts": 13,
+    "density_assumption": "Uniform inside each component, separately normalized to measured mass.",
+    "measured_total_mass_kg": 2.3263,
+    "all_output_meshes_positive_closed_volumes": true,
+    "remaining_gears_without_geometry": 3,
+    "stm_geometry": "Existing box proxy exported as STL.",
+    "open_shell_convex_proxies": [
+      {
+        "source_model": "Zippy2800",
+        "count": 2
+      },
+      {
+        "source_model": "RASPBERRY_PI_5",
+        "count": 1
+      },
+      {
+        "source_model": "D435_standalone_STL",
+        "count": 4
+      },
+      {
+        "source_model": "IMU_standalone_STL",
+        "count": 8
+      }
+    ],
+    "maximum_serialization_vertex_shift_mm": 0.0001622105123920056
+  },
+  "swerve_geometry": {
+    "reference_pose": "Rockers zero, base_link ROS frame",
+    "front_rear_axis_spacing_m": 0.20486278533935548,
+    "left_right_axis_spacing_m": 0.265,
+    "configuration": "config/swerve_geometry.json"
+  },
+  "not_executed": [
+    "ROS 2/RViz runtime",
+    "Gazebo runtime",
+    "Isaac Sim import/runtime"
+  ]
+}

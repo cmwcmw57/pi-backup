@@ -1,0 +1,3243 @@
+[
+  {
+    "occurrence_id": 203,
+    "source_model": "base_link",
+    "link": "base_link",
+    "mass_kg": 0.4085,
+    "com_m": [
+      -0.00799901936328196,
+      -0.00021315532094278111,
+      -0.033880282420697176
+    ],
+    "inertia_kg_m2": [
+      [
+        0.0014631319168195824,
+        -1.6976442250743918e-05,
+        9.805810913791168e-05
+      ],
+      [
+        -1.6976442250743918e-05,
+        0.0021922916206335978,
+        -1.4921816081028765e-06
+      ],
+      [
+        9.805810913791168e-05,
+        -1.4921816081028765e-06,
+        0.003302195700411741
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.9999999999999998,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.9999999999999998,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        11.1813
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      0.2131553209427811,
+      -7.99901936328196,
+      127.93271757930285
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "inertial_mesh": "meshes/inertial_parts/component_203.stl",
+    "inertial_mesh_source": "First structural component triangles of delivered link STL; correspondence to native CAD triangles verified within 3.6e-9 m before extraction.",
+    "prior_box_com_m": [
+      -0.0049999999999999906,
+      0.0,
+      -0.02399999976158143
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        0.0012474228860810395,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0020644224714487782,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0027846081648021936
+      ]
+    ],
+    "volume_m3": 0.0006332741319587581,
+    "effective_density_kg_m3": 645.0602975625783,
+    "source_correspondence_error_m": 3.5762787037318944e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      0,
+      4736
+    ],
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4736,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4736,
+      "output_volume_cm3": 633.2741319587582,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 203,
+      "source_model": "base_link",
+      "mesh": "meshes/inertial_parts/component_203.stl",
+      "source_proxy": false
+    }
+  },
+  {
+    "occurrence_id": 5132,
+    "source_model": "Zippy2800",
+    "link": "base_link",
+    "mass_kg": 0.1781,
+    "com_m": [
+      0.025957055049194946,
+      -0.0010201551164827649,
+      -0.048797951884584384
+    ],
+    "inertia_kg_m2": [
+      [
+        3.323656008610564e-05,
+        2.3416788546672406e-06,
+        1.9685082450149976e-08
+      ],
+      [
+        2.3416788546672406e-06,
+        0.00019402279817012667,
+        1.4295592884102709e-08
+      ],
+      [
+        1.9685082450149976e-08,
+        1.4295592884102709e-08,
+        0.00020449904064980182
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.0,
+        1.0,
+        6.123234262925839e-17,
+        -5.493314653596333e-16
+      ],
+      [
+        0.0,
+        6.123234262925839e-17,
+        -1.0,
+        8.095000267028809
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0,
+        11.324963569641113
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      1.020155116482765,
+      25.957055049194945,
+      113.01504811541562
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.2782554587607038e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      4736,
+      12266
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_5132.stl",
+    "mesh_preparation": {
+      "source_watertight": false,
+      "source_winding_consistent": true,
+      "source_faces": 7530,
+      "repaired_shells": 3,
+      "convex_shell_proxies": 2,
+      "discarded_surface_fragments": 2,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 6,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 7314,
+      "output_volume_cm3": 107.6676314660893,
+      "bounds_difference_mm": 0.00048801302909851074,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 5132,
+      "source_model": "Zippy2800",
+      "mesh": "meshes/inertial_parts/component_5132.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.024437745856121185,
+      -0.014875000119209282,
+      -0.048800002491951
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        7.115810149116442e-05,
+        -8.026313631765737e-21,
+        0.0
+      ],
+      [
+        -8.026313631765737e-21,
+        0.0002022377448156476,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0002494544896762818
+      ]
+    ],
+    "volume_m3": 0.00010766763146608931,
+    "effective_density_kg_m3": 1654.1647436174342
+  },
+  {
+    "occurrence_id": 5293,
+    "source_model": "MDD3A_cytron",
+    "link": "base_link",
+    "mass_kg": 0.02,
+    "com_m": [
+      -0.01576380569525848,
+      0.05416999764229548,
+      -0.034845034951755394
+    ],
+    "inertia_kg_m2": [
+      [
+        2.4372373528481876e-06,
+        -1.1150386031424763e-14,
+        5.268658414467418e-07
+      ],
+      [
+        -1.1150386031424763e-14,
+        4.520854651541423e-06,
+        3.3378973479687326e-15
+      ],
+      [
+        5.268658414467418e-07,
+        3.3378973479687326e-15,
+        6.523276233711657e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -5.416999816894531
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.7730000019073486
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        12.38129997253418
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -54.16999764229548,
+      -15.763805695258482,
+      126.96796504824462
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.2782554587607038e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      12266,
+      12706
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_5293.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 440,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 440,
+      "output_volume_cm3": 5.341837960264642,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 5293,
+      "source_model": "MDD3A_cytron",
+      "mesh": "meshes/inertial_parts/component_5293.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.007730000019073487,
+      0.05416999816894531,
+      -0.03225000039386751
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.113009370281361e-06,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.1021289689524565e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.7743053477897774e-06
+      ]
+    ],
+    "volume_m3": 5.341837960264642e-06,
+    "effective_density_kg_m3": 3744.0297045268617
+  },
+  {
+    "occurrence_id": 5516,
+    "source_model": "MDD3A_cytron",
+    "link": "base_link",
+    "mass_kg": 0.02,
+    "com_m": [
+      -0.05894380344320256,
+      0.05416999764229565,
+      -0.021345032427940426
+    ],
+    "inertia_kg_m2": [
+      [
+        2.4372375062787726e-06,
+        -1.115028941711743e-14,
+        5.268657254158534e-07
+      ],
+      [
+        -1.115028941711743e-14,
+        4.520854597822454e-06,
+        3.3379414510166193e-15
+      ],
+      [
+        5.268657254158534e-07,
+        3.3379414510166193e-15,
+        6.52327634010643e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -5.416999816894531
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -5.091000080108643
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        13.731300354003906
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -54.16999764229565,
+      -58.94380344320256,
+      140.4679675720596
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.5762786898541066e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      12706,
+      13146
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_5516.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 440,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 440,
+      "output_volume_cm3": 5.3418367676841525,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 5516,
+      "source_model": "MDD3A_cytron",
+      "mesh": "meshes/inertial_parts/component_5516.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.05091000080108643,
+      0.05416999816894531,
+      -0.018749996579170244
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.113009370281361e-06,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.1021289689524565e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.7743053477897774e-06
+      ]
+    ],
+    "volume_m3": 5.341836767684152e-06,
+    "effective_density_kg_m3": 3744.030540392309
+  },
+  {
+    "occurrence_id": 5661,
+    "source_model": "RASPBERRY_PI_5",
+    "link": "base_link",
+    "mass_kg": 0.0712,
+    "com_m": [
+      0.07379093515778112,
+      0.014267669196898045,
+      -0.02491992236183216
+    ],
+    "inertia_kg_m2": [
+      [
+        4.741581780765921e-05,
+        -3.8303296490178734e-07,
+        -1.2531879843166305e-07
+      ],
+      [
+        -3.8303296490178734e-07,
+        2.0691846043458933e-05,
+        5.273547706746148e-06
+      ],
+      [
+        -1.2531879843166305e-07,
+        5.273547706746148e-06,
+        6.41722852723008e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        1.467281283711082e-28,
+        -1.3965924974108056e-14,
+        -2.950000047683716
+      ],
+      [
+        -1.3965924974108056e-14,
+        1.0474444154097515e-14,
+        -1.0,
+        7.400000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        1.0474444154097515e-14,
+        13.181300163269043
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -14.267669196898044,
+      73.79093515778112,
+      136.89307763816785
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "usage": "Raspberry Pi plus AI HAT combined measured mass; AI HAT inertia lumped into board envelope.",
+    "source_correspondence_error_m": 3.725290020906158e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      13146,
+      102944
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_5661.stl",
+    "mesh_preparation": {
+      "source_watertight": false,
+      "source_winding_consistent": true,
+      "source_faces": 89798,
+      "repaired_shells": 5,
+      "convex_shell_proxies": 1,
+      "discarded_surface_fragments": 1086,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 466,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 90130,
+      "output_volume_cm3": 18.572912505239433,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0001622105123920056,
+        "relative_volume_change": 9.5065263518701e-10,
+        "centroid_shift_mm": 4.0943810091832994e-08
+      },
+      "occurrence_id": 5661,
+      "source_model": "RASPBERRY_PI_5",
+      "mesh": "meshes/inertial_parts/component_5661.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.07340500116348316,
+      0.027630000114440813,
+      -0.028151084340095445
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        5.3813611884834245e-05,
+        -3.859351033571785e-19,
+        1.3232046741341678e-19
+      ],
+      [
+        -3.859351033571785e-19,
+        2.617955942696426e-05,
+        -1.87740195082164e-33
+      ],
+      [
+        1.3232046741341678e-19,
+        -1.87740195082164e-33,
+        6.644630775554106e-05
+      ]
+    ],
+    "volume_m3": 1.8572912505239435e-05,
+    "effective_density_kg_m3": 3833.5398381871673
+  },
+  {
+    "occurrence_id": 6038,
+    "source_model": "NUCLEO-F411RE",
+    "link": "base_link",
+    "mass_kg": 0.0344,
+    "com_m": [
+      -0.02685999777168036,
+      -0.03749999892897904,
+      -0.02999999932944775
+    ],
+    "inertia_kg_m2": [
+      [
+        1.5193332467252993e-05,
+        7.88364061084921e-21,
+        7.88364061084921e-21
+      ],
+      [
+        7.88364061084921e-21,
+        2.065791552292803e-05,
+        1.576728122169842e-20
+      ],
+      [
+        7.88364061084921e-21,
+        1.576728122169842e-20,
+        3.35579147593677e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        6.123234262925839e-17,
+        -1.0,
+        0.0,
+        7.25
+      ],
+      [
+        1.0,
+        6.123234262925839e-17,
+        0.0,
+        -6.810999870300293
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        13.75979995727539
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      37.49999892897904,
+      -26.85999777168036,
+      131.81300067055227
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      102944,
+      102956
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_6038.stl",
+    "source_proxy": true,
+    "source_proxy_note": "Box visual proxy for Nucleo because CAD source has no display triangles.",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 12,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 12,
+      "output_volume_cm3": 115.49999083485478,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 6038,
+      "source_model": "NUCLEO-F411RE",
+      "mesh": "meshes/inertial_parts/component_6038.stl",
+      "source_proxy": true
+    },
+    "prior_box_com_m": [
+      -0.026859998703002926,
+      -0.037500000000000006,
+      -0.0300000004272461
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.5193333333333336e-05,
+        3.346092389928017e-22,
+        0.0
+      ],
+      [
+        3.3460923899280167e-22,
+        2.065791666666667e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.355791666666667e-05
+      ]
+    ],
+    "volume_m3": 0.00011549999083485478,
+    "effective_density_kg_m3": 297.8355214693143
+  },
+  {
+    "occurrence_id": 6734,
+    "source_model": "MDD3A_cytron",
+    "link": "base_link",
+    "mass_kg": 0.0129,
+    "com_m": [
+      -0.029623803576179702,
+      -0.04471000241604556,
+      -0.028345040662874278
+    ],
+    "inertia_kg_m2": [
+      [
+        1.5720182210015273e-06,
+        -4.389191623177864e-14,
+        3.3982845164115427e-07
+      ],
+      [
+        -4.389191623177864e-14,
+        2.9159513475798287e-06,
+        1.3139266677524137e-14
+      ],
+      [
+        3.3982845164115427e-07,
+        1.3139266677524137e-14,
+        4.20751341053201e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        2.481541837659083e-24,
+        4.1359030627651384e-25,
+        4.4710001945495605
+      ],
+      [
+        0.0,
+        -0.0,
+        -1.0,
+        -2.1589999198913574
+      ],
+      [
+        -3.308722450212111e-24,
+        1.0,
+        0.0,
+        13.031299591064453
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      44.710002416045555,
+      -29.6238035761797,
+      133.46795933712573
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "usage": "Steering driver; MDD3A mesh is a user-authorized visual substitute.",
+    "source_correspondence_error_m": 3.5762786898541066e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      102956,
+      103396
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_6734.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 440,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 440,
+      "output_volume_cm3": 5.341837604526856,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 6734,
+      "source_model": "MDD3A_cytron",
+      "mesh": "meshes/inertial_parts/component_6734.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.021589999198913575,
+      -0.044710001945495605,
+      -0.025750004208564756
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        2.0078912257304182e-06,
+        8.304443470197685e-31,
+        0.0
+      ],
+      [
+        8.304443470197685e-31,
+        2.6458731099410215e-06,
+        -2.0884566145183673e-30
+      ],
+      [
+        0.0,
+        -2.0884566145183673e-30,
+        4.369427188066766e-06
+      ]
+    ],
+    "volume_m3": 5.341837604526856e-06,
+    "effective_density_kg_m3": 2414.899320239181
+  },
+  {
+    "occurrence_id": 5010,
+    "source_model": "JACOBSPARTS-XL4015",
+    "link": "base_link",
+    "mass_kg": 0.0312,
+    "com_m": [
+      0.04161899928487216,
+      -0.027388201205203203,
+      -0.001801107071446165
+    ],
+    "inertia_kg_m2": [
+      [
+        1.342039757507316e-05,
+        6.803152216788876e-08,
+        7.37557373035756e-08
+      ],
+      [
+        6.803152216788876e-08,
+        4.039036769655713e-06,
+        -8.486293875261938e-08
+      ],
+      [
+        7.37557373035756e-08,
+        -8.486293875261938e-08,
+        1.0026666119877199e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        2.633999824523926
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        3.740000009536743
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        15.937299728393555
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      27.388201205203202,
+      41.61899928487216,
+      160.01189292855386
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 1.7881393449270533e-09,
+    "source_visual_mesh": "meshes/base_link.stl",
+    "source_visual_face_range": [
+      103396,
+      284608
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_5010.stl",
+    "mesh_preparation": {
+      "source_watertight": false,
+      "source_winding_consistent": true,
+      "source_faces": 181212,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 94,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 182524,
+      "output_volume_cm3": 12.790522170465747,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 5010,
+      "source_model": "JACOBSPARTS-XL4015",
+      "mesh": "meshes/inertial_parts/component_5010.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.04254900008440018,
+      -0.02633999824523926,
+      -0.0024400027160644544
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.5706315025454387e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.579841061058687e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.2432829862518702e-05
+      ]
+    ],
+    "volume_m3": 1.2790522170465747e-05,
+    "effective_density_kg_m3": 2439.3061975251553
+  },
+  {
+    "source_model": "omitted_large_gear",
+    "link": "base_link",
+    "mass_kg": 0.0156,
+    "com_m": [
+      0,
+      0,
+      0
+    ],
+    "inertia_kg_m2": [
+      [
+        1.56e-06,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.56e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.56e-06
+      ]
+    ],
+    "approximation": "Gear mass lumped at pivot; 10 mm inertial radius; large gear assigned to chassis, small gears to respective rocker."
+  },
+  {
+    "occurrence_id": 211,
+    "source_model": "arm_l_rev4",
+    "link": "left_rocker_link",
+    "mass_kg": 0.0608,
+    "com_m": [
+      -6.018240259360857e-06,
+      0.030326396458958297,
+      -0.015317678659366661
+    ],
+    "inertia_kg_m2": [
+      [
+        4.0047277015167476e-05,
+        1.0473251070246827e-09,
+        -4.097617280335471e-09
+      ],
+      [
+        1.0473251070246827e-09,
+        0.00018724502712775523,
+        1.1585989431679768e-05
+      ],
+      [
+        -4.097617280335471e-09,
+        1.1585989431679768e-05,
+        0.0001867852656523302
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.0,
+        1.0,
+        0.0,
+        -11.5
+      ],
+      [
+        -1.0,
+        0.0,
+        6.123234262925839e-17,
+        -6.628684498238694e-16
+      ],
+      [
+        6.123234262925839e-17,
+        0.0,
+        1.0,
+        16.181299209594727
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -115.3263964589583,
+      -0.00601824025936138,
+      146.49532134063335
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "inertial_mesh": "meshes/inertial_parts/component_211.stl",
+    "inertial_mesh_source": "First structural component triangles of delivered link STL; correspondence to native CAD triangles verified within 3.6e-9 m before extraction.",
+    "prior_box_com_m": [
+      0.0,
+      0.02749999999999999,
+      -0.01246530965614319
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        4.971634552930482e-05,
+        0.0,
+        1.5960127362508523e-20
+      ],
+      [
+        0.0,
+        0.0003030813531950116,
+        0.0
+      ],
+      [
+        1.5960127362508523e-20,
+        0.0,
+        0.0003103649942204356
+      ]
+    ],
+    "volume_m3": 0.0001125498850905734,
+    "effective_density_kg_m3": 540.2049051500302,
+    "source_correspondence_error_m": 3.5762787037318944e-09,
+    "source_visual_mesh": "meshes/left_rocker_link.stl",
+    "source_visual_face_range": [
+      0,
+      5204
+    ],
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 5204,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 5204,
+      "output_volume_cm3": 112.54988509057341,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 211,
+      "source_model": "arm_l_rev4",
+      "mesh": "meshes/inertial_parts/component_211.stl",
+      "source_proxy": false
+    }
+  },
+  {
+    "occurrence_id": 1501,
+    "source_model": "STS3215_c",
+    "link": "left_rocker_link",
+    "mass_kg": 0.0598,
+    "com_m": [
+      -0.09013758039597196,
+      0.04750063337386025,
+      -0.02668043828603173
+    ],
+    "inertia_kg_m2": [
+      [
+        8.117709330586038e-06,
+        -4.5595383170041607e-10,
+        1.1572255278364e-07
+      ],
+      [
+        -4.5595383170041607e-10,
+        1.5311241943611643e-05,
+        -7.580387572800468e-10
+      ],
+      [
+        1.1572255278364e-07,
+        -7.580387572800468e-10,
+        1.3020169835442124e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.2246468525851679e-16,
+        0.0,
+        -1.0,
+        -13.25
+      ],
+      [
+        1.0,
+        -6.123234262925839e-17,
+        1.2246468525851679e-16,
+        -10.243139266967773
+      ],
+      [
+        -6.123234262925839e-17,
+        -1.0,
+        -1.232595164407831e-32,
+        13.569974899291992
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -132.50063337386027,
+      -90.13758039597195,
+      135.1325617139683
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.725290298461914e-09,
+    "source_visual_mesh": "meshes/left_rocker_link.stl",
+    "source_visual_face_range": [
+      5204,
+      54110
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_1501.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 48906,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 3,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 21,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 38184,
+      "output_volume_cm3": 33.85790515878782,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.00015080196841487227,
+        "relative_volume_change": 3.7852957219557934e-11,
+        "centroid_shift_mm": 1.1647459437851524e-08
+      },
+      "occurrence_id": 1501,
+      "source_model": "STS3215_c",
+      "mesh": "meshes/inertial_parts/component_1501.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.08993139266967773,
+      0.0475,
+      -0.026443997180938726
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.2018197594443336e-05,
+        8.75089860303347e-22,
+        7.467565810046447e-23
+      ],
+      [
+        8.75089860303347e-22,
+        1.9163848264724948e-05,
+        -1.4609061209930277e-37
+      ],
+      [
+        7.467565810046447e-23,
+        -1.4609061209930277e-37,
+        1.3237743587524164e-05
+      ]
+    ],
+    "volume_m3": 3.3857905158787825e-05,
+    "effective_density_kg_m3": 1766.2049592125725
+  },
+  {
+    "occurrence_id": 1783,
+    "source_model": "STS3215_c",
+    "link": "left_rocker_link",
+    "mass_kg": 0.0598,
+    "com_m": [
+      0.09013758044606841,
+      0.04749936691946273,
+      -0.026680438255020606
+    ],
+    "inertia_kg_m2": [
+      [
+        8.117709342683328e-06,
+        -4.5584090930529636e-10,
+        -1.1572258948980252e-07
+      ],
+      [
+        -4.5584090930529636e-10,
+        1.531124193952844e-05,
+        7.582647768163958e-10
+      ],
+      [
+        -1.1572258948980252e-07,
+        7.582647768163958e-10,
+        1.3020169833798587e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -1.444608060206108e-32,
+        0.0,
+        1.0,
+        -13.25
+      ],
+      [
+        -1.0,
+        -6.123234262925839e-17,
+        -1.5739724536606408e-30,
+        10.243139266967773
+      ],
+      [
+        -1.7469005010358737e-16,
+        -1.0,
+        2.465190328815662e-32,
+        13.569974899291992
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -132.49936691946274,
+      90.13758044606841,
+      135.1325617449794
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.725290298461914e-09,
+    "source_visual_mesh": "meshes/left_rocker_link.stl",
+    "source_visual_face_range": [
+      54110,
+      103016
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_1783.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 48906,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 3,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 21,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 38198,
+      "output_volume_cm3": 33.857905272484615,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.00015080196841487227,
+        "relative_volume_change": 1.7017379321149473e-10,
+        "centroid_shift_mm": 3.537993080660259e-09
+      },
+      "occurrence_id": 1783,
+      "source_model": "STS3215_c",
+      "mesh": "meshes/inertial_parts/component_1783.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.08993139266967773,
+      0.0475,
+      -0.026443997180938726
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.2018197594443336e-05,
+        2.9989753423668515e-35,
+        2.9100375909176674e-21
+      ],
+      [
+        2.9989753423668515e-35,
+        1.9163848264724948e-05,
+        -4.7242533405090745e-37
+      ],
+      [
+        2.9100375909176674e-21,
+        -4.7242533405090745e-37,
+        1.3237743587524164e-05
+      ]
+    ],
+    "volume_m3": 3.385790527248462e-05,
+    "effective_density_kg_m3": 1766.2049532815547
+  },
+  {
+    "source_model": "omitted_small_gear",
+    "link": "left_rocker_link",
+    "mass_kg": 0.0058,
+    "com_m": [
+      0,
+      0,
+      0
+    ],
+    "inertia_kg_m2": [
+      [
+        5.8e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.8e-07,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.8e-07
+      ]
+    ],
+    "approximation": "Gear mass lumped at pivot; 10 mm inertial radius; large gear assigned to chassis, small gears to respective rocker."
+  },
+  {
+    "occurrence_id": 338,
+    "source_model": "arm_r_rev4",
+    "link": "right_rocker_link",
+    "mass_kg": 0.0608,
+    "com_m": [
+      5.9510054844541675e-06,
+      -0.03037417369404501,
+      -0.015144049234616506
+    ],
+    "inertia_kg_m2": [
+      [
+        3.979481878261482e-05,
+        1.0183377525340164e-09,
+        4.114662179800523e-09
+      ],
+      [
+        1.0183377525340164e-09,
+        0.00018533799858657066,
+        -1.1411469753858987e-05
+      ],
+      [
+        4.114662179800523e-09,
+        -1.1411469753858987e-05,
+        0.00018473221938498927
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.0,
+        -1.0,
+        0.0,
+        11.5
+      ],
+      [
+        1.0,
+        0.0,
+        -6.123234262925839e-17,
+        5.583768772638028e-16
+      ],
+      [
+        6.123234262925839e-17,
+        0.0,
+        1.0,
+        16.181299209594727
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      115.37417369404501,
+      0.005951005484453645,
+      146.6689507653835
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "inertial_mesh": "meshes/inertial_parts/component_338.stl",
+    "inertial_mesh_source": "First structural component triangles of delivered link STL; correspondence to native CAD triangles verified within 3.6e-9 m before extraction.",
+    "prior_box_com_m": [
+      0.0,
+      -0.02749999999999999,
+      -0.01246530965614319
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        4.971634552930482e-05,
+        0.0,
+        -1.5960127362508523e-20
+      ],
+      [
+        0.0,
+        0.0003030813531950116,
+        0.0
+      ],
+      [
+        -1.5960127362508523e-20,
+        0.0,
+        0.0003103649942204356
+      ]
+    ],
+    "volume_m3": 0.00011382147964862909,
+    "effective_density_kg_m3": 534.1698261847565,
+    "source_correspondence_error_m": 3.5762787037318944e-09,
+    "source_visual_mesh": "meshes/right_rocker_link.stl",
+    "source_visual_face_range": [
+      0,
+      5188
+    ],
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 5188,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 5188,
+      "output_volume_cm3": 113.8214796486291,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 338,
+      "source_model": "arm_r_rev4",
+      "mesh": "meshes/inertial_parts/component_338.stl",
+      "source_proxy": false
+    }
+  },
+  {
+    "occurrence_id": 465,
+    "source_model": "STS3215_c",
+    "link": "right_rocker_link",
+    "mass_kg": 0.0598,
+    "com_m": [
+      -0.09013758044479377,
+      -0.04749936690708881,
+      -0.026680438256862383
+    ],
+    "inertia_kg_m2": [
+      [
+        8.117709345415165e-06,
+        -4.5585600983601623e-10,
+        1.1572259053410302e-07
+      ],
+      [
+        -4.5585600983601623e-10,
+        1.531124193875822e-05,
+        -7.582544664719644e-10
+      ],
+      [
+        1.1572259053410302e-07,
+        -7.582544664719644e-10,
+        1.3020169834071307e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.0,
+        0.0,
+        -1.0,
+        13.25
+      ],
+      [
+        1.0,
+        6.123234262925839e-17,
+        0.0,
+        -10.243139266967773
+      ],
+      [
+        6.123234262925839e-17,
+        -1.0,
+        0.0,
+        13.569974899291992
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      132.4993669070888,
+      -90.13758044479377,
+      135.13256174313764
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.725290298461914e-09,
+    "source_visual_mesh": "meshes/right_rocker_link.stl",
+    "source_visual_face_range": [
+      5188,
+      54094
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_465.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 48906,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 3,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 21,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 38194,
+      "output_volume_cm3": 33.85790527696463,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.00015080196841487227,
+        "relative_volume_change": 3.785575902362608e-11,
+        "centroid_shift_mm": 1.1647483566400324e-08
+      },
+      "occurrence_id": 465,
+      "source_model": "STS3215_c",
+      "mesh": "meshes/inertial_parts/component_465.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.08993139266967773,
+      -0.0475,
+      -0.026443997180938726
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.2018197594443336e-05,
+        0.0,
+        -7.467565810046447e-23
+      ],
+      [
+        0.0,
+        1.9163848264724948e-05,
+        0.0
+      ],
+      [
+        -7.467565810046447e-23,
+        0.0,
+        1.3237743587524164e-05
+      ]
+    ],
+    "volume_m3": 3.385790527696463e-05,
+    "effective_density_kg_m3": 1766.204953047854
+  },
+  {
+    "occurrence_id": 674,
+    "source_model": "STS3215_c",
+    "link": "right_rocker_link",
+    "mass_kg": 0.0598,
+    "com_m": [
+      0.09013758037842447,
+      -0.04750063336518733,
+      -0.02668043829782076
+    ],
+    "inertia_kg_m2": [
+      [
+        8.117709339103076e-06,
+        -4.559432693161447e-10,
+        -1.1572256730935938e-07
+      ],
+      [
+        -4.559432693161447e-10,
+        1.5311241962300313e-05,
+        7.580459824001886e-10
+      ],
+      [
+        -1.1572256730935938e-07,
+        7.580459824001886e-10,
+        1.3020169851803797e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.2246468525851679e-16,
+        0.0,
+        1.0,
+        13.25
+      ],
+      [
+        -1.0,
+        6.123234262925839e-17,
+        1.2246468525851679e-16,
+        10.243139266967773
+      ],
+      [
+        -6.123234262925839e-17,
+        -1.0,
+        1.232595164407831e-32,
+        13.569974899291992
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      132.50063336518733,
+      90.13758037842447,
+      135.13256170217926
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.725290298461914e-09,
+    "source_visual_mesh": "meshes/right_rocker_link.stl",
+    "source_visual_face_range": [
+      54094,
+      103000
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_674.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 48906,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 3,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 21,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 38188,
+      "output_volume_cm3": 33.857905187429495,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0001622105123920056,
+        "relative_volume_change": 8.080846040974175e-10,
+        "centroid_shift_mm": 2.0039451832011923e-08
+      },
+      "occurrence_id": 674,
+      "source_model": "STS3215_c",
+      "mesh": "meshes/inertial_parts/component_674.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.08993139266967773,
+      -0.0475,
+      -0.026443997180938726
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.2018197594443336e-05,
+        -8.75089860303347e-22,
+        -7.467565810046447e-23
+      ],
+      [
+        -8.75089860303347e-22,
+        1.9163848264724948e-05,
+        -1.4609061209930277e-37
+      ],
+      [
+        -7.467565810046447e-23,
+        -1.4609061209930277e-37,
+        1.3237743587524164e-05
+      ]
+    ],
+    "volume_m3": 3.385790518742949e-05,
+    "effective_density_kg_m3": 1766.2049577184737
+  },
+  {
+    "source_model": "omitted_small_gear",
+    "link": "right_rocker_link",
+    "mass_kg": 0.0058,
+    "com_m": [
+      0,
+      0,
+      0
+    ],
+    "inertia_kg_m2": [
+      [
+        5.8e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.8e-07,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.8e-07
+      ]
+    ],
+    "approximation": "Gear mass lumped at pivot; 10 mm inertial radius; large gear assigned to chassis, small gears to respective rocker."
+  },
+  {
+    "occurrence_id": 2394,
+    "source_model": "wheel_hub",
+    "link": "fl_steering_link",
+    "mass_kg": 0.0216,
+    "com_m": [
+      -0.002541879273811773,
+      -0.029568576591091376,
+      -0.03240431765827834
+    ],
+    "inertia_kg_m2": [
+      [
+        1.9302980458095106e-05,
+        3.851603491038565e-07,
+        -2.0497913226789044e-06
+      ],
+      [
+        3.851603491038565e-07,
+        1.851297080878041e-05,
+        -1.3001663667275228e-06
+      ],
+      [
+        -2.0497913226789044e-06,
+        -1.3001663667275228e-06,
+        5.9457831091508595e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -1.2246468525851679e-16,
+        0.0,
+        1.0,
+        -12.303000450134277
+      ],
+      [
+        1.0,
+        6.123234262925839e-17,
+        1.2246468525851679e-16,
+        9.543139457702637
+      ],
+      [
+        -6.123234262925839e-17,
+        1.0,
+        -1.232595164407831e-32,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -102.93142340890863,
+      99.88951339586596,
+      84.09543847575488
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/fl_steering_link.stl",
+    "source_visual_face_range": [
+      0,
+      4272
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_2394.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4272,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4272,
+      "output_volume_cm3": 36.66312821644632,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 2394,
+      "source_model": "wheel_hub",
+      "mesh": "meshes/inertial_parts/component_2394.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.006999475955963133,
+      -0.01725946724414825,
+      -0.04512487844276429
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.9992003217339516e-05,
+        2.54710708546515e-22,
+        -6.986566480660478e-22
+      ],
+      [
+        2.54710708546515e-22,
+        1.791213253454771e-05,
+        7.086805437883883e-38
+      ],
+      [
+        -6.986566480660478e-22,
+        7.086805437883883e-38,
+        8.582074769947212e-06
+      ]
+    ],
+    "volume_m3": 3.6663128216446315e-05,
+    "effective_density_kg_m3": 589.1477637282105
+  },
+  {
+    "occurrence_id": 3608,
+    "source_model": "vb-motor-37",
+    "link": "fl_steering_link",
+    "mass_kg": 0.2032,
+    "com_m": [
+      -0.007142630846711333,
+      -0.039408680177402775,
+      -0.0690000865392411
+    ],
+    "inertia_kg_m2": [
+      [
+        7.533397341597127e-05,
+        5.145094217021746e-07,
+        -1.4064181964307527e-10
+      ],
+      [
+        5.145094217021746e-07,
+        3.217100795477102e-05,
+        -4.95330162732433e-10
+      ],
+      [
+        -1.4064181964307527e-10,
+        -4.95330162732433e-10,
+        7.509309997728124e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -2.671646111804625e-33,
+        -1.2246468525851679e-16,
+        -1.0,
+        -10.709824562072754
+      ],
+      [
+        1.2246468525851679e-16,
+        1.0,
+        -1.2246468525851679e-16,
+        13.46586799621582
+      ],
+      [
+        1.0,
+        -1.2246468525851679e-16,
+        1.232595164407831e-32,
+        8.260095596313477
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -93.09131982259723,
+      95.2887618229664,
+      47.499669594792124
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/fl_steering_link.stl",
+    "source_visual_face_range": [
+      4272,
+      9204
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_3608.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4932,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 6,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 5254,
+      "output_volume_cm3": 52.993998927688835,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 3608,
+      "source_model": "vb-motor-37",
+      "mesh": "meshes/inertial_parts/component_3608.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.007000000476837159,
+      -0.033620004653930675,
+      -0.06900000349330902
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        0.00014929595636203885,
+        1.2605595254594008e-20,
+        -6.998536123920506e-53
+      ],
+      [
+        1.2605595254594008e-20,
+        4.636346420738846e-05,
+        -1.2687411268690994e-36
+      ],
+      [
+        -6.998536123920506e-53,
+        -1.2687411268690994e-36,
+        0.00014929595636203885
+      ]
+    ],
+    "volume_m3": 5.2993998927688836e-05,
+    "effective_density_kg_m3": 3834.3964243436253
+  },
+  {
+    "occurrence_id": 4301,
+    "source_model": "rover_wheel_rev4",
+    "link": "fl_wheel_link",
+    "mass_kg": 0.0471,
+    "com_m": [
+      1.3534365063182682e-08,
+      1.1917175736975658e-08,
+      -0.0045908978838137115
+    ],
+    "inertia_kg_m2": [
+      [
+        3.199444361048369e-05,
+        2.3586900959527922e-12,
+        1.1558987979295715e-11
+      ],
+      [
+        2.3586900959527922e-12,
+        3.1994437039815096e-05,
+        3.1864596805634047e-12
+      ],
+      [
+        1.1558987979295715e-11,
+        3.1864596805634047e-12,
+        5.5452185502320546e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -1.0,
+        1.222482418707137e-16,
+        -7.27779807267633e-18,
+        -14.003000259399414
+      ],
+      [
+        -1.2246468525851679e-16,
+        -0.9982326030731201,
+        0.05942773446440697,
+        10.243139266967773
+      ],
+      [
+        0.0,
+        0.05942773446440697,
+        0.9982326030731201,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -137.4391028028318,
+      102.4314062040428,
+      47.49974803155476
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 1.8607747009902198e-09,
+    "source_visual_mesh": "meshes/fl_wheel_link.stl",
+    "source_visual_face_range": [
+      0,
+      4392
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_4301.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4392,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4392,
+      "output_volume_cm3": 108.5680909072031,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 4301,
+      "source_model": "rover_wheel_rev4",
+      "mesh": "meshes/inertial_parts/component_4301.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.0,
+      0.0,
+      -0.009531247615814205
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.199864161667064e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.199864161667064e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.314143850677879e-05
+      ]
+    ],
+    "volume_m3": 0.0001085680909072031,
+    "effective_density_kg_m3": 433.8291260943144
+  },
+  {
+    "occurrence_id": 2946,
+    "source_model": "wheel_hub_mirror",
+    "link": "fr_steering_link",
+    "mass_kg": 0.0216,
+    "com_m": [
+      -0.0025418655321750453,
+      0.02956860096096613,
+      -0.0324042501175504
+    ],
+    "inertia_kg_m2": [
+      [
+        1.930302334726642e-05,
+        -3.851595766503833e-07,
+        -2.0497946576226e-06
+      ],
+      [
+        -3.851595766503833e-07,
+        1.8513016059216667e-05,
+        1.300183231978388e-06
+      ],
+      [
+        -2.0497946576226e-06,
+        1.300183231978388e-06,
+        5.945798266064749e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -2.4492937051703357e-16,
+        0.0,
+        1.0,
+        12.303000450134277
+      ],
+      [
+        1.0,
+        -6.123234262925839e-17,
+        2.4492937051703357e-16,
+        9.543139457702637
+      ],
+      [
+        6.123234262925839e-17,
+        1.0,
+        1.232595164407831e-32,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      102.93139903903388,
+      99.8895271375027,
+      84.09550601648282
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/fr_steering_link.stl",
+    "source_visual_face_range": [
+      0,
+      4276
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_2946.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4276,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4276,
+      "output_volume_cm3": 36.66298940172411,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 2946,
+      "source_model": "wheel_hub_mirror",
+      "mesh": "meshes/inertial_parts/component_2946.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.0069994807243347265,
+      0.01725946724414825,
+      -0.04512487844276429
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.9992003217339516e-05,
+        5.094218626169596e-22,
+        6.98656703756539e-22
+      ],
+      [
+        5.094218626169596e-22,
+        1.7912130715558305e-05,
+        7.904799312625467e-38
+      ],
+      [
+        6.98656703756539e-22,
+        7.904799312625467e-38,
+        8.58207386045251e-06
+      ]
+    ],
+    "volume_m3": 3.666298940172411e-05,
+    "effective_density_kg_m3": 589.149994380552
+  },
+  {
+    "occurrence_id": 3596,
+    "source_model": "vb-motor-37",
+    "link": "fr_steering_link",
+    "mass_kg": 0.2032,
+    "com_m": [
+      -0.007142630809325673,
+      0.039408679896723295,
+      -0.06899992310214541
+    ],
+    "inertia_kg_m2": [
+      [
+        7.533397562841041e-05,
+        -5.145089293896529e-07,
+        1.405658462579687e-10
+      ],
+      [
+        -5.145089293896529e-07,
+        3.2171009179392544e-05,
+        -4.956527165316139e-10
+      ],
+      [
+        1.405658462579687e-10,
+        -4.956527165316139e-10,
+        7.509310046889967e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -1.6653345369377348e-16,
+        3.0774673678373137e-16,
+        1.0,
+        10.709824562072754
+      ],
+      [
+        1.2246468525851679e-16,
+        1.0,
+        -3.0774673678373137e-16,
+        13.46586799621582
+      ],
+      [
+        -1.0,
+        1.2246468525851679e-16,
+        -1.353666027916818e-31,
+        1.2398546934127808
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      93.09132010327671,
+      95.28876186035207,
+      47.49983303188782
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.718852975564957e-09,
+    "source_visual_mesh": "meshes/fr_steering_link.stl",
+    "source_visual_face_range": [
+      4276,
+      9208
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_3596.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4932,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 6,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 5272,
+      "output_volume_cm3": 52.99400157740906,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 3596,
+      "source_model": "vb-motor-37",
+      "mesh": "meshes/inertial_parts/component_3596.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.007000000476837159,
+      0.033620004653930675,
+      -0.06900000587749483
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        0.00014929595636203885,
+        -3.167713856961068e-20,
+        1.931438413852537e-51
+      ],
+      [
+        -3.167713856961068e-20,
+        4.636346420738846e-05,
+        -2.4862771235485223e-20
+      ],
+      [
+        1.931438413852537e-51,
+        -2.4862771235485223e-20,
+        0.00014929595636203885
+      ]
+    ],
+    "volume_m3": 5.2994001577409056e-05,
+    "effective_density_kg_m3": 3834.396232622347
+  },
+  {
+    "occurrence_id": 4165,
+    "source_model": "rover_wheel_rev4",
+    "link": "fr_wheel_link",
+    "mass_kg": 0.0471,
+    "com_m": [
+      -1.3534365063182682e-08,
+      1.1917175736975658e-08,
+      0.0045908978838137115
+    ],
+    "inertia_kg_m2": [
+      [
+        3.199444361048369e-05,
+        -2.3586900959527922e-12,
+        1.1558987979295715e-11
+      ],
+      [
+        -2.3586900959527922e-12,
+        3.1994437039815096e-05,
+        -3.1864596805634047e-12
+      ],
+      [
+        1.1558987979295715e-11,
+        -3.1864596805634047e-12,
+        5.5452185502320546e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        3.072028357524757e-16,
+        -1.8288692028306524e-17,
+        14.003000259399414
+      ],
+      [
+        -3.0774673678373137e-16,
+        0.9982326030731201,
+        -0.05942773446440697,
+        10.243139266967773
+      ],
+      [
+        -2.3680859731036975e-32,
+        0.05942773446440697,
+        0.9982326030731201,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      137.4391028028318,
+      102.43137913531268,
+      47.49974803155476
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 1.8607747079291137e-09,
+    "source_visual_mesh": "meshes/fr_wheel_link.stl",
+    "source_visual_face_range": [
+      0,
+      4392
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_4165.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4392,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4392,
+      "output_volume_cm3": 108.5680909072031,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 4165,
+      "source_model": "rover_wheel_rev4",
+      "mesh": "meshes/inertial_parts/component_4165.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.0,
+      0.0,
+      0.009531247615814198
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.1998641616670656e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.1998641616670656e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.314143850677879e-05
+      ]
+    ],
+    "volume_m3": 0.0001085680909072031,
+    "effective_density_kg_m3": 433.8291260943144
+  },
+  {
+    "occurrence_id": 2812,
+    "source_model": "wheel_hub_mirror",
+    "link": "rl_steering_link",
+    "mass_kg": 0.0216,
+    "com_m": [
+      0.0025418655321750453,
+      -0.02956860096096613,
+      -0.0324042501175504
+    ],
+    "inertia_kg_m2": [
+      [
+        1.930302334726642e-05,
+        -3.851595766503833e-07,
+        2.0497946576226e-06
+      ],
+      [
+        -3.851595766503833e-07,
+        1.8513016059216667e-05,
+        -1.300183231978388e-06
+      ],
+      [
+        2.0497946576226e-06,
+        -1.300183231978388e-06,
+        5.945798266064749e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -12.303000450134277
+      ],
+      [
+        -1.0,
+        6.123234262925839e-17,
+        0.0,
+        -9.543139457702637
+      ],
+      [
+        6.123234262925839e-17,
+        1.0,
+        0.0,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -102.93139903903388,
+      -99.8895271375027,
+      84.09550601648282
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/rl_steering_link.stl",
+    "source_visual_face_range": [
+      0,
+      4276
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_2812.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4276,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4276,
+      "output_volume_cm3": 36.66298940172411,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 2812,
+      "source_model": "wheel_hub_mirror",
+      "mesh": "meshes/inertial_parts/component_2812.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.00699948072433472,
+      -0.01725946724414825,
+      -0.04512487844276429
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.9992003217339516e-05,
+        0.0,
+        -6.98656703756539e-22
+      ],
+      [
+        0.0,
+        1.7912130715558305e-05,
+        0.0
+      ],
+      [
+        -6.98656703756539e-22,
+        0.0,
+        8.58207386045251e-06
+      ]
+    ],
+    "volume_m3": 3.666298940172411e-05,
+    "effective_density_kg_m3": 589.149994380552
+  },
+  {
+    "occurrence_id": 3247,
+    "source_model": "vb-motor-37",
+    "link": "rl_steering_link",
+    "mass_kg": 0.2032,
+    "com_m": [
+      0.0071426308093256695,
+      -0.039408679896723295,
+      -0.06899992310214537
+    ],
+    "inertia_kg_m2": [
+      [
+        7.533397562841099e-05,
+        -5.145089293896465e-07,
+        -1.405658461945339e-10
+      ],
+      [
+        -5.145089293896465e-07,
+        3.2171009179393344e-05,
+        4.956527163286225e-10
+      ],
+      [
+        -1.405658461945339e-10,
+        4.956527163286225e-10,
+        7.50931004688997e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -0.0,
+        0.0,
+        -1.0,
+        -10.709824562072754
+      ],
+      [
+        -1.2246468525851679e-16,
+        -1.0,
+        0.0,
+        -13.46586799621582
+      ],
+      [
+        -1.0,
+        1.2246468525851679e-16,
+        0.0,
+        1.2398546934127808
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -93.09132010327671,
+      -95.28876186035207,
+      47.499833031887846
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.718852975564957e-09,
+    "source_visual_mesh": "meshes/rl_steering_link.stl",
+    "source_visual_face_range": [
+      4276,
+      9208
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_3247.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4932,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 6,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 5270,
+      "output_volume_cm3": 52.99400157740907,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 3247,
+      "source_model": "vb-motor-37",
+      "mesh": "meshes/inertial_parts/component_3247.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.007000000476837159,
+      -0.03362000465393067,
+      -0.06900000587749483
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        0.00014929595636203885,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.636346420738846e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.00014929595636203885
+      ]
+    ],
+    "volume_m3": 5.299400157740907e-05,
+    "effective_density_kg_m3": 3834.396232622346
+  },
+  {
+    "occurrence_id": 4309,
+    "source_model": "rover_wheel_rev4",
+    "link": "rl_wheel_link",
+    "mass_kg": 0.0471,
+    "com_m": [
+      1.3534365063182682e-08,
+      1.1917175736975658e-08,
+      -0.0045908978838137115
+    ],
+    "inertia_kg_m2": [
+      [
+        3.199444361048369e-05,
+        2.3586900959527922e-12,
+        1.1558987979295715e-11
+      ],
+      [
+        2.3586900959527922e-12,
+        3.1994437039815096e-05,
+        3.1864596805634047e-12
+      ],
+      [
+        1.1558987979295715e-11,
+        3.1864596805634047e-12,
+        5.5452185502320546e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        -1.0,
+        0.0,
+        0.0,
+        -14.003000259399414
+      ],
+      [
+        0.0,
+        -0.9982326030731201,
+        0.05942773446440697,
+        -10.243139266967773
+      ],
+      [
+        0.0,
+        0.05942773446440697,
+        0.9982326030731201,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      -137.4391028028318,
+      -102.43137913531268,
+      47.49974803155476
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 1.8607747009902198e-09,
+    "source_visual_mesh": "meshes/rl_wheel_link.stl",
+    "source_visual_face_range": [
+      0,
+      4392
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_4309.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4392,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4392,
+      "output_volume_cm3": 108.5680909072031,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 4309,
+      "source_model": "rover_wheel_rev4",
+      "mesh": "meshes/inertial_parts/component_4309.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.0,
+      0.0,
+      -0.009531247615814205
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.199864161667064e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.199864161667064e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.314143850677879e-05
+      ]
+    ],
+    "volume_m3": 0.0001085680909072031,
+    "effective_density_kg_m3": 433.8291260943144
+  },
+  {
+    "occurrence_id": 2063,
+    "source_model": "wheel_hub",
+    "link": "rr_steering_link",
+    "mass_kg": 0.0216,
+    "com_m": [
+      0.002541879273811773,
+      0.029568576591091376,
+      -0.03240431765827834
+    ],
+    "inertia_kg_m2": [
+      [
+        1.9302980458095106e-05,
+        3.851603491038565e-07,
+        2.0497913226789044e-06
+      ],
+      [
+        3.851603491038565e-07,
+        1.851297080878041e-05,
+        1.3001663667275228e-06
+      ],
+      [
+        2.0497913226789044e-06,
+        1.3001663667275228e-06,
+        5.9457831091508595e-06
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.2246468525851679e-16,
+        0.0,
+        -1.0,
+        12.303000450134277
+      ],
+      [
+        -1.0,
+        -6.123234262925839e-17,
+        -1.2246468525851679e-16,
+        -9.543139457702637
+      ],
+      [
+        -6.123234262925839e-17,
+        1.0,
+        -1.232595164407831e-32,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      102.93142340890863,
+      -99.88951339586596,
+      84.09543847575488
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/rr_steering_link.stl",
+    "source_visual_face_range": [
+      0,
+      4272
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_2063.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4272,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4272,
+      "output_volume_cm3": 36.66312821644632,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 2063,
+      "source_model": "wheel_hub",
+      "mesh": "meshes/inertial_parts/component_2063.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.006999475955963133,
+      0.01725946724414825,
+      -0.04512487844276429
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.9992003217339516e-05,
+        2.54710708546515e-22,
+        6.986566480660478e-22
+      ],
+      [
+        2.54710708546515e-22,
+        1.791213253454771e-05,
+        -7.086805437883883e-38
+      ],
+      [
+        6.986566480660478e-22,
+        -7.086805437883883e-38,
+        8.582074769947212e-06
+      ]
+    ],
+    "volume_m3": 3.6663128216446315e-05,
+    "effective_density_kg_m3": 589.1477637282105
+  },
+  {
+    "occurrence_id": 3080,
+    "source_model": "vb-motor-37",
+    "link": "rr_steering_link",
+    "mass_kg": 0.2032,
+    "com_m": [
+      0.007142630846711333,
+      0.03940868017740277,
+      -0.06900008653924108
+    ],
+    "inertia_kg_m2": [
+      [
+        7.533397341597168e-05,
+        5.145094217021683e-07,
+        1.4064181970651005e-10
+      ],
+      [
+        5.145094217021683e-07,
+        3.2171007954771425e-05,
+        4.953301630369199e-10
+      ],
+      [
+        1.4064181970651005e-10,
+        4.953301630369199e-10,
+        7.509309997728138e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        2.671646111804625e-33,
+        1.2246468525851679e-16,
+        1.0,
+        10.709824562072754
+      ],
+      [
+        -1.2246468525851679e-16,
+        -1.0,
+        1.2246468525851679e-16,
+        -13.46586799621582
+      ],
+      [
+        1.0,
+        -1.2246468525851679e-16,
+        1.232595164407831e-32,
+        8.260095596313477
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      93.09131982259724,
+      -95.2887618229664,
+      47.499669594792124
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 3.7188530033205325e-09,
+    "source_visual_mesh": "meshes/rr_steering_link.stl",
+    "source_visual_face_range": [
+      4272,
+      9204
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_3080.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4932,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 6,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 5256,
+      "output_volume_cm3": 52.993998927688835,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 3080,
+      "source_model": "vb-motor-37",
+      "mesh": "meshes/inertial_parts/component_3080.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.007000000476837159,
+      0.033620004653930675,
+      -0.06900000349330902
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        0.00014929595636203885,
+        1.2605595254594008e-20,
+        6.998536123920506e-53
+      ],
+      [
+        1.2605595254594008e-20,
+        4.636346420738846e-05,
+        1.2687411268690994e-36
+      ],
+      [
+        6.998536123920506e-53,
+        1.2687411268690994e-36,
+        0.00014929595636203885
+      ]
+    ],
+    "volume_m3": 5.2993998927688836e-05,
+    "effective_density_kg_m3": 3834.3964243436253
+  },
+  {
+    "occurrence_id": 3929,
+    "source_model": "rover_wheel_rev4",
+    "link": "rr_wheel_link",
+    "mass_kg": 0.0471,
+    "com_m": [
+      -1.3534365063182682e-08,
+      1.1917175736975658e-08,
+      0.0045908978838137115
+    ],
+    "inertia_kg_m2": [
+      [
+        3.199444361048369e-05,
+        -2.3586900959527922e-12,
+        1.1558987979295715e-11
+      ],
+      [
+        -2.3586900959527922e-12,
+        3.1994437039815096e-05,
+        -3.1864596805634047e-12
+      ],
+      [
+        1.1558987979295715e-11,
+        -3.1864596805634047e-12,
+        5.5452185502320546e-05
+      ]
+    ],
+    "cad_transform_cm": [
+      [
+        1.0,
+        2.1644279326701016e-19,
+        7.27779807267633e-18,
+        14.003000259399414
+      ],
+      [
+        2.1644279326701016e-19,
+        0.9982326030731201,
+        -0.05942773446440697,
+        -10.243139266967773
+      ],
+      [
+        -7.27779807267633e-18,
+        0.05942773446440697,
+        0.9982326030731201,
+        4.749975204467773
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "global_com_cad_mm": [
+      137.4391028028318,
+      -102.4314062040428,
+      47.49974803155476
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_correspondence_error_m": 1.8607747079291137e-09,
+    "source_visual_mesh": "meshes/rr_wheel_link.stl",
+    "source_visual_face_range": [
+      0,
+      4392
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_3929.stl",
+    "mesh_preparation": {
+      "source_watertight": true,
+      "source_winding_consistent": true,
+      "source_faces": 4392,
+      "repaired_shells": 0,
+      "convex_shell_proxies": 0,
+      "discarded_surface_fragments": 0,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "method": "original_closed_single_solid",
+      "output_faces": 4392,
+      "output_volume_cm3": 108.5680909072031,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": 3929,
+      "source_model": "rover_wheel_rev4",
+      "mesh": "meshes/inertial_parts/component_3929.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      0.0,
+      0.0,
+      0.009531247615814212
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        3.199864161667065e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.199864161667065e-05,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.314143850677879e-05
+      ]
+    ],
+    "volume_m3": 0.0001085680909072031,
+    "effective_density_kg_m3": 433.8291260943144
+  },
+  {
+    "occurrence_id": "sensor_d435",
+    "source_model": "D435_standalone_STL",
+    "link": "camera_link",
+    "mass_kg": 0.072,
+    "com_m": [
+      -0.01286942497011691,
+      0.007499938459487053,
+      -0.0001114329962294606
+    ],
+    "inertia_kg_m2": [
+      [
+        4.514190213443471e-05,
+        6.827631166437737e-11,
+        2.839270239439878e-08
+      ],
+      [
+        6.827631166437737e-11,
+        6.753472319053048e-06,
+        -4.6046756940200406e-11
+      ],
+      [
+        2.839270239439878e-08,
+        -4.6046756940200406e-11,
+        4.552680228004904e-05
+      ]
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_visual_mesh": "meshes/camera_link.stl",
+    "source_visual_face_range": [
+      0,
+      30898
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_sensor_d435.stl",
+    "mesh_preparation": {
+      "source_watertight": false,
+      "source_winding_consistent": true,
+      "source_faces": 30898,
+      "repaired_shells": 2,
+      "convex_shell_proxies": 4,
+      "discarded_surface_fragments": 1730,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 7,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 10844,
+      "output_volume_cm3": 48.96708720525186,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.00013565607696440406,
+        "relative_volume_change": 2.772801100943094e-12,
+        "centroid_shift_mm": 1.1016059372211877e-10
+      },
+      "occurrence_id": "sensor_d435",
+      "source_model": "D435_standalone_STL",
+      "mesh": "meshes/inertial_parts/component_sensor_d435.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.012499999999999995,
+      0.00750000381469727,
+      2.8848648070834565e-07
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        5.235020262060966e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        7.500210860355422e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.2349991760254246e-05
+      ]
+    ],
+    "volume_m3": 4.896708720525186e-05,
+    "effective_density_kg_m3": 1470.37539109081,
+    "global_com_cad_mm": [
+      -7.499938459487053,
+      106.01306888603573,
+      164.9813183455842
+    ]
+  },
+  {
+    "occurrence_id": "sensor_imu",
+    "source_model": "IMU_standalone_STL",
+    "link": "imu_link",
+    "mass_kg": 0.0024,
+    "com_m": [
+      -0.006458225547000631,
+      0.010199938328182657,
+      0.0011149498809886382
+    ],
+    "inertia_kg_m2": [
+      [
+        1.366030785264021e-07,
+        1.5071233702173367e-10,
+        5.50310477147598e-12
+      ],
+      [
+        1.5071233702173367e-10,
+        5.6100279484841645e-08,
+        -1.1488906387481262e-10
+      ],
+      [
+        5.50310477147598e-12,
+        -1.1488906387481262e-10,
+        1.8858762229909324e-07
+      ]
+    ],
+    "approximation": "Prepared closed component STL volume; uniform effective density normalized to measured mass; internal density differences ignored. See mesh_preparation for repairs/proxies.",
+    "source_visual_mesh": "meshes/imu_link.stl",
+    "source_visual_face_range": [
+      0,
+      7404
+    ],
+    "inertial_mesh": "meshes/inertial_parts/component_sensor_imu.stl",
+    "mesh_preparation": {
+      "source_watertight": false,
+      "source_winding_consistent": true,
+      "source_faces": 7404,
+      "repaired_shells": 10,
+      "convex_shell_proxies": 8,
+      "discarded_surface_fragments": 48,
+      "void_shells": 0,
+      "whole_component_hull_proxy": false,
+      "positive_shells": 42,
+      "method": "closed_shell_union_with_recorded_repairs",
+      "output_faces": 7312,
+      "output_volume_cm3": 0.8130935567828371,
+      "bounds_difference_mm": 0.0,
+      "stl_serialization": {
+        "maximum_vertex_shift_mm": 0.0,
+        "relative_volume_change": 0.0,
+        "centroid_shift_mm": 0.0
+      },
+      "occurrence_id": "sensor_imu",
+      "source_model": "IMU_standalone_STL",
+      "mesh": "meshes/inertial_parts/component_sensor_imu.stl",
+      "source_proxy": false
+    },
+    "prior_box_com_m": [
+      -0.006349999904632569,
+      0.010160000324249267,
+      0.002367500066757202
+    ],
+    "prior_box_inertia_kg_m2": [
+      [
+        1.3351605106647498e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        6.77097233537674e-08,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.9225768391448985e-07
+      ]
+    ],
+    "volume_m3": 8.130935567828371e-07,
+    "effective_density_kg_m3": 2951.6898516525785,
+    "global_com_cad_mm": [
+      -6.458225547000634,
+      10.199938328182656,
+      138.32794988098865
+    ]
+  }
+]

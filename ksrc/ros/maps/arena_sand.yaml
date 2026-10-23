@@ -1,0 +1,7 @@
+image: arena_sand.pgm
+mode: trinary
+resolution: 0.008333
+origin: [-1.600000, -2.000000, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

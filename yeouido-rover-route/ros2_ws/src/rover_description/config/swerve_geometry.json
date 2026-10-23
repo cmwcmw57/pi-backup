@@ -1,0 +1,168 @@
+{
+  "frame": "base_link",
+  "axes": "X forward, Y left, Z up",
+  "units": "metres; radians; seconds",
+  "reference_pose": "Both passive rockers at zero; planar kinematics use steering-pivot XY positions.",
+  "front_rear_steering_axis_spacing_m": 0.20486278533935548,
+  "left_right_steering_axis_spacing_m": 0.265,
+  "modules": [
+    {
+      "name": "front_left",
+      "steering_joint": "fl_steering_joint",
+      "position_base_link_m": [
+        0.10243139266967774,
+        0.1325,
+        -0.045313243865966794
+      ],
+      "steering_axis_local": [
+        0,
+        0,
+        1
+      ],
+      "steering_pivot_base_link_m": [
+        0.10243139267,
+        0.1325,
+        -0.045313243866
+      ],
+      "drive_axis_point_below_steering_base_link_m": [
+        0.10243139267,
+        0.1325,
+        -0.1143132400513
+      ],
+      "steering_to_drive_axis_drop_m": 0.0689999961853,
+      "wheel_joint": "fl_wheel_joint",
+      "wheel_joint_origin_base_link_m": [
+        0.10243139267,
+        0.14203000068665,
+        -0.1143132400513
+      ],
+      "wheel_rotation_axis_base_link_zero_pose": [
+        0.0,
+        1.0,
+        4.896583138958022e-12
+      ],
+      "wheel_joint_origin_axis_offset_from_vertical_point_m": 0.009530000686649998
+    },
+    {
+      "name": "front_right",
+      "steering_joint": "fr_steering_joint",
+      "position_base_link_m": [
+        0.10243139266967774,
+        -0.1325,
+        -0.045313243865966794
+      ],
+      "steering_axis_local": [
+        0,
+        0,
+        1
+      ],
+      "steering_pivot_base_link_m": [
+        0.10243139267,
+        -0.1325,
+        -0.045313243866
+      ],
+      "drive_axis_point_below_steering_base_link_m": [
+        0.10243139267,
+        -0.1325,
+        -0.1143132400513
+      ],
+      "steering_to_drive_axis_drop_m": 0.0689999961853,
+      "wheel_joint": "fr_wheel_joint",
+      "wheel_joint_origin_base_link_m": [
+        0.10243139267,
+        -0.14203000068665,
+        -0.1143132400513
+      ],
+      "wheel_rotation_axis_base_link_zero_pose": [
+        0.0,
+        1.0,
+        4.896583138958022e-12
+      ],
+      "wheel_joint_origin_axis_offset_from_vertical_point_m": -0.009530000686649998
+    },
+    {
+      "name": "rear_left",
+      "steering_joint": "rl_steering_joint",
+      "position_base_link_m": [
+        -0.10243139266967774,
+        0.1325,
+        -0.045313243865966794
+      ],
+      "steering_axis_local": [
+        0,
+        0,
+        1
+      ],
+      "steering_pivot_base_link_m": [
+        -0.10243139267,
+        0.1325,
+        -0.045313243866
+      ],
+      "drive_axis_point_below_steering_base_link_m": [
+        -0.10243139267,
+        0.1325,
+        -0.1143132400513
+      ],
+      "steering_to_drive_axis_drop_m": 0.0689999961853,
+      "wheel_joint": "rl_wheel_joint",
+      "wheel_joint_origin_base_link_m": [
+        -0.10243139267,
+        0.14203000068665,
+        -0.1143132400513
+      ],
+      "wheel_rotation_axis_base_link_zero_pose": [
+        0.0,
+        1.0,
+        4.896583138958022e-12
+      ],
+      "wheel_joint_origin_axis_offset_from_vertical_point_m": 0.009530000686649998
+    },
+    {
+      "name": "rear_right",
+      "steering_joint": "rr_steering_joint",
+      "position_base_link_m": [
+        -0.10243139266967774,
+        -0.1325,
+        -0.045313243865966794
+      ],
+      "steering_axis_local": [
+        0,
+        0,
+        1
+      ],
+      "steering_pivot_base_link_m": [
+        -0.10243139267,
+        -0.1325,
+        -0.045313243866
+      ],
+      "drive_axis_point_below_steering_base_link_m": [
+        -0.10243139267,
+        -0.1325,
+        -0.1143132400513
+      ],
+      "steering_to_drive_axis_drop_m": 0.0689999961853,
+      "wheel_joint": "rr_wheel_joint",
+      "wheel_joint_origin_base_link_m": [
+        -0.10243139267,
+        -0.14203000068665,
+        -0.1143132400513
+      ],
+      "wheel_rotation_axis_base_link_zero_pose": [
+        0.0,
+        1.0,
+        4.896583138958022e-12
+      ],
+      "wheel_joint_origin_axis_offset_from_vertical_point_m": -0.009530000686649998
+    }
+  ],
+  "planar_kinematics": {
+    "module_vx": "body_vx - yaw_rate * module_y",
+    "module_vy": "body_vy + yaw_rate * module_x",
+    "steering_angle": "atan2(module_vy, module_vx)",
+    "wheel_linear_speed": "hypot(module_vx, module_vy)"
+  },
+  "rocker_note": "Nonzero rocker angles move module positions and tilt steering axes. Use forward kinematics for a 3D model; fixed XY values are a level-rocker approximation.",
+  "steering_to_drive_axis_vertical_drop_m": 0.0689999961853,
+  "drive_axis_point_definition": "Intersection of the vertical line through steering pivot with the horizontal drive rotation axis at zero rocker/steering pose.",
+  "wheel_joint_origin_note": "Existing URDF wheel joint origin is 9.5300007 mm outward along the same drive axis; the requested point directly below steering is on that axis. Geometry and dynamics are unchanged."
+}

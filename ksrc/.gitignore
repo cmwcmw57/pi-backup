@@ -1,0 +1,25 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Native build products
+*.o
+*.so
+*.elf
+*.bin
+*.hex
+firmware/src2026-rover-firmware/build/
+
+# Training outputs and local logs
+sim/rl/runs/
+*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+*~
+.claude/

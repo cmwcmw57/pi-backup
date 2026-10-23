@@ -1,0 +1,58 @@
+{
+  "task": "Isaac-KSRC-Rover-Student-MLP-Res8-v0",
+  "checkpoint": "/workspace/logs/rsl_rl/ksrc_rover_teacher_res8/2026-10-17_23-15-52_student_mlp_v1_lc3000_st15/model_1000.pt",
+  "recurrent": false,
+  "student_history": 5,
+  "obs_dim": 145,
+  "terms": [
+    {
+      "name": "command",
+      "shape": [
+        15
+      ]
+    },
+    {
+      "name": "gyro",
+      "shape": [
+        15
+      ]
+    },
+    {
+      "name": "gravity",
+      "shape": [
+        15
+      ]
+    },
+    {
+      "name": "steering",
+      "shape": [
+        20
+      ]
+    },
+    {
+      "name": "steering_rate",
+      "shape": [
+        20
+      ]
+    },
+    {
+      "name": "wheel_rate",
+      "shape": [
+        20
+      ]
+    },
+    {
+      "name": "applied_targets",
+      "shape": [
+        40
+      ]
+    }
+  ],
+  "history_order": "oldest first per term",
+  "action_dim": 8,
+  "control_dt_s": 0.02,
+  "res8_rate_limit": 0.0,
+  "res8_stand_mask": false,
+  "res8_steer_scale_rad": 0.2617993877991494,
+  "res8_wheel_scale": 0.6
+}

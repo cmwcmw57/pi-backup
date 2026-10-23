@@ -1,0 +1,5 @@
+2026-10-22T22:11:50+09:00
+collector_pid=22776
+[REAL · 실기 스택] /home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_221150
+상태: 초기화 중 또는 상태 파일 없음
+2초 뒤 다시 확인. 계속 같으면 supervisor.log와 runner.log 확인.

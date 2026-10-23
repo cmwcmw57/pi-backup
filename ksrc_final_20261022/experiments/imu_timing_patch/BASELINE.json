@@ -1,0 +1,11 @@
+{
+  "ksrc_commit": "40499bcb1acaabf6bbbf604795caf28b6a952739",
+  "sha256": {
+    "firmware/common/spi_link.c": "82f7e834f8fab7857eea7fcae479bd1cebf0eca3f1cfbf9415dab704410004a7",
+    "firmware/common/spi_link.h": "19747ebd418f46ecd0a272ff1e0f4a0f7ebdd706318614b36f32c81e527d7e99",
+    "firmware/src2026-rover-firmware/Core/Inc/imu_ism330.h": "784a2e8a69814ee71ed4390493befcff3ccd3859324dcb9d035297c22f8e6cfa",
+    "firmware/src2026-rover-firmware/Core/Src/imu_ism330.c": "e64de598d3a671fe42c2bf9a205f5dfee6d90273d6ae7b8f74040c99d735d5b8",
+    "firmware/src2026-rover-firmware/Core/Src/main.c": "381c3ef514bf9686dc0391dee826656c61a506481d102dd6d9c164e0c62f7ce9",
+    "pi/common/nucleo_link.py": "1262a5647380e38dfdeb1ede5f163e1975ee6cd98e675efb124203c7e6f3e251"
+  }
+}

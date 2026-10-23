@@ -1,0 +1,5 @@
+2026-10-22T22:24:15+09:00
+collector_pid=46814
+[모드 미확인] /home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_222415
+상태: 초기화 중 또는 상태 파일 없음
+2초 뒤 다시 확인. 계속 같으면 supervisor.log와 runner.log 확인.

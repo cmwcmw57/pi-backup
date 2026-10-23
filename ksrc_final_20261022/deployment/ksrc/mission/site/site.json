@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "grid_revision": 3,
+  "frame": "site",
+  "units": "m",
+  "source_units": "m",
+  "source_path": "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand_m.stl",
+  "source_sha256": "5e5db8a269d017af16a05fcc0a52809ab7df73ede467404af1a58d22e044c1c6",
+  "source_geometry_sha256": "8a9b3b1815ca6c48402fe6a6710f993a40f7a5b0b3b85b9203c07ae40c951fd6",
+  "scale_to_m": 1.0,
+  "T_site_source_axes": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "origin": [
+    0.0,
+    0.0
+  ],
+  "resolution": 0.025,
+  "robot_radius": 0.21,
+  "max_step_m": 0.06,
+  "shape": [
+    133,
+    161
+  ],
+  "accuracy_verified": false,
+  "surface_mode": "top",
+  "grid_method": "vertical surface; up to 16 lower hits; multiple layers unknown; exposed steep walls blocked",
+  "limitation": "2.5D; thick closed solids or overlapping floors can remain unknown",
+  "identity": "5d4e253bc266af0b810a03e96e8c210588d4539d28a423690b9b4220c4b8af97",
+  "code_commit": "02879f4e77e07b01443ff0d7b9d63802444c251b",
+  "assets": {
+    "grid.npz": "185ce966b86cc33c38cda9c74db2d60384a566f5b032f80deb6ffda841143717",
+    "mesh.ply": "3ecfcc07538f893fff3a7fafa4d2bd371be088465ed26befad684a61d1fde5f4"
+  }
+}

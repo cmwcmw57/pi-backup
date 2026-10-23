@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<!--
+  Placeholder KSRC swerve rover URDF -- geometry/mass values are NOT
+  from real CAD yet. They mirror the placeholders already used in
+  firmware/common/test_swerve_kinematics.c (module offsets +-0.12m) and
+  the technical proposal's placeholder wheel (105mm diameter RC crawler
+  tire, see project memory). Swap in real numbers once CAD/motor specs
+  exist -- everything downstream (mujoco_sim.py, the swerve kinematics
+  itself) reads geometry from this file or from swerve_kinematics.c's
+  module config, not from hardcoded constants, so this is a drop-in
+  replacement later.
+
+  Module order/positions match swerve_kinematics.c's test config:
+    FL (+x,+y)  FR (+x,-y)  RL (-x,+y)  RR (-x,-y)
+  Body frame: x forward, y left, z up (matches swerve_kinematics.h).
+
+  "world" link + a floating joint to base_link: MuJoCo's URDF importer
+  otherwise welds the root link fixed to the world (verified empirically
+  -- a URDF with no explicit joint to a "world" link compiles with
+  njnt=0, i.e. the body never moves even under gravity). type="floating"
+  compiles to a proper 6-DOF MuJoCo free joint.
+
+  Steering joints are "continuous" (no limit) for now: swerve_kinematics.c
+  outputs a continuous/unwrapped target angle by design (see its header),
+  which maps directly onto a MuJoCo position actuator's ctrl with no
+  wrap conversion needed. This does NOT reflect the real STS3215's
+  single-turn 0-4095 tick range -- that wraparound behavior is a
+  separate, still-open hardware question (see
+  firmware/common/sts3215_protocol.h's caveat) and isn't modeled here.
+-->
+<robot name="ksrc_rover">
+  <link name="world"/>
+
+  <link name="base_link">
+    <inertial>
+      <mass value="1.5"/>
+      <inertia ixx="0.01" iyy="0.01" izz="0.015" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+    <visual>
+      <geometry><box size="0.24 0.24 0.06"/></geometry>
+    </visual>
+    <collision>
+      <geometry><box size="0.24 0.24 0.06"/></geometry>
+    </collision>
+  </link>
+
+  <!-- front-heading marker: a SEPARATE link (not a second <visual> on
+       base_link) fixed-jointed onto the chassis. A second <visual>
+       element on the same link does NOT work here -- verified
+       empirically that MuJoCo's URDF importer collapses multiple
+       <visual> entries on one link into a single geom, keeping only
+       the last <material> color but the FIRST geometry/collision size,
+       which painted the entire chassis red instead of adding a small
+       marker. A distinct link (same pattern as ground_link below) gets
+       its own geom, confirmed by ngeom increasing and the marker
+       having its own small size/color. -->
+  <link name="front_marker_link">
+    <visual>
+      <geometry><box size="0.08 0.05 0.015"/></geometry>
+      <material name="front_marker_mat"><color rgba="0.9 0.15 0.1 1"/></material>
+    </visual>
+    <!-- a visual-only link (no <collision>) was silently dropped by
+         MuJoCo's URDF importer -- verified empirically (ngeom did not
+         increase). ground_link, which DOES render, has a <collision>;
+         adding one here (even though we don't care about colliding
+         with it) is what actually makes the link/geom show up. -->
+    <collision>
+      <geometry><box size="0.08 0.05 0.015"/></geometry>
+    </collision>
+  </link>
+  <joint name="front_marker_fixed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_marker_link"/>
+    <origin xyz="0.10 0 0.0375" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_free_joint" type="floating">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================= FL ============================= -->
+  <link name="fl_steer_link">
+    <inertial><mass value="0.05"/><inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.02"/></geometry></visual>
+    <!-- no <collision> here on purpose: this tiny steer-pivot mount sits
+         flush against base_link's underside by construction, so its
+         collision box was self-colliding with base_link every step and
+         fighting the wheel-drive forces (confirmed empirically: 4 spurious
+         contacts appeared exactly at base_link's bottom-face height). -->
+  </link>
+  <joint name="fl_steer_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="fl_steer_link"/>
+    <origin xyz="0.12 0.12 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="fl_wheel_link">
+    <inertial><mass value="0.1"/><inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="fl_wheel_joint" type="continuous">
+    <parent link="fl_steer_link"/>
+    <child link="fl_wheel_link"/>
+    <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================= FR ============================= -->
+  <link name="fr_steer_link">
+    <inertial><mass value="0.05"/><inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.02"/></geometry></visual>
+    <!-- no <collision> here on purpose: this tiny steer-pivot mount sits
+         flush against base_link's underside by construction, so its
+         collision box was self-colliding with base_link every step and
+         fighting the wheel-drive forces (confirmed empirically: 4 spurious
+         contacts appeared exactly at base_link's bottom-face height). -->
+  </link>
+  <joint name="fr_steer_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="fr_steer_link"/>
+    <origin xyz="0.12 -0.12 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="fr_wheel_link">
+    <inertial><mass value="0.1"/><inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="fr_wheel_joint" type="continuous">
+    <parent link="fr_steer_link"/>
+    <child link="fr_wheel_link"/>
+    <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================= RL ============================= -->
+  <link name="rl_steer_link">
+    <inertial><mass value="0.05"/><inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.02"/></geometry></visual>
+    <!-- no <collision> here on purpose: this tiny steer-pivot mount sits
+         flush against base_link's underside by construction, so its
+         collision box was self-colliding with base_link every step and
+         fighting the wheel-drive forces (confirmed empirically: 4 spurious
+         contacts appeared exactly at base_link's bottom-face height). -->
+  </link>
+  <joint name="rl_steer_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rl_steer_link"/>
+    <origin xyz="-0.12 0.12 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rl_wheel_link">
+    <inertial><mass value="0.1"/><inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="rl_wheel_joint" type="continuous">
+    <parent link="rl_steer_link"/>
+    <child link="rl_wheel_link"/>
+    <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================= RR ============================= -->
+  <link name="rr_steer_link">
+    <inertial><mass value="0.05"/><inertia ixx="1e-5" iyy="1e-5" izz="1e-5" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.02"/></geometry></visual>
+    <!-- no <collision> here on purpose: this tiny steer-pivot mount sits
+         flush against base_link's underside by construction, so its
+         collision box was self-colliding with base_link every step and
+         fighting the wheel-drive forces (confirmed empirically: 4 spurious
+         contacts appeared exactly at base_link's bottom-face height). -->
+  </link>
+  <joint name="rr_steer_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rr_steer_link"/>
+    <origin xyz="-0.12 -0.12 -0.04" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="rr_wheel_link">
+    <inertial><mass value="0.1"/><inertia ixx="1e-4" iyy="1e-4" izz="1e-4" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.0525" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="rr_wheel_joint" type="continuous">
+    <parent link="rr_steer_link"/>
+    <child link="rr_wheel_link"/>
+    <origin xyz="0 0 -0.0525" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Static ground plane, fixed to "world" (not base_link) so it never
+       moves with the robot. NOTE: joints/actuators are NOT embedded via
+       a <mujoco> extension tag here -- empirically, MuJoCo's URDF
+       importer does NOT pick up <actuator> elements from an embedded
+       <mujoco> block (tested directly: nu stayed 0 regardless). Instead,
+       mujoco_sim.py drives the steer/wheel joints by writing qpos/qvel
+       directly each step (see its module docstring) -- ground contact
+       forces on the wheels still come from MuJoCo's real physics, only
+       the joint actuation itself is kinematic rather than torque-driven. -->
+  <link name="ground_link">
+    <visual>
+      <geometry><box size="4 4 0.02"/></geometry>
+      <!-- bright, distinct from MuJoCo's default dark-gray viewer
+           background so the ground plane actually reads as a floor -->
+      <material name="ground_mat"><color rgba="0.75 0.82 0.7 1"/></material>
+    </visual>
+    <collision><geometry><box size="4 4 0.02"/></geometry></collision>
+  </link>
+  <joint name="ground_fixed_joint" type="fixed">
+    <parent link="world"/>
+    <child link="ground_link"/>
+    <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+  </joint>
+</robot>

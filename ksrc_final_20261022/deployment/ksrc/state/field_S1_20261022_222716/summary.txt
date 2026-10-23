@@ -1,0 +1,17 @@
+시험 결과: /home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_222716
+실행 스택: 종료 미확인
+부하 기록: 수집 중 또는 중단됨 · load_collector.log 확인
+CPU: 첫 프레임 제외 / 종료 표시 이후 표본 제외 / 100%=코어 하나
+CPU0: 평균 21.5% / 최대 98.3% / 63개 표본
+CPU1: 평균 48.4% / 최대 100.0% / 63개 표본
+CPU2: 평균 54.1% / 최대 100.0% / 63개 표본
+CPU3: 평균 24.1% / 최대 100.0% / 63개 표본
+온도: 시작 76.0°C / 최대 77.7°C / 마지막 77.1°C
+throttle 표본: 0x0
+정책 NPZ 없음: 실행 중이면 정상 stop 후 확인. 정책 미설치/저장 실패는 policy.log 확인.
+recovery_start: 1회
+recovery_done: 1회
+start_rejected: 0회
+  t=7.760067629999867초 recovery_start / 이유=pose_jump / 단계=entry30
+  t=8.76007874700008초 recovery_done / 이유=- / 단계=entry30
+정지 시험은 이동 중 MPPI 부하·완주 검증이 아님. 부하 수집 시간과 실제 스택 실행 시간은 다를 수 있음.

@@ -1,0 +1,15 @@
+started runner 9943
+started gateway 9944
+started camera 9945
+started inputs 9948
+started policy 9951
+started orb 9955
+stopped owned processes
+Traceback (most recent call last):
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 401, in <module>
+    main()
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 356, in main
+    supervise(args)
+  File "/home/pi/ksrc_final_20261022/deployment/ksrc/cli.py", line 276, in supervise
+    raise RuntimeError('process exited: ' + ', '.join(dead))
+RuntimeError: process exited: gateway

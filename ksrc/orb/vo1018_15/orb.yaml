@@ -1,0 +1,55 @@
+%YAML:1.0
+---
+File.version: "1.0"
+Camera.type: "PinHole"
+ROS.pose_output: "base"
+Camera.width: 640
+Camera.height: 480
+Camera.fps: 15
+Camera.RGB: 0
+Stereo.ThDepth: 40.0
+ORBextractor.nFeatures: 1200
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+System.SaveAtlasToFile: "atlas"
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0
+Viewer.imageViewScale: 1.0
+Camera1.fx: 377.1861267089844
+Camera1.fy: 377.1861267089844
+Camera1.cx: 320.54248046875
+Camera1.cy: 241.73216247558594
+Camera1.k1: 0.0
+Camera1.k2: 0.0
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+Camera1.k3: 0.0
+Camera2.fx: 377.1861267089844
+Camera2.fy: 377.1861267089844
+Camera2.cx: 320.54248046875
+Camera2.cy: 241.73216247558594
+Camera2.k1: 0.0
+Camera2.k2: 0.0
+Camera2.p1: 0.0
+Camera2.p2: 0.0
+Camera2.k3: 0.0
+Stereo.T_c1_c2: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: f
+  data: [ 1, 0, 0, 0.0499182621493, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ]
+ROS.T_c1_base: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: f
+  data: [ 4.01105077483e-12, -1, -2.80856798868e-12, 0.0249999999995, -0.573576436347, 2.39765827762e-23, -0.819152044292, 0.0635133657038, 0.819152044292, 4.89658886015e-12, -0.573576436347, -0.093592974324, 0, 0, 0, 1 ]

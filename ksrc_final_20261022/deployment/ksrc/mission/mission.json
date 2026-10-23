@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "site_name": "demo",
+  "frame": "site",
+  "units": "m",
+  "site_identity": "5d4e253bc266af0b810a03e96e8c210588d4539d28a423690b9b4220c4b8af97",
+  "start": [
+    3.6,
+    2.82,
+    -1.5707963267948966
+  ],
+  "junction": [
+    3.2,
+    2.75
+  ],
+  "summit": [
+    2.8,
+    0.4
+  ],
+  "connector_waypoints": [
+    [
+      3.6,
+      2.82
+    ],
+    [
+      3.2,
+      2.75
+    ]
+  ],
+  "routes": {
+    "30": [
+      [
+        3.2,
+        2.75
+      ],
+      [
+        2.8,
+        2.75
+      ],
+      [
+        2.8,
+        0.4
+      ]
+    ],
+    "15": [
+      [
+        3.2,
+        2.75
+      ],
+      [
+        3.35,
+        2.75
+      ],
+      [
+        3.4147047612756305,
+        2.741481456572267
+      ],
+      [
+        3.475,
+        2.71650635094611
+      ],
+      [
+        3.526776695296637,
+        2.676776695296637
+      ],
+      [
+        3.56650635094611,
+        2.625
+      ],
+      [
+        3.591481456572267,
+        2.56470476127563
+      ],
+      [
+        3.6,
+        2.5
+      ],
+      [
+        3.6,
+        0.65
+      ],
+      [
+        3.591481456572267,
+        0.5852952387243698
+      ],
+      [
+        3.56650635094611,
+        0.525
+      ],
+      [
+        3.526776695296637,
+        0.47322330470336316
+      ],
+      [
+        3.475,
+        0.4334936490538904
+      ],
+      [
+        3.4147047612756305,
+        0.40851854342773297
+      ],
+      [
+        3.35,
+        0.4
+      ],
+      [
+        2.8,
+        0.4
+      ]
+    ],
+    "10": [
+      [
+        3.2,
+        2.75
+      ],
+      [
+        1.25,
+        2.75
+      ],
+      [
+        1.1852952387243698,
+        2.741481456572267
+      ],
+      [
+        1.125,
+        2.71650635094611
+      ],
+      [
+        1.073223304703363,
+        2.676776695296637
+      ],
+      [
+        1.0334936490538904,
+        2.625
+      ],
+      [
+        1.0085185434277328,
+        2.56470476127563
+      ],
+      [
+        1.0,
+        2.5
+      ],
+      [
+        1.0,
+        0.65
+      ],
+      [
+        1.0085185434277328,
+        0.5852952387243698
+      ],
+      [
+        1.0334936490538902,
+        0.5250000000000001
+      ],
+      [
+        1.073223304703363,
+        0.47322330470336316
+      ],
+      [
+        1.125,
+        0.43349364905389043
+      ],
+      [
+        1.1852952387243698,
+        0.40851854342773297
+      ],
+      [
+        1.25,
+        0.4
+      ],
+      [
+        2.8,
+        0.4
+      ]
+    ]
+  },
+  "settings": {
+    "normal_slope_deg": 20.0,
+    "trial_slope_deg": 35.0,
+    "arrival_tolerance_m": 0.05,
+    "max_speed_m_s": 0.08,
+    "max_yaw_rate_rad_s": 0.6,
+    "pose_max_age_s": 0.5,
+    "stuck_window_s": 8.0,
+    "min_progress_m": 0.025,
+    "max_attempt_s": 245.0519229909166,
+    "max_pose_jump_m": 0.5,
+    "carrot_lookahead_m": 0.2,
+    "carrot_brake_m": 0.3,
+    "carrot_min_speed_factor": 0.35,
+    "stanley_gain": 0.0,
+    "follower_blend": 0.0,
+    "blend_heading_hold": 0.0,
+    "blend_max_yaw_rate_rad_s": 0.09,
+    "blend_ramp_slope_deg": 8.0,
+    "blend_ramp_resume_deg": 15.0,
+    "blend_ramp_stop_deg": 25.0,
+    "blend_dir_rate_rad_s": 1.0,
+    "blend_realign_stop_deg": 90.0,
+    "blend_realign_resume_deg": 45.0,
+    "summit_look": 1,
+    "trial30_forward_limit_s": 5,
+    "trial30_elapsed_limit_s": 12
+  },
+  "policy": {
+    "ascent_order": [
+      "30",
+      "15",
+      "10"
+    ],
+    "descent_route": "10",
+    "representative_visit_not_coverage": true,
+    "trial_entry": [
+      2.8,
+      2.75
+    ]
+  },
+  "validation": {
+    "accepted": true,
+    "routes": {
+      "30": {
+        "accepted": true,
+        "reason": "clear",
+        "length_m": 2.7500000000000004,
+        "samples": 277
+      },
+      "15": {
+        "accepted": true,
+        "reason": "clear",
+        "length_m": 3.3331571533203097,
+        "samples": 341
+      },
+      "10": {
+        "accepted": true,
+        "reason": "clear",
+        "length_m": 6.133157153320309,
+        "samples": 620
+      }
+    },
+    "reason": "valid",
+    "connector": {
+      "accepted": true
+    }
+  },
+  "hardware_commands_enabled": false
+}

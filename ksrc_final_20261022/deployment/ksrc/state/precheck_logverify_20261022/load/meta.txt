@@ -1,0 +1,70 @@
+2026-10-22T20:50:14+09:00
+Linux raspberrypi 6.8.0-1065-raspi #69-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep  8 18:10:10 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+4
+ 20:50:14 up  6:34, 26 users,  load average: 0.00, 0.03, 0.07
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk0p2   29G   21G  6.7G  76% /
+{"pid": 444889, "starttime": "2366709"}{
+  "runner": {
+    "pid": 444890,
+    "starttime": "2366724",
+    "command": [
+      "taskset",
+      "-c",
+      "0",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runner.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify_20261022/fake.json",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify_20261022",
+      "--plan-cpu",
+      "0"
+    ]
+  },
+  "gateway": {
+    "pid": 444891,
+    "starttime": "2366724",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py",
+      "--runner",
+      "127.0.0.1:5010"
+    ]
+  },
+  "inputs": {
+    "pid": 444892,
+    "starttime": "2366724",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/fake_inputs.py",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify_20261022"
+    ]
+  },
+  "policy": {
+    "pid": 444893,
+    "starttime": "2366725",
+    "command": [
+      "taskset",
+      "-c",
+      "3",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc/pi/policy/run_policy.py",
+      "--fake",
+      "--policy",
+      "/home/pi/ksrc/pi/policy/res8_mlp_v3vo_rc4000",
+      "--cmd-udp",
+      "5005",
+      "--vo-port",
+      "5600",
+      "--seconds",
+      "90.0",
+      "--rt",
+      "50",
+      "--gc-off",
+      "--log",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/precheck_logverify_20261022/policy.npz"
+    ]
+  }
+}

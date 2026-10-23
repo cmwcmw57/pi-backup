@@ -1,0 +1,32 @@
+diff --git a/src/System.cc b/src/System.cc
+index 8c0fa98..bdc1588 100644
+--- a/src/System.cc
++++ b/src/System.cc
+@@ -655,18 +655,16 @@ void System::Shutdown()
+             usleep(5000);
+     }
+ 
+-    // Wait until all thread have effectively stopped
++    // Export only after all workers finish; never accept an active GBA as saved.
++    const auto shutdown_deadline = std::chrono::steady_clock::now() + std::chrono::seconds(30);
+     while(!mpLocalMapper->isFinished() || !mpLoopCloser->isFinished() || mpLoopCloser->isRunningGBA())
+     {
+         if(!mpLocalMapper->isFinished())
+             cout << "mpLocalMapper is not finished" << endl;
+         if(!mpLoopCloser->isFinished())
+             cout << "mpLoopCloser is not finished" << endl;
+-        if(mpLoopCloser->isRunningGBA()){
+-            cout << "mpLoopCloser is running GBA" << endl;
+-            cout << "break anyway..." << endl;
+-            break;
+-        }
++        if(std::chrono::steady_clock::now() > shutdown_deadline)
++            throw std::runtime_error("ORB-LINE worker shutdown timed out");
+         usleep(5000);
+     }
+ 
+@@ -1264,4 +1262,3 @@ string System::CalculateCheckSum(string filename, int type)
+ 
+ } //namespace ORB_SLAM
+ 
+-

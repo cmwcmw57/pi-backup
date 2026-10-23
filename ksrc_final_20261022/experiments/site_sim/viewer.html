@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- ================================================================
+viewer.html
+설명: 지형·주행 기록과 region-mppi 구역·통로·후보 궤적을 관찰한다.
+사용법: experiments.site_sim.server에서 제공하는 viewer를 연다.
+================================================================ -->
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rover · 대회 임무 관찰</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0b1220;color:#e6eef7}*{box-sizing:border-box}body{max-width:1600px;margin:auto;padding:22px}header{display:flex;align-items:center;gap:16px;flex-wrap:wrap}h1{font-size:24px;margin:0}p{color:#a6b9ce}#connection{padding:8px 14px;border-radius:20px;background:#27384e}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.panel{background:#142035;border:1px solid #293d56;border-radius:12px;padding:16px}h2{font-size:17px;margin:0 0 12px}img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#080e18;border-radius:6px}canvas{width:100%;height:auto;aspect-ratio:5/4;background:#080e18}#details{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{background:#0c1728;padding:12px;border-radius:8px}.metric small{display:block;color:#9bb0c6}.metric strong{font-size:19px}.visits{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.visit{padding:8px;border-radius:6px;background:#22314a}.reached{background:#145c4b}.failed{background:#783a3a}.active{background:#69501d}select{padding:6px;background:#263952;border:1px solid #49637f;color:white;border-radius:5px}.legend{font-size:13px;color:#adc0d1;margin-top:8px;line-height:1.8}code{word-break:break-all;font-size:12px}.wide{grid-column:1/-1}#notice{color:#f9c26f}#error{color:#ff9c9c}@media(max-width:1000px){.grid{grid-template-columns:1fr}#details{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){body{padding:12px}h1{font-size:20px}#details{grid-template-columns:repeat(4,1fr);gap:5px}.metric{padding:7px}.metric strong{font-size:13px}.metric small{font-size:10px}.panel{padding:10px}.grid{gap:10px}.visits{margin:8px 0}.visit{font-size:12px;padding:5px}.grid>section:nth-child(3){order:1;display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid>section:nth-child(3)>h2{font-size:13px;margin:0!important}.grid>section:nth-child(3)>h2:nth-of-type(1){grid-column:1;grid-row:1}.grid>section:nth-child(3)>h2:nth-of-type(2){grid-column:2;grid-row:1}.grid>section:nth-child(3)>img:nth-of-type(1){grid-column:1;grid-row:2}.grid>section:nth-child(3)>img:nth-of-type(2){grid-column:2;grid-row:2}.grid>section:nth-child(2){order:2}.legend{font-size:11px;line-height:1.5}}
+</style>
+<style>.panel{min-width:0}img{min-width:0}@media(max-width:1000px){.grid>section:nth-child(3){grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.metric{min-width:0;overflow-wrap:anywhere}}</style>
+<header><h1>Rover · 대회 임무 관찰</h1><span id="connection">서버 준비 중</span></header>
+<p id="poseSource">Isaac 물리 시뮬레이션 · 고정 모래 표면</p>
+<div id="notice">자연 주행과 정체 주입 시험은 별도로 기록합니다.</div>
+<div class="grid">
+<section class="panel wide"><div id="details"></div><div id="visits" class="visits"></div><div id="navigation" class="legend" hidden></div><div id="error"></div><code id="recording"></code></section>
+<section class="panel"><h2>2.5D 지형 · 경로 · costmap <select id="layer"><option value="height">지형 높이</option><option value="auto">현재 경로 cost</option><option value="normal_cost">일반 경사 기준</option><option value="trial_cost">30° 시험 기준</option><option value="experience">방문 경험</option></select></h2><canvas id="map" width="1000" height="800"></canvas><div id="routeLegend" class="legend">점선 계획: 파랑 30° · 주황 15° · 초록 10° · 굵은 분홍 GT 궤적 · 주황 추정(ORB+ESKF) 궤적 · 노란 방향선·원 현재 로버 위치<br>높이 모드: 청록 낮음 → 황토 높음 · cost 모드: 초록 낮음 → 빨강 높음 · 어두운 영역 주행 차단·로버 여유 포함(254) · 회색 미관측(255)<br>방문 경험: 주행 관측 횟수만 표시하며 미방문 영역은 채우지 않습니다.</div></section>
+<section class="panel"><h2>추적 시점 (로버 중심) <small id="overviewAge"></small></h2><img id="overview" alt="경기장 영상 준비 중"><h2 style="margin-top:16px">전방 카메라 <small id="frontAge"></small></h2><img id="front" alt="전방 영상 준비 중"></section>
+</div>
+<script>
+let mapData=null,state=null,receivedAt=0,serverAge=0;const canvas=document.getElementById('map'),ctx=canvas.getContext('2d');
+const names={to_junction:'갈림길 이동',trial_entry:'30° 진입점 이동',ascending:'등판',retreating:'실제 경로 후퇴',descending:'10° 하산',returning:'출발지 복귀',complete:'임무 완료',failed:'임무 실패'};
+const labels={entry30:'30° 진입점',entry15:'15° 진입점',entry10:'10° 진입점',summit:'정상',return:'복귀'};
+function text(id,value){document.getElementById(id).textContent=value}
+const point=p=>Array.isArray(p)&&p.length>=2&&Number.isFinite(p[0])&&Number.isFinite(p[1]);
+const points=p=>Array.isArray(p)&&p.length>0&&p.every(point);
+const list=v=>Array.isArray(v)?v:[];
+const navigation=()=>state?.last?.mission?.navigation;
+function navigationDetails(n){const box=document.getElementById('navigation');box.hidden=n?.mode!=='region-mppi';if(box.hidden)return;
+const probabilities=n.probabilities&&typeof n.probabilities==='object'?Object.entries(n.probabilities).filter(([,p])=>Number.isFinite(p)).map(([id,p])=>`${id}: ${(p*100).toFixed(0)}%`).join(', '):'';
+const evidence=n.failure_evidence==null?'—':JSON.stringify(n.failure_evidence);
+box.textContent=`구역 ${n.current_region??'—'} → ${n.next_region??'—'} · 현재 후보 [${list(n.candidates).join(', ')}] · 확률 ${probabilities||'—'} · 전방 관측 [${list(n.visible_regions).join(', ')}]\n유도 ${n.guidance_valid===true?'유효':n.guidance_valid===false?'무효':'—'} · 관측: ${n.observation_reason||'—'} · 실패 근거: ${evidence}\n청록 구역 경계 · 노란 현재 구역 · 주황 후보 구역 · 흰색 통로 · 연두 선택 통로/target · 보라 MPPI 후보(최대16) · 밝은 청록 선택 궤적`;
+box.style.whiteSpace='pre-wrap'}
+// Height-field projection uses metre coordinates for terrain, routes, and pose alike.
+let azimuth=-.35,tilt=.8,zoom=1,drag=null;
+function draw(){if(!mapData)return;
+const rows=mapData.normal_cost.length,cols=mapData.normal_cost[0].length,r=mapData.resolution,[ox,oy]=mapData.origin;
+const heights=mapData.height_m,observed=mapData.observed;
+const known=heights?heights.flat().filter(Number.isFinite):[0];const zmin=Math.min(...known),zmax=Math.max(...known);
+const ca=Math.cos(azimuth),sa=Math.sin(azimuth),ct=Math.cos(tilt),st=Math.sin(tilt);
+const project=(x,y,z)=>{x-=ox+cols*r/2;y-=oy+rows*r/2;const u=ca*x-sa*y,v=sa*x+ca*y;return [u,-v*st-(z-zmin)*ct,v*ct-(z-zmin)*st]};
+const bounds=[];for(const x of [ox,ox+cols*r])for(const y of [oy,oy+rows*r])for(const z of [zmin,zmax])bounds.push(project(x,y,z));
+const xs=bounds.map(p=>p[0]),ys=bounds.map(p=>p[1]),xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+const scale=zoom*Math.min((canvas.width-130)/(xmax-xmin),(canvas.height-140)/(ymax-ymin));
+const screen=(x,y,z)=>{const p=project(x,y,z);return [canvas.width/2+(p[0]-(xmin+xmax)/2)*scale,canvas.height/2+(p[1]-(ymin+ymax)/2)*scale]};
+const height=p=>{const x=Math.floor((p[0]-ox)/r),y=Math.floor((p[1]-oy)/r);return heights?.[y]?.[x]??zmin};
+const xy=p=>screen(p[0],p[1],height(p)+.012);
+ctx.clearRect(0,0,canvas.width,canvas.height);
+let selected=document.getElementById('layer').value;const m=state?.last?.mission||{};
+if(selected==='auto')selected=(m.route==='30'&&['ascending','trial_entry','retreating'].includes(m.state))?'trial_cost':'normal_cost';
+const cells=[];for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){
+const h=heights?.[y]?.[x]??zmin;if(observed&&!observed[y][x])continue;
+cells.push({x,y,h,depth:project(ox+(x+.5)*r,oy+(y+.5)*r,h)[2]})}
+cells.sort((a,b)=>b.depth-a.depth);
+const visits=new Map((state?.experience||[]).map(([x,y,n])=>[x+','+y,n]));
+for(const {x,y,h} of cells){let color;
+if(selected==='height')color=`hsl(${195-160*(h-zmin)/Math.max(.001,zmax-zmin)} 48% ${35+18*(h-zmin)/Math.max(.001,zmax-zmin)}%)`;
+else if(selected==='experience'){const n=visits.get(x+','+y)||0;color=n?`hsl(${180-Math.min(n,80)} 85% 55%)`:'#344351'}
+else{const v=mapData[selected][y][x];color=v===255?'#637084':v===254?'#594c56':`hsl(${120-120*v/252} 62% 40%)`}
+// Draw the exposed sides as well as the top so height discontinuities are solid surfaces.
+for(const [nx,ny,a,b] of [[x,y-1,[0,0],[1,0]],[x+1,y,[1,0],[1,1]],[x,y+1,[1,1],[0,1]],[x-1,y,[0,1],[0,0]]]){
+const nh=heights?.[ny]?.[nx]??zmin;if(nh>=h-.0001)continue;
+const verts=[[a[0],a[1],nh],[b[0],b[1],nh],[b[0],b[1],h],[a[0],a[1],h]];
+ctx.beginPath();verts.forEach(([dx,dy,z],i)=>{const q=screen(ox+(x+dx)*r,oy+(y+dy)*r,z);i?ctx.lineTo(...q):ctx.moveTo(...q)});ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.fillStyle='rgba(0,0,0,.22)';ctx.fill()}
+ctx.beginPath();for(const [i,[dx,dy]] of [[0,[0,0]],[1,[1,0]],[2,[1,1]],[3,[0,1]]]){const q=screen(ox+(x+dx)*r,oy+(y+dy)*r,h);i?ctx.lineTo(...q):ctx.moveTo(...q)}ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.strokeStyle=color;ctx.lineWidth=.35;ctx.stroke()}
+const line=(p,color,width)=>{if(!p?.length)return;ctx.beginPath();p.forEach((pt,i)=>{const q=xy(pt);i?ctx.lineTo(...q):ctx.moveTo(...q)});ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()};
+const n=navigation();if(n?.mode==='region-mppi'){
+ctx.save();ctx.font='bold 17px system-ui';
+for(const region of list(mapData.navigation_regions)){const p=region?.polygon_xy_m;if(!points(p)||p.length<3)continue;
+const current=String(region.id)===String(n.current_region),candidate=list(n.candidates).some(id=>String(id)===String(region.id));
+const color=current?'#ffe14a':candidate?'#ffa75c':'#54d6df';line([...p,p[0]],color,current?4:2);
+const center=p.reduce((a,b)=>[a[0]+b[0]/p.length,a[1]+b[1]/p.length],[0,0]),q=xy(center);
+ctx.fillStyle=color;ctx.fillText(String(region.id),q[0],q[1])}
+for(const portal of list(mapData.navigation_portals)){const p=portal?.segment_xy_m;if(points(p)&&p.length===2)line(p,'#ecf2ff',2)}
+for(const p of list(n.candidate_trajectories).slice(0,16))if(points(p))line(p,'#bb82f080',1.5);
+if(points(n.selected_trajectory))line(n.selected_trajectory,'#71fff2',4);
+if(points(n.portal_segment_xy_m)&&n.portal_segment_xy_m.length===2)line(n.portal_segment_xy_m,'#baff63',6);
+if(point(n.target_xy_m)){const q=xy(n.target_xy_m);ctx.strokeStyle='#baff63';ctx.lineWidth=3;ctx.beginPath();ctx.arc(...q,8,0,Math.PI*2);ctx.moveTo(q[0]-12,q[1]);ctx.lineTo(q[0]+12,q[1]);ctx.moveTo(q[0],q[1]-12);ctx.lineTo(q[0],q[1]+12);ctx.stroke();ctx.fillStyle='#baff63';ctx.fillText('TARGET',q[0]+12,q[1]-10)}
+ctx.restore()}
+ctx.setLineDash([8,6]);if(n?.mode!=='region-mppi')for(const [key,color] of [['30','#61a4ff'],['15','#ffa75c'],['10','#6cdb8c']])line(mapData.routes[key],color,3);
+ctx.setLineDash([]);line(state?.trajectory,'#111827',8);line(state?.trajectory,'#ff2fd0',4);line(state?.estimated_trajectory,'#111827',6);line(state?.estimated_trajectory,'#ffa500',3);
+ctx.font='16px system-ui';for(const [name,p] of [['START',mapData.start],['JUNCTION',mapData.junction],['SUMMIT',mapData.summit]]){const q=xy(p);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(...q,5,0,7);ctx.fill();ctx.fillText(name,q[0]+7,q[1]-8)}
+const last=state?.last;if(last?.position_m){const p=last.position_m,q=xy(p),w=last.quaternion_wxyz;const yaw=w?Math.atan2(2*(w[0]*w[3]+w[1]*w[2]),1-2*(w[2]**2+w[3]**2)):0;
+const tip=xy([p[0]+.16*Math.cos(yaw),p[1]+.16*Math.sin(yaw)]);
+ctx.strokeStyle='#ffe14a';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(...q);ctx.lineTo(...tip);ctx.stroke();ctx.beginPath();ctx.arc(...q,9,0,Math.PI*2);ctx.fillStyle='#ffe14a';ctx.fill();ctx.strokeStyle='#172033';ctx.lineWidth=2;ctx.stroke();ctx.fillText('ROVER',q[0]+14,q[1]-12)}
+ctx.fillStyle='#c6d5e4';ctx.fillText(`높이 ${zmin.toFixed(2)}–${zmax.toFixed(2)} m · 드래그 회전 / 휠 확대`,20,canvas.height-20);
+}
+canvas.style.touchAction='none';canvas.style.cursor='grab';
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;azimuth+=(e.clientX-drag[0])*.006;tilt=Math.max(.25,Math.min(1.4,tilt+(e.clientY-drag[1])*.006));drag=[e.clientX,e.clientY];draw()});
+canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.6,Math.min(3,zoom*Math.exp(-e.deltaY*.001)));draw()},{passive:false});
+function update(){const l=state.last||{},m=l.mission||{};navigationDetails(m.navigation);
+text('poseSource',m.navigation?.mode==='region-mppi'?'Isaac 물리 시뮬레이션 · ORB+IMU ESKF · 구역 MPPI · 고정 모래 표면':'Isaac 물리 시뮬레이션 · '+(state.pose_source==='orb_eskf_estimate'?'ORB+IMU ESKF':'정답 pose feedback')+' · 고정 모래 표면');
+if(m.navigation?.mode==='region-mppi')text('routeLegend','구역 경계·통로 · 보라 MPPI 후보 · 청록 선택 궤적 · 연두 다음 목표 · 분홍 GT · 주황 ESKF');
+text('connection',state.stale?'상태 수신 지연':state.status==='running'?'서버 실행 중':state.status);document.getElementById('connection').style.background=state.stale?'#833f32':'#1a574d';
+text('notice',(state.fault_injection||l.fault_injection)?'정체 주입 시험 · 30°에서 wheel target을 제한해 후퇴·우회를 검사합니다.':'자연 주행 · 등판 성공과 실패를 실제 시뮬레이션 결과대로 기록합니다.');
+const metrics=[['현재 단계',names[m.state]||'초기화'],['경로 / 방향',`${m.route||'—'}° / ${m.direction||'—'}`],['simulation 시간',`${(l.stamp_s||0).toFixed(1)} s`],['wall 시간',`${(l.wall_s||0).toFixed(1)} s`],['위치 (m)',l.position_m?.slice(0,2).map(x=>x.toFixed(3)).join(', ')||'—'],['관측 방문 칸',state.visited_cells||0],['costmap 저장',state.snapshot_count||0],['상태 age',`${state.age_s.toFixed(1)} s`]];
+const d=document.getElementById('details');d.replaceChildren(...metrics.map(([k,v])=>{const e=document.createElement('div');e.className='metric';const a=document.createElement('small'),b=document.createElement('strong');a.textContent=k;b.textContent=v;if(k==='상태 age')b.id='stateAge';e.append(a,b);return e}));
+const visits=document.getElementById('visits');visits.replaceChildren(...Object.entries(m.visits||{}).map(([k,v])=>{const e=document.createElement('span');e.className='visit '+v;e.textContent=(labels[k]||k)+': '+v;return e}));text('recording',state.recording||'');text('error',[state.reason,m.reason,m.camera_error].filter(x=>x&&x!=='active').join(' · '));
+for(const key of ['overview','front']){const age=state.image_age_s?.[key];text(key+'Age',age==null?'영상 준비 중':`(${age.toFixed(1)}초 전)`);document.getElementById(key).src='/frame/'+key+'.jpg?t='+Date.now()}draw()}
+async function request(path){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),2500);try{const r=await fetch(path,{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('장면·기록 준비 중');return await r.json()}finally{clearTimeout(timer)}}
+function checkFreshness(){if(!state||!receivedAt)return;const silence=Math.max(0,(Date.now()-receivedAt)/1000);const age=serverAge+silence;if(state.status==='running'&&age>3){text('connection','상태 수신 지연');document.getElementById('connection').style.background='#833f32';text('stateAge',age.toFixed(1)+' s');for(const key of ['overview','front']){const a=state.image_age_s?.[key];if(a!=null)text(key+'Age','('+(a+silence).toFixed(1)+'초 전)')}}}
+setInterval(checkFreshness,500);
+async function poll(){try{if(!mapData)mapData=await request('/map');const fresh=await request('/state');if(fresh.last?.mission?.navigation?.mode==='region-mppi'&&(!Array.isArray(mapData.navigation_regions)||!Array.isArray(mapData.navigation_portals)))mapData=await request('/map');liveState=fresh;receivedAt=Date.now();serverAge=fresh.age_s;if(!replay.active){state=fresh;update()}if(fresh.status!=='running')ensureReplay()}catch(e){text('connection',e.name==='AbortError'?'상태 수신 시간 초과':e.message);document.getElementById('connection').style.background='#7a4936'}finally{setTimeout(poll,400)}}
+document.getElementById('layer').addEventListener('change',draw);
+// ---- 기록 재생: 끝난 run의 telemetry를 시간 슬라이더로 다시 본다(실제=분홍, 추정=주황, 위치 오차 표시).
+let liveState=null;const replay={data:null,active:false,t:0,playing:false,speed:5,tick:0};
+const rp=id=>document.getElementById(id);
+async function ensureReplay(){if(replay.data!==null)return;replay.data=false;try{const r=await fetch('/replay',{cache:'no-store'});if(!r.ok)return;replay.data=await r.json();if(replay.data.options)text('notice','설정: '+replay.data.options);buildReplayBar()}catch(e){}}
+function buildReplayBar(){const d=replay.data,bar=document.createElement('div');bar.id='replayBar';bar.style.cssText='display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0;padding:10px 14px;background:#142038;border-radius:10px';
+bar.innerHTML='<button id="rpPlay">▶ 재생</button><input id="rpSlider" type="range" min="0" max="'+d.t[d.t.length-1]+'" step="0.05" value="0" style="flex:1;min-width:220px"><select id="rpSpeed"><option>1</option><option>2</option><option selected>5</option><option>10</option><option>20</option><option>40</option></select><span>배속</span><strong id="rpLabel"></strong><button id="rpLive">끝 상태</button>';
+document.querySelector('.grid').before(bar);
+rp('rpPlay').onclick=()=>{replay.playing=!replay.playing;if(replay.playing&&replay.t>=d.t[d.t.length-1]-.05)replay.t=0;replay.active=true;rp('rpPlay').textContent=replay.playing?'⏸ 일시정지':'▶ 재생';showReplay()};
+rp('rpSlider').oninput=e=>{replay.active=true;replay.t=+e.target.value;showReplay()};
+rp('rpSpeed').onchange=e=>{replay.speed=+e.target.value};
+rp('rpLive').onclick=()=>{replay.active=false;replay.playing=false;rp('rpPlay').textContent='▶ 재생';if(liveState){state=liveState;update()}};
+replay.tick=performance.now();setInterval(()=>{const now=performance.now(),dt=(now-replay.tick)/1000;replay.tick=now;if(!replay.playing)return;replay.t=Math.min(d.t[d.t.length-1],replay.t+dt*replay.speed);if(replay.t>=d.t[d.t.length-1]){replay.playing=false;rp('rpPlay').textContent='▶ 재생'}showReplay()},50)}
+function replayIndex(t){const a=replay.data.t;let lo=0,hi=a.length-1;while(lo<hi){const m=(lo+hi+1)>>1;if(a[m]<=t)lo=m;else hi=m-1}return lo}
+function showReplay(){const d=replay.data,i=replayIndex(replay.t),r=mapData.resolution,[ox,oy]=mapData.origin,cells=new Map();
+for(let k=0;k<=i;k++){const key=Math.floor((d.gt[k][0]-ox)/r)+','+Math.floor((d.gt[k][1]-oy)/r);cells.set(key,(cells.get(key)||0)+1)}
+const experience=[...cells].map(([k,n])=>{const [x,y]=k.split(',').map(Number);return [x,y,n,0]});
+const yaw=d.yaw[i],live=liveState||{};
+state={...live,status:'재생 중',stale:false,age_s:0,reason:`위치 오차 ${d.err_cm[i].toFixed(1)} cm`,trajectory:d.gt.slice(0,i+1),estimated_trajectory:d.est.slice(0,i+1),experience,visited_cells:cells.size,
+last:{stamp_s:d.t[i],wall_s:0,position_m:[d.gt[i][0],d.gt[i][1],0],quaternion_wxyz:[Math.cos(yaw/2),0,0,Math.sin(yaw/2)],mission:{state:d.state[i],route:d.route[i],direction:'',visits:{},navigation:d.navigation?.[i]}}};
+update();rp('rpSlider').value=replay.t;rp('rpLabel').textContent=`${d.t[i].toFixed(1)} s · 오차 ${d.err_cm[i].toFixed(1)} cm`+(d.clear_cm?` · 벽 ${d.clear_cm[i]>=999?'먼 곳':d.clear_cm[i].toFixed(0)+' cm'}`:'');
+if(d.frames&&d.frames.length){rp('overview').src='/replay_frame?t='+d.t[i].toFixed(2);text('overviewAge','(재생 화면)')}
+if(d.front&&d.front.length){rp('front').src='/replay_front?t='+d.t[i].toFixed(2);text('frontAge','(재생 화면)')}}
+poll();
+</script></html>

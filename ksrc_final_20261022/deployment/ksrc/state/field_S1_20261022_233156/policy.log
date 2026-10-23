@@ -1,0 +1,7 @@
+[run] 실시간 우선순위 SCHED_FIFO 50
+/home/pi/venv/lib/python3.12/site-packages/torch/jit/_serialization.py:176: FutureWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+[run] 잔차 후처리: 변화율 제한 없음/스텝, 정지 명령 잔차 0, EMA α 끔, 조향 잔차 폭 30°
+[run] VO 수신 UDP :5600 (vo_relay.py)
+[run] 텔레옵 명령 UDP :5005 (상한 0.2 m/s, 0.8 rad/s, 0.3 s 끊기면 0). 최대 3600 s, Ctrl+C 로 끝
+IMU 값이 안 들어옴 (TLM_FLAG_IMU_VALID) -- 배선·펌웨어 확인

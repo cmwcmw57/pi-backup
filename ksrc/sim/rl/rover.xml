@@ -1,0 +1,125 @@
+<mujoco model="ksrc_swerve_rover">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic"/>
+  
+  <default>
+    <default class="arm">
+      <geom rgba="0.80 0.45 0.15 1" friction="0.7 0.01 0.001" density="1270"/>
+    </default>
+    <default class="steer">
+      <geom rgba="0.30 0.35 0.45 1" mass="0.1000" friction="0.7 0.01 0.001"/>
+      <joint type="hinge" axis="0 0 1" range="-1.5708 1.5708"
+             damping="0.02" armature="0.002"/>
+    </default>
+    <default class="tyre">
+      <!-- 종방향 마찰은 뒤에서 커스텀 슬립모델이 담당한다. 지금은 표준값. -->
+      <geom rgba="0.15 0.15 0.18 1" friction="1.0 0.02 0.002" condim="4"/>
+    </default>
+    <default class="wheel">
+      <joint type="hinge" axis="0 1 0" damping="0.2462" armature="0.0015"/>
+    </default>
+    <default class="rocker">
+      <joint type="hinge" axis="0 1 0" range="-0.4400 0.4400"
+             damping="0.05" armature="0.001"/>
+    </default>
+    <default class="terrain">
+      <geom rgba="0.55 0.52 0.48 1" friction="1.0 0.02 0.002" condim="4"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
+    <geom name="ground" type="plane" size="20 20 0.1" class="terrain"/>
+    <body name="chassis" pos="0 0 0.08550">
+      <freejoint name="root"/>
+      <geom name="base" type="box" pos="0 0 0.03250"
+            size="0.06350 0.08500 0.03250"
+            mass="1.4000" rgba="0.25 0.50 0.75 1"/>
+      <site name="imu" pos="0 0 0.03250" size="0.006"/>
+
+    <body name="rocker_l" pos="0 0.10000 0.04500">
+      <joint name="rock_l" class="rocker"/>
+      <geom class="arm" type="cylinder" zaxis="0 1 0" size="0.011 0.01750"
+            mass="0.0800"/>
+      <geom class="arm" type="capsule" fromto="0 0 0 0.06700 0 -0.02700" size="0.009"/> <geom class="arm" type="capsule" fromto="0 0 0 -0.06700 0 -0.02700" size="0.009"/>
+      <geom class="arm" type="box" pos="0.09463 0 -0.03715" size="0.02763 0.01750 0.01015"/> <geom class="arm" type="box" pos="-0.09463 0 -0.03715" size="0.02763 0.01750 0.01015"/>
+      <body name="steer_fl" pos="0.10500 0 -0.04730">
+        <joint name="st_fl" class="steer"/>
+        <geom class="steer" type="box" size="0.016 0.014 0.016"/>
+        <body name="wheel_fl" pos="0.00000 0 -0.02000">
+          <joint name="wh_fl" class="wheel"/>
+          <geom class="tyre" type="cylinder" zaxis="0 1 0"
+                size="0.04050 0.01750" mass="0.2600"/>
+        </body>
+      </body>
+      <body name="steer_rl" pos="-0.10500 0 -0.04730">
+        <joint name="st_rl" class="steer"/>
+        <geom class="steer" type="box" size="0.016 0.014 0.016"/>
+        <body name="wheel_rl" pos="0.00000 0 -0.02000">
+          <joint name="wh_rl" class="wheel"/>
+          <geom class="tyre" type="cylinder" zaxis="0 1 0"
+                size="0.04050 0.01750" mass="0.2600"/>
+        </body>
+      </body>
+    </body>
+
+    <body name="rocker_r" pos="0 -0.10000 0.04500">
+      <joint name="rock_r" class="rocker"/>
+      <geom class="arm" type="cylinder" zaxis="0 1 0" size="0.011 0.01750"
+            mass="0.0800"/>
+      <geom class="arm" type="capsule" fromto="0 0 0 0.06700 0 -0.02700" size="0.009"/> <geom class="arm" type="capsule" fromto="0 0 0 -0.06700 0 -0.02700" size="0.009"/>
+      <geom class="arm" type="box" pos="0.09463 0 -0.03715" size="0.02763 0.01750 0.01015"/> <geom class="arm" type="box" pos="-0.09463 0 -0.03715" size="0.02763 0.01750 0.01015"/>
+      <body name="steer_fr" pos="0.10500 0 -0.04730">
+        <joint name="st_fr" class="steer"/>
+        <geom class="steer" type="box" size="0.016 0.014 0.016"/>
+        <body name="wheel_fr" pos="0.00000 0 -0.02000">
+          <joint name="wh_fr" class="wheel"/>
+          <geom class="tyre" type="cylinder" zaxis="0 1 0"
+                size="0.04050 0.01750" mass="0.2600"/>
+        </body>
+      </body>
+      <body name="steer_rr" pos="-0.10500 0 -0.04730">
+        <joint name="st_rr" class="steer"/>
+        <geom class="steer" type="box" size="0.016 0.014 0.016"/>
+        <body name="wheel_rr" pos="0.00000 0 -0.02000">
+          <joint name="wh_rr" class="wheel"/>
+          <geom class="tyre" type="cylinder" zaxis="0 1 0"
+                size="0.04050 0.01750" mass="0.2600"/>
+        </body>
+      </body>
+    </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <!-- 중앙 베벨 디퍼렌셜: 좌우 로커 1:1 역방향. 사이드기어가 동일 부품이므로
+         가운데 피니언 크기와 무관하게 비는 정확히 1:1 이다. -->
+    <joint joint1="rock_l" joint2="rock_r" polycoef="0 -1.0 0 0 0" solimp="0.99 0.999 0.001"/>
+  </equality>
+
+  <actuator>
+    <position name="a_st_fl" joint="st_fl" kp="12.0" ctrlrange="-1.5708 1.5708" forcerange="-2.0 2.0"/>
+    <position name="a_st_rl" joint="st_rl" kp="12.0" ctrlrange="-1.5708 1.5708" forcerange="-2.0 2.0"/>
+    <position name="a_st_fr" joint="st_fr" kp="12.0" ctrlrange="-1.5708 1.5708" forcerange="-2.0 2.0"/>
+    <position name="a_st_rr" joint="st_rr" kp="12.0" ctrlrange="-1.5708 1.5708" forcerange="-2.0 2.0"/>
+    <motor name="a_wh_fl" joint="wh_fl" gear="1.96" ctrlrange="-1 1"/>
+    <motor name="a_wh_rl" joint="wh_rl" gear="1.96" ctrlrange="-1 1"/>
+    <motor name="a_wh_fr" joint="wh_fr" gear="1.96" ctrlrange="-1 1"/>
+    <motor name="a_wh_rr" joint="wh_rr" gear="1.96" ctrlrange="-1 1"/>
+  </actuator>
+
+  <sensor>
+    <framequat name="s_quat" objtype="site" objname="imu"/>
+    <gyro name="s_gyro" site="imu"/>
+    <accelerometer name="s_acc" site="imu"/>
+    <velocimeter name="s_vel" site="imu"/>
+    <jointpos name="s_st_fl" joint="st_fl"/>
+    <jointvel name="s_wh_fl" joint="wh_fl"/>
+    <jointpos name="s_st_rl" joint="st_rl"/>
+    <jointvel name="s_wh_rl" joint="wh_rl"/>
+    <jointpos name="s_st_fr" joint="st_fr"/>
+    <jointvel name="s_wh_fr" joint="wh_fr"/>
+    <jointpos name="s_st_rr" joint="st_rr"/>
+    <jointvel name="s_wh_rr" joint="wh_rr"/>
+  </sensor>
+</mujoco>

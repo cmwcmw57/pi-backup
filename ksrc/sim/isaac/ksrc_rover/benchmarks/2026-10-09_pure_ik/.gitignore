@@ -1,0 +1,2 @@
+# Keep these small, reproducible benchmark traces despite the parent *.npz rule.
+!*.npz

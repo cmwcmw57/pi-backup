@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(rover_description)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY urdf meshes config launch rviz mjcf DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/generate_urdf.py scripts/refine_mesh_inertia.py scripts/prepare_component_meshes.py scripts/test_requirements.py scripts/test_mesh_inertia.py scripts/test_mesh_preparation.py scripts/test_mujoco_import.py scripts/verify_physics.py scripts/render_preview.py DESTINATION share/${PROJECT_NAME}/scripts)
+ament_package()

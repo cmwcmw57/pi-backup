@@ -1,0 +1,227 @@
+--- a/firmware/common/spi_link.c
++++ b/firmware/common/spi_link.c
+@@ -155,6 +155,7 @@
+     }
+     frame[138] = t->servo_valid;
+     frame[139] = t->imu_n;
++    put_u16(&frame[140], (uint16_t)t->imu_mean_read_offset_us);
+     put_u16(&frame[TLM_CRC_OFS], spi_link_crc16(&frame[2], TLM_CRC_OFS - 2));
+ }
+ 
+@@ -195,5 +196,6 @@
+     }
+     out->servo_valid = frame[138];
+     out->imu_n = frame[139];
++    out->imu_mean_read_offset_us = (int16_t)get_u16(&frame[140]);
+     return SPI_LINK_OK;
+ }
+--- a/firmware/common/spi_link.h
++++ b/firmware/common/spi_link.h
+@@ -62,7 +62,7 @@
+  *   [138] servo_valid u8       비트 m = 모듈 m 의 서보 값이 이번 주기에 읽혔다
+  *   [139] imu_n u8             imu 값이 이번 주기(20 ms) 동안 읽은 샘플 몇 개의 평균인지 (208 Hz → 보통 3–4).
+  *                              0 = 평균 없음, 순간값 하나 (2026-10-13 이전 펌웨어도 0)
+- *   [140..141] 예약 (0)
++ *   [140..141] imu_mean_read_offset_us i16 (IMU_READ_TIME_VALID flag일 때만 유효)
+  *   [142] CRC16 ([2]..[141])
+  *
+  * CRC16 = CRC-16/CCITT-FALSE (poly 0x1021, init 0xFFFF, 반사/xorout 없음).
+@@ -101,6 +101,8 @@
+ #define SPI_TLM_FLAG_WHEEL_STALL   (1u << 9)  /* 바퀴 PI 스톨 보호 중인 모듈 있음 (FF 만) */
+ #define SPI_TLM_FLAG_ENC_DIR       (1u << 10) /* 엔코더 방향 불일치로 잠긴 모듈 있음 (FF 만, WPI ON 으로 해제). wheel_pi.h 보호 3 */
+ #define SPI_TLM_FLAG_RES_ACTIVE    (1u << 11) /* 이번 주기 IK 에 바퀴별 잔차(타입 0x02)를 더함 */
++
++#define SPI_TLM_FLAG_IMU_READ_TIME_VALID (1u << 12) /* MCU 평균 표본 읽기 시각 유효 */
+ 
+ typedef enum {
+     SPI_LINK_OK = 0,
+@@ -144,6 +146,7 @@
+     uint8_t  steer_status[4];
+     uint8_t  servo_valid;
+     uint8_t  imu_n;           /* imu 평균에 들어간 샘플 수 (0 = 순간값) */
++    int16_t imu_mean_read_offset_us; /* t_ms 기준 signed us, 실제 tick 정밀도는 1ms */
+ } spi_link_telemetry_t;
+ 
+ uint16_t spi_link_crc16(const uint8_t *data, uint32_t len);
+--- a/firmware/src2026-rover-firmware/Core/Inc/imu_ism330.h
++++ b/firmware/src2026-rover-firmware/Core/Inc/imu_ism330.h
+@@ -60,6 +60,10 @@
+  */
+ int Imu_TakeMean(int16_t out[6], uint8_t *n);
+ 
++/* 평균 표본 읽기 시각의 offset. 입력 clock은 HAL_GetTick; 정확도는 us 단위와 다르다.
++ * 범위 초과/표본 없음이면 0 반환·offset=0. 센서 내부 acquisition 시각은 아니다. */
++int Imu_MeanReadOffsetUs(uint32_t reference_ms, int16_t *offset);
++
+ #ifdef __cplusplus
+ }
+ #endif
+--- /dev/null
++++ b/firmware/src2026-rover-firmware/Core/Inc/imu_mean_time.h
+@@ -0,0 +1,61 @@
++/* ================================================================
++ * imu_mean_time.h
++ * 설명: MCU millisecond 읽기 시각을 누적해 평균과 제어 시각의 signed offset을 만든다.
++ * 사용법: imu_time_add(&acc, read_ms); mean=imu_time_take(&acc);
++ * ================================================================ */
++#ifndef ROVER_IMU_MEAN_TIME_H
++#define ROVER_IMU_MEAN_TIME_H
++#include <stdint.h>
++#include <string.h>
++
++/* 평균 구간의 읽기 시각을 wrap에 안전한 상대값으로 보관한다. */
++typedef struct {
++    uint64_t sum_delta_ms;
++    uint32_t first_ms, last_ms;
++    uint16_t count;
++    uint8_t bad;
++} imu_time_accumulator_t;
++
++/* 마지막 평균에 사용한 표본들의 대표 읽기 시각과 유효성을 보관한다. */
++typedef struct {
++    uint32_t first_ms, last_ms, mean_delta_us;
++    uint8_t count, valid;
++} imu_mean_time_t;
++
++static inline void imu_time_add(imu_time_accumulator_t *a, uint32_t read_ms)
++{
++    if (a->count >= 255) { a->bad=1; return; }
++    if (!a->count) a->first_ms=read_ms;
++    uint32_t delta=read_ms-a->first_ms;
++    if (delta > INT32_MAX || (a->count && (uint32_t)(read_ms-a->last_ms)>INT32_MAX)) a->bad=1;
++    a->last_ms=read_ms;
++    a->sum_delta_ms+=delta;
++    a->count++;
++}
++
++static inline imu_mean_time_t imu_time_take(imu_time_accumulator_t *a)
++{
++    imu_mean_time_t out={0};
++    if (a->count && !a->bad) {
++        uint64_t mean=(a->sum_delta_ms*1000+a->count/2)/a->count;
++        if (mean <= UINT32_MAX) {
++            out.first_ms=a->first_ms; out.last_ms=a->last_ms;
++            out.mean_delta_us=(uint32_t)mean; out.count=(uint8_t)a->count; out.valid=1;
++        }
++    }
++    memset(a,0,sizeof *a);
++    return out;
++}
++
++static inline int imu_mean_offset_us(const imu_mean_time_t *mean, uint32_t reference_ms, int16_t *offset)
++{
++    *offset=0;
++    if (!mean->valid) return 0;
++    uint32_t wrapped=mean->first_ms-reference_ms;
++    int64_t delta=(wrapped <= INT32_MAX ? (int64_t)wrapped : (int64_t)wrapped-INT64_C(4294967296));
++    int64_t us=delta*1000+mean->mean_delta_us;
++    if (us < INT16_MIN || us > INT16_MAX) return 0;
++    *offset=(int16_t)us;
++    return 1;
++}
++#endif
+--- a/firmware/src2026-rover-firmware/Core/Src/imu_ism330.c
++++ b/firmware/src2026-rover-firmware/Core/Src/imu_ism330.c
+@@ -4,6 +4,7 @@
+  */
+ 
+ #include "imu_ism330.h"
++#include "imu_mean_time.h"
+ #include "main.h"
+ #include <string.h>
+ 
+@@ -30,6 +31,8 @@
+ 
+ /* 제어주기 평균 (Imu_Poll 이 쌓고 Imu_TakeMean 이 꺼낸다) */
+ static int32_t s_sum[6];
++static imu_time_accumulator_t s_read_times;
++static imu_mean_time_t s_last_mean_time;
+ static uint8_t s_n = 0;
+ 
+ static inline void cs_low(void)  { GPIOC->BSRR = (uint32_t)GPIO_PIN_9 << 16; }
+@@ -186,9 +189,11 @@
+     int16_t v[6];
+     if (!s_valid || !reg_read(REG_STATUS, &st, 1) || (st & 0x03) != 0x03) return 0;
+     if (!Imu_Read(v)) return 0;
++    uint32_t read_ms = HAL_GetTick();
+     if (s_n == 255) return 0;
+     for (int i = 0; i < 6; i++) s_sum[i] += v[i];
+     s_n++;
++    imu_time_add(&s_read_times, read_ms);
+     if (sample != NULL) memcpy(sample, v, sizeof v);
+     return 1;
+ }
+@@ -198,7 +203,11 @@
+     *n = s_n;
+     if (s_n == 0)
+     {
+-        return Imu_Read(out);          /* 이번 주기에 못 쌓았으면 순간값 하나 */
++        int ok = Imu_Read(out);       /* 순간값의 읽기 완료 시각; acquisition 시각이 아님 */
++        imu_time_accumulator_t instant = {0};
++        if (ok) imu_time_add(&instant, HAL_GetTick());
++        s_last_mean_time = imu_time_take(&instant);
++        return ok;
+     }
+     for (int i = 0; i < 6; i++)
+     {
+@@ -206,6 +215,13 @@
+         out[i] = (int16_t)((q >= 0 ? q + s_n / 2 : q - s_n / 2) / s_n);   /* 반올림 */
+         s_sum[i] = 0;
+     }
++    s_last_mean_time = imu_time_take(&s_read_times);
+     s_n = 0;
+     return s_valid;
+ }
++
++/* 마지막 평균의 대표 읽기 시각 - 제어 reference, microsecond 단위. */
++int Imu_MeanReadOffsetUs(uint32_t reference_ms, int16_t *offset)
++{
++    return imu_mean_offset_us(&s_last_mean_time, reference_ms, offset);
++}
+--- a/firmware/src2026-rover-firmware/Core/Src/main.c
++++ b/firmware/src2026-rover-firmware/Core/Src/main.c
+@@ -1998,6 +1998,8 @@
+       {
+         spi_link_telemetry_t t;
+         memset(&t, 0, sizeof t);
++        int imu_read_time_valid = s_imu_valid &&
++            Imu_MeanReadOffsetUs(now, &t.imu_mean_read_offset_us);
+         t.seq_echo = s_spi_seq_echo;
+         t.tick = ctrl_tick++;
+         t.flags = (uint16_t)(
+@@ -2012,7 +2014,8 @@
+             (s_wpi_on           ? SPI_TLM_FLAG_WHEEL_PI       : 0u) |
+             (wpi_any(0)         ? SPI_TLM_FLAG_WHEEL_STALL    : 0u) |
+             (wpi_any(1)         ? SPI_TLM_FLAG_ENC_DIR        : 0u) |
+-            (s_res_active       ? SPI_TLM_FLAG_RES_ACTIVE     : 0u));
++            (s_res_active       ? SPI_TLM_FLAG_RES_ACTIVE     : 0u) |
++            (imu_read_time_valid ? SPI_TLM_FLAG_IMU_READ_TIME_VALID : 0u));
+         t.t_ms = now;
+         t.cmd_vx = s_cmd_applied[0];
+         t.cmd_vy = s_cmd_applied[1];
+--- a/pi/common/nucleo_link.py
++++ b/pi/common/nucleo_link.py
+@@ -74,10 +74,12 @@
+ TLM_FLAG_ENC_DIR = 1 << 10        # 엔코더 방향 불일치로 잠김 (FF 만, WPI ON 으로 해제)
+ TLM_FLAG_RES_ACTIVE = 1 << 11     # 이번 주기 IK 에 바퀴별 잔차를 더함 (타입 0x02 가 제때 옴)
+ 
++TLM_FLAG_IMU_READ_TIME_VALID = 1 << 12  # 평균 표본의 MCU 읽기 시각 offset
++
+ # [2]..[141] 영역: ver, type, seq_echo, tick, flags, t_ms, cmd x3, ticks x4,
+ # wheel_mps x4, steer_cmd x4, duty x4, imu x6, rx_err,
+ # steer_meas x4, steer_speed x4, steer_load x4, volt x4, temp x4, status x4, servo_valid, 예약 3
+-_TLM_BODY = struct.Struct("<BBBBHI3f4i4f4f4h6hH4f4h4h4B4B4BBB2x")
++_TLM_BODY = struct.Struct("<BBBBHI3f4i4f4f4h6hH4f4h4h4B4B4BBBh")
+ assert 2 + _TLM_BODY.size == SPI_FRAME_LEN - 2
+ 
+ # 원시값 -> 물리량 (펌웨어 imu_ism330.c 설정: ±500 dps, ±4 g)
+@@ -170,6 +172,9 @@
+         "steer_temp": v[48:52],           # 섭씨
+         "steer_status": v[52:56],
+         "servo_valid": tuple(bool(v[56] >> m & 1) for m in range(4)),
++        "imu_timing_valid": (v[4] & (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID)) == (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID),
++        "imu_mean_read_offset_us": v[58] if (v[4] & (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID)) == (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID) else None,
++        "imu_time_source": "mcu_mean_sample_read" if (v[4] & (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID)) == (TLM_FLAG_IMU_VALID | TLM_FLAG_IMU_READ_TIME_VALID) else None,
+         "imu_n": v[57],                   # imu 가 이번 20 ms 동안 몇 샘플의 평균인지 (0 = 순간값)
+     }
+ 

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="rover_measured">
+  <compiler angle="radian" meshdir="../meshes" autolimits="true" inertiafromgeom="false" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" solver="Newton" iterations="100" />
+  <visual />
+  <default>
+    <geom friction="1.0 0.005 0.0001" solref="0.01 1" solimp="0.95 0.99 0.001" />
+  </default>
+  <asset>
+    <mesh name="base_link_mesh" file="base_link_sim.stl" />
+    <mesh name="left_rocker_link_mesh" file="left_rocker_link.stl" />
+    <mesh name="right_rocker_link_mesh" file="right_rocker_link.stl" />
+    <mesh name="fl_steering_link_mesh" file="fl_steering_link.stl" />
+    <mesh name="fl_wheel_link_mesh" file="fl_wheel_link.stl" />
+    <mesh name="fr_steering_link_mesh" file="fr_steering_link.stl" />
+    <mesh name="fr_wheel_link_mesh" file="fr_wheel_link.stl" />
+    <mesh name="rl_steering_link_mesh" file="rl_steering_link.stl" />
+    <mesh name="rl_wheel_link_mesh" file="rl_wheel_link.stl" />
+    <mesh name="rr_steering_link_mesh" file="rr_steering_link.stl" />
+    <mesh name="rr_wheel_link_mesh" file="rr_wheel_link.stl" />
+    <mesh name="camera_link_mesh" file="camera_link.stl" />
+    <mesh name="imu_link_mesh" file="imu_link.stl" />
+  </asset>
+  <worldbody>
+    <light pos="0 -1 2" dir="0 0 -1" />
+    <geom name="ground" type="plane" size="5 5 .1" rgba=".75 .72 .65 1" contype="1" conaffinity="2" />
+    <body name="base_link" pos="0 0 0.161813">
+      <freejoint name="floating_base" />
+      <body name="left_rocker_link" pos="-5.22457895888e-19 0.085 0" quat="1 0 0 0">
+        <joint name="left_rocker_joint" type="hinge" axis="0 1 0" damping="0.01" range="-0.523598775598 0.523598775598" />
+        <body name="fl_steering_link" pos="0.10243139267 0.0475 -0.045313243866" quat="1 0 0 0">
+          <joint name="fl_steering_joint" type="hinge" axis="0 0 1" damping="0.01" range="-1.57079632679 1.57079632679" />
+          <body name="fl_wheel_link" pos="0 0.00953000068665 -0.0689999961853" quat="0.707106781187 -0.707106781187 0 0">
+            <joint name="fl_wheel_joint" type="hinge" axis="0 0 1" damping="0.001" />
+            <inertial mass="0.0471" pos="1.35343650632e-08 1.1917175737e-08 -0.00459089788381" fullinertia="3.19944436105e-05 3.19944370398e-05 5.54521855023e-05 2.35869009595e-12 1.15589879793e-11 3.18645968056e-12" />
+            <geom name="fl_wheel_link_visual" type="mesh" mesh="fl_wheel_link_mesh" rgba="0.18 0.2 0.22 1" contype="0" conaffinity="0" group="2" />
+            <geom name="fl_wheel_link_collision_0" type="cylinder" pos="0 0 -0.00953124761581" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.047503017451 0.01859375" />
+          </body>
+          <inertial mass="0.2248" pos="-0.00670056574896 -0.0384631897972 -0.0654837671094" fullinertia="0.0001226757368 7.72455197191e-05 8.33426742573e-05 1.57566077196e-08 -5.3372430729e-06 -8.33157421512e-06" />
+          <geom name="fl_steering_link_visual" type="mesh" mesh="fl_steering_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+          <geom name="fl_steering_link_collision_0" type="box" pos="-0.00699947595596 -0.0172594672441 -0.0451248784428" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0212495183945 0.0272105282545 0.0451248753071" />
+          <geom name="fl_steering_link_collision_1" type="box" pos="-0.00700000047684 -0.0336200046539 -0.0690000034933" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0185000014305 0.0431500005722 0.0184999996424" />
+        </body>
+        <body name="rl_steering_link" pos="-0.10243139267 0.0475 -0.045313243866" quat="1 0 0 0">
+          <joint name="rl_steering_joint" type="hinge" axis="0 0 1" damping="0.01" range="-1.57079632679 1.57079632679" />
+          <body name="rl_wheel_link" pos="0 0.00953000068665 -0.0689999961853" quat="0.707106781187 -0.707106781187 0 0">
+            <joint name="rl_wheel_joint" type="hinge" axis="0 0 1" damping="0.001" />
+            <inertial mass="0.0471" pos="1.35343650632e-08 1.1917175737e-08 -0.00459089788381" fullinertia="3.19944436105e-05 3.19944370398e-05 5.54521855023e-05 2.35869009595e-12 1.15589879793e-11 3.18645968056e-12" />
+            <geom name="rl_wheel_link_visual" type="mesh" mesh="rl_wheel_link_mesh" rgba="0.18 0.2 0.22 1" contype="0" conaffinity="0" group="2" />
+            <geom name="rl_wheel_link_collision_0" type="cylinder" pos="0 0 -0.00953124761581" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.047503017451 0.01859375" />
+          </body>
+          <inertial mass="0.2248" pos="0.0067005643948 -0.0384631918851 -0.0654836128865" fullinertia="0.000122675635391 7.72454316174e-05 8.3342682896e-05 -1.57549243504e-08 5.33696637792e-06 -8.33056406036e-06" />
+          <geom name="rl_steering_link_visual" type="mesh" mesh="rl_steering_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+          <geom name="rl_steering_link_collision_0" type="box" pos="0.00699948072433 -0.0172594672441 -0.0451248784428" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0212495136261 0.0272105282545 0.0451248753071" />
+          <geom name="rl_steering_link_collision_1" type="box" pos="0.00700000047684 -0.0336200046539 -0.0690000058775" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0185000014305 0.0431500005722 0.0184999996424" />
+        </body>
+        <inertial mass="0.1862" pos="-1.96512358754e-06 0.0404127009788 -0.0221390723934" fullinertia="8.66666054512e-05 0.00119831015184 0.00120679506749 3.27131653456e-09 -1.60179812582e-09 2.48078972061e-05" />
+        <geom name="left_rocker_link_visual" type="mesh" mesh="left_rocker_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+        <geom name="left_rocker_link_collision_0" type="box" pos="0 0.0275 -0.0124653096561" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.117931394577 0.0375 0.0323552072048" />
+        <geom name="left_rocker_link_collision_1" type="box" pos="-0.0899313926697 0.0475 -0.0264439971809" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0226117038727 0.0123617041111 0.0212157464027" />
+        <geom name="left_rocker_link_collision_2" type="box" pos="0.0899313926697 0.0475 -0.0264439971809" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0226117038727 0.0123617041111 0.0212157464027" />
+      </body>
+      <body name="right_rocker_link" pos="-5.22457895888e-19 -0.085 0" quat="1 0 0 0">
+        <joint name="right_rocker_joint" type="hinge" axis="0 1 0" damping="0.01" range="-0.523598775598 0.523598775598" />
+        <body name="fr_steering_link" pos="0.10243139267 -0.0475 -0.045313243866" quat="1 0 0 0">
+          <joint name="fr_steering_joint" type="hinge" axis="0 0 1" damping="0.01" range="-1.57079632679 1.57079632679" />
+          <body name="fr_wheel_link" pos="0 -0.00953000068665 -0.0689999961853" quat="0.707106781187 -0.707106781187 0 0">
+            <joint name="fr_wheel_joint" type="hinge" axis="0 0 1" damping="0.001" />
+            <inertial mass="0.0471" pos="-1.35343650632e-08 1.1917175737e-08 0.00459089788381" fullinertia="3.19944436105e-05 3.19944370398e-05 5.54521855023e-05 -2.35869009595e-12 1.15589879793e-11 -3.18645968056e-12" />
+            <geom name="fr_wheel_link_visual" type="mesh" mesh="fr_wheel_link_mesh" rgba="0.18 0.2 0.22 1" contype="0" conaffinity="0" group="2" />
+            <geom name="fr_wheel_link_collision_0" type="cylinder" pos="0 0 0.00953124761581" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.047503017451 0.01859375" />
+          </body>
+          <inertial mass="0.2248" pos="-0.0067005643948 0.0384631918851 -0.0654836128865" fullinertia="0.000122675635391 7.72454316174e-05 8.3342682896e-05 -1.57549243504e-08 -5.33696637792e-06 8.33056406036e-06" />
+          <geom name="fr_steering_link_visual" type="mesh" mesh="fr_steering_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+          <geom name="fr_steering_link_collision_0" type="box" pos="-0.00699948072433 0.0172594672441 -0.0451248784428" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0212495136261 0.0272105282545 0.0451248753071" />
+          <geom name="fr_steering_link_collision_1" type="box" pos="-0.00700000047684 0.0336200046539 -0.0690000058775" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0185000014305 0.0431500005722 0.0184999996424" />
+        </body>
+        <body name="rr_steering_link" pos="-0.10243139267 -0.0475 -0.045313243866" quat="1 0 0 0">
+          <joint name="rr_steering_joint" type="hinge" axis="0 0 1" damping="0.01" range="-1.57079632679 1.57079632679" />
+          <body name="rr_wheel_link" pos="0 -0.00953000068665 -0.0689999961853" quat="0.707106781187 -0.707106781187 0 0">
+            <joint name="rr_wheel_joint" type="hinge" axis="0 0 1" damping="0.001" />
+            <inertial mass="0.0471" pos="-1.35343650632e-08 1.1917175737e-08 0.00459089788381" fullinertia="3.19944436105e-05 3.19944370398e-05 5.54521855023e-05 -2.35869009595e-12 1.15589879793e-11 -3.18645968056e-12" />
+            <geom name="rr_wheel_link_visual" type="mesh" mesh="rr_wheel_link_mesh" rgba="0.18 0.2 0.22 1" contype="0" conaffinity="0" group="2" />
+            <geom name="rr_wheel_link_collision_0" type="cylinder" pos="0 0 0.00953124761581" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.047503017451 0.01859375" />
+          </body>
+          <inertial mass="0.2248" pos="0.00670056574896 0.0384631897972 -0.0654837671094" fullinertia="0.0001226757368 7.72455197191e-05 8.33426742573e-05 1.57566077196e-08 5.33724307291e-06 8.33157421512e-06" />
+          <geom name="rr_steering_link_visual" type="mesh" mesh="rr_steering_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+          <geom name="rr_steering_link_collision_0" type="box" pos="0.00699947595596 0.0172594672441 -0.0451248784428" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0212495183945 0.0272105282545 0.0451248753071" />
+          <geom name="rr_steering_link_collision_1" type="box" pos="0.00700000047684 0.0336200046539 -0.0690000034933" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0185000014305 0.0431500005722 0.0184999996424" />
+        </body>
+        <inertial mass="0.1862" pos="1.94316414914e-06 -0.0404283017018 -0.0220823770754" fullinertia="8.65008989919e-05 0.00119654837992 0.00120468351593 3.29521144284e-09 1.6044542867e-09 -2.47197004467e-05" />
+        <geom name="right_rocker_link_visual" type="mesh" mesh="right_rocker_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+        <geom name="right_rocker_link_collision_0" type="box" pos="0 -0.0275 -0.0124653096561" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.117931394577 0.0375 0.0323552072048" />
+        <geom name="right_rocker_link_collision_1" type="box" pos="-0.0899313926697 -0.0475 -0.0264439971809" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0226117038727 0.0123617041111 0.0212157464027" />
+        <geom name="right_rocker_link_collision_2" type="box" pos="0.0899313926697 -0.0475 -0.0264439971809" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0226117038727 0.0123617041111 0.0212157464027" />
+      </body>
+      <body name="camera_link" pos="0.116619 0 -0.004122" quat="0.953716950748 0 0.300705799504 0">
+        <body name="camera_depth_frame" pos="-0.0043 0.025 0" quat="1 0 0 0">
+          <body name="camera_depth_optical_frame" pos="0 0 0" quat="0.5 -0.5 0.5 -0.5" />
+        </body>
+        <body name="camera_infra1_frame" pos="-0.0043 0.025 0" quat="1 0 0 0">
+          <body name="camera_infra1_optical_frame" pos="0 0 0" quat="0.5 -0.5 0.5 -0.5">
+            <camera name="camera_infra1" pos="0 0 0" quat="0 1 0 0" fovy="58" />
+          </body>
+        </body>
+        <body name="camera_infra2_frame" pos="-0.0043 -0.025 0" quat="1 0 0 0">
+          <body name="camera_infra2_optical_frame" pos="0 0 0" quat="0.5 -0.5 0.5 -0.5">
+            <camera name="camera_infra2" pos="0 0 0" quat="0 1 0 0" fovy="58" />
+          </body>
+        </body>
+        <body name="camera_stereo_center_frame" pos="-0.0043 0 0" quat="1 0 0 0">
+          <body name="camera_stereo_center_optical_frame" pos="0 0 0" quat="0.5 -0.5 0.5 -0.5" />
+        </body>
+        <inertial mass="0.072" pos="-0.0128694249701 0.00749993845949 -0.000111432996229" fullinertia="4.51419021344e-05 6.75347231905e-06 4.552680228e-05 6.82763116644e-11 2.83927023944e-08 -4.60467569402e-11" />
+        <geom name="camera_link_visual" type="mesh" mesh="camera_link_mesh" rgba="0.45 0.5 0.55 1" contype="0" conaffinity="0" group="2" />
+        <geom name="camera_link_collision_0" type="box" pos="-0.0125 0.0075000038147 2.88486480708e-07" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0125 0.0449999961853 0.012500351429" />
+      </body>
+      <body name="imu_link" pos="0 0 -0.0246" quat="0.707106781187 0 0 -0.707106781187">
+        <body name="imu_sensor_frame" pos="0 0 0" quat="1 0 0 0">
+          <site name="imu_site" pos="0 0 0" size=".001" rgba="1 0 0 1" />
+        </body>
+        <inertial mass="0.0024" pos="-0.006458225547 0.0101999383282 0.00111494988099" fullinertia="1.36603078526e-07 5.61002794848e-08 1.88587622299e-07 1.50712337022e-10 5.50310477148e-12 -1.14889063875e-10" />
+        <geom name="imu_link_visual" type="mesh" mesh="imu_link_mesh" rgba="0.45 0.5 0.55 1" contype="0" conaffinity="0" group="2" />
+        <geom name="imu_link_collision_0" type="box" pos="-0.00634999990463 0.0101600003242 0.00236750006676" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.00888999986649 0.0127000002861 0.00236750006676" />
+      </body>
+      <inertial mass="0.7918999999999999" pos="0.00644967329592 0.000243242209539 -0.0339474125033" fullinertia="0.00190943161553 0.00321018044161 0.00452838207579 -1.98819430021e-05 9.94823399427e-05 1.49596539567e-05" />
+      <geom name="base_link_visual" type="mesh" mesh="base_link_mesh" rgba="0.7 0.73 0.76 1" contype="0" conaffinity="0" group="2" />
+      <geom name="base_link_collision_0" type="box" pos="-0.005 0 -0.0239999997616" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.115 0.085 0.0439999997616" />
+      <geom name="base_link_collision_1" type="box" pos="0.0244377458561 -0.0148750001192 -0.048800002492" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0566122568119 0.0315749996901 0.0142000001669" />
+      <geom name="base_link_collision_2" type="box" pos="-0.00773000001907 0.0541699981689 -0.0322500003939" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0241300010681 0.0208299994469 0.00574999988079" />
+      <geom name="base_link_collision_3" type="box" pos="-0.0509100008011 0.0541699981689 -0.0187499965792" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0241300010681 0.0208299994469 0.00574999988079" />
+      <geom name="base_link_collision_4" type="box" pos="0.0734050011635 0.0276300001144 -0.0281510843401" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0285949993134 0.0445199990273 0.016893710494" />
+      <geom name="base_link_collision_5" type="box" pos="-0.026859998703 -0.0375 -0.0300000004272" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.04125 0.035 0.01" />
+      <geom name="base_link_collision_6" type="box" pos="-0.0215899991989 -0.0447100019455 -0.0257500042086" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.0241300010681 0.0208299994469 0.00574999988079" />
+      <geom name="base_link_collision_7" type="box" pos="0.0425490000844 -0.0263399982452 -0.00244000271606" contype="2" conaffinity="1" rgba=".3 .5 .8 .2" group="3" size="0.00792499989271 0.033654999733 0.0194309997559" />
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="rocker_differential" joint1="right_rocker_joint" joint2="left_rocker_joint" polycoef="0 -1 0 0 0" solref="0.002 1" />
+  </equality>
+  <actuator>
+    <position name="fl_steering_joint_actuator" joint="fl_steering_joint" kp="10" kv=".3" ctrlrange="-1.57079632679 1.57079632679" forcerange="-2.942 2.942" />
+    <velocity name="fl_wheel_joint_actuator" joint="fl_wheel_joint" kv=".2" ctrlrange="-8 8" forcerange="-1 1" />
+    <position name="fr_steering_joint_actuator" joint="fr_steering_joint" kp="10" kv=".3" ctrlrange="-1.57079632679 1.57079632679" forcerange="-2.942 2.942" />
+    <velocity name="fr_wheel_joint_actuator" joint="fr_wheel_joint" kv=".2" ctrlrange="-8 8" forcerange="-1 1" />
+    <position name="rl_steering_joint_actuator" joint="rl_steering_joint" kp="10" kv=".3" ctrlrange="-1.57079632679 1.57079632679" forcerange="-2.942 2.942" />
+    <velocity name="rl_wheel_joint_actuator" joint="rl_wheel_joint" kv=".2" ctrlrange="-8 8" forcerange="-1 1" />
+    <position name="rr_steering_joint_actuator" joint="rr_steering_joint" kp="10" kv=".3" ctrlrange="-1.57079632679 1.57079632679" forcerange="-2.942 2.942" />
+    <velocity name="rr_wheel_joint_actuator" joint="rr_wheel_joint" kv=".2" ctrlrange="-8 8" forcerange="-1 1" />
+  </actuator>
+  <sensor>
+    <accelerometer name="imu_accelerometer" site="imu_site" />
+    <gyro name="imu_gyro" site="imu_site" />
+    <framequat name="base_orientation" objtype="body" objname="base_link" />
+  </sensor>
+</mujoco>

@@ -1,0 +1,29 @@
+[INFO] [1792678948.898851742] [camera.camera]: RealSense ROS v4.58.4
+[INFO] [1792678948.899152599] [camera.camera]: Built with LibRealSense v2.58.4
+[INFO] [1792678948.899199155] [camera.camera]: Running with LibRealSense v2.58.4
+ 22/10 23:22:28,901 WARNING [281472725016576] (context.cpp:41) No valid configuration file found at : /home/pi/.realsense-config.json loading defaults
+[INFO] [1792678949.004204377] [camera.camera]: Device with serial number 027322073612 was found.
+
+[INFO] [1792678949.004352491] [camera.camera]: Device with physical ID /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb5/5-1/5-1:1.0/video4linux/video0 was found.
+[INFO] [1792678949.004406140] [camera.camera]: Device with name RealSense D435 was found.
+[INFO] [1792678949.004777052] [camera.camera]: Device with port number 5-1 was found.
+[INFO] [1792678949.004839979] [camera.camera]: Device USB type: 3.2
+[INFO] [1792678949.004880961] [camera.camera]: Starting device RealSense D435 (Product ID: 0x0B07)
+[INFO] [1792678949.005045945] [camera.camera]: getParameters...
+[INFO] [1792678949.005676455] [camera.camera]: JSON file is not provided
+[INFO] [1792678949.005742733] [camera.camera]: Device Name: RealSense D435
+[INFO] [1792678949.005768197] [camera.camera]: Device Serial No: 027322073612
+[INFO] [1792678949.005788882] [camera.camera]: Device physical port: /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb5/5-1/5-1:1.0/video4linux/video0
+[INFO] [1792678949.005813364] [camera.camera]: Device FW version: 5.13.0.50
+[INFO] [1792678949.005835457] [camera.camera]: Device Product ID: 0x0B07
+[INFO] [1792678949.005855883] [camera.camera]: Sync Mode: On
+[WARN] [1792678949.187077068] [camera.camera]: re-enable the stream for the change to take effect.
+[INFO] [1792678949.243660629] [camera.camera]: Stopping Sensor: Depth Module
+[INFO] [1792678949.295187281] [camera.camera]: Starting Sensor: Depth Module
+[INFO] [1792678949.310938792] [camera.camera]: Open profile: stream_type: Infra(1), Format: Y8, Width: 640, Height: 480, FPS: 15
+[INFO] [1792678949.311103369] [camera.camera]: Open profile: stream_type: Infra(2), Format: Y8, Width: 640, Height: 480, FPS: 15
+[INFO] [1792678949.366590728] [camera.camera]: RealSense Node Is Up!
+[INFO] [1792679029.522382958] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1792679029.523655366] [camera.camera]: Stop Sensor: Depth Module
+[INFO] [1792679029.523705737] [camera.camera]: Close Sensor. 
+[INFO] [1792679029.932171308] [camera.camera]: Close Sensor - Done. 

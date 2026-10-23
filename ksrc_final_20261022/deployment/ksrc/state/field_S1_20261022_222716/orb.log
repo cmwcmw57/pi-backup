@@ -1,0 +1,57 @@
+
+ORB-SLAM3 Copyright (C) 2017-2020 Carlos Campos, Richard Elvira, Juan J. Gómez, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+ORB-SLAM2 Copyright (C) 2014-2016 Raúl Mur-Artal, José M.M. Montiel and Juan D. Tardós, University of Zaragoza.
+This program comes with ABSOLUTELY NO WARRANTY;
+This is free software, and you are welcome to redistribute it
+under certain conditions. See LICENSE.txt.
+
+Input sensor was set to: Stereo
+Loading settings from /home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml
+Camera1.k3 optional parameter does not exist...
+	-Loaded camera 1
+Camera2.k3 optional parameter does not exist...
+	-Loaded camera 2
+Camera.newHeight optional parameter does not exist...
+Camera.newWidth optional parameter does not exist...
+	-Loaded image info
+	-Loaded ORB settings
+	-Loaded viewer settings
+System.LoadAtlasFromFile optional parameter does not exist...
+System.SaveAtlasToFile optional parameter does not exist...
+	-Loaded Atlas settings
+System.thFarPoints optional parameter does not exist...
+	-Loaded misc parameters
+	-Computed rectification maps
+----------------------------------
+SLAM settings: 
+	-Camera 1 parameters (Pinhole): [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Camera 2 parameters (Pinhole: [ 377.186 377.186 320.542 241.732 ]
+	-Camera 1 distortion parameters: [  0 0 0 0 ]
+	-Original image size: [ 640 , 480 ]
+	-Current image size: [ 640 , 480 ]
+	-Camera 1 parameters after rectification: [  377.186 377.186 320.542 241.732 ]
+	-Sequence FPS: 15
+	-Stereo baseline: 0.0499183
+	-Stereo depth threshold : 60
+	-Features per image: 1200
+	-ORB scale factor: 1.2
+	-ORB number of scales: 8
+	-Initial FAST threshold: 20
+	-Min FAST threshold: 7
+
+
+Loading ORB Vocabulary. This could take a while...
+Vocabulary loaded!
+
+Initialization of Atlas from scratch 
+Creation of new map with id: 0
+Creation of new map with last KF id: 0
+Seq. Name: 
+There are 1 cameras in the atlas
+Camera 0 is pinhole
+[INFO] [1792675646.150468412] [orbslam3_stereo_inertial]: waiting for exact stereo on /camera/camera/infra1/image_rect_raw and /camera/camera/infra2/image_rect_raw; mode=stereo; IMU=disabled
+First KF:0; Map init KF:0
+New Map created with 330 points
+[INFO] [1792675886.615236906] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+Shutdown

@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "map_alignment_identity": "origin_keyframe_id_v1",
+  "status": "prepared",
+  "sensor_mode": "stereo",
+  "run_dir": "/home/pi/mapping_runs/vo1018_14",
+  "calibration": {
+    "left": {
+      "width": 640,
+      "height": 480,
+      "k": [
+        377.1861267089844,
+        0.0,
+        320.54248046875,
+        0.0,
+        377.1861267089844,
+        241.73216247558594,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "d": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "distortion_model": "plumb_bob"
+    },
+    "right": {
+      "width": 640,
+      "height": 480,
+      "k": [
+        377.1861267089844,
+        0.0,
+        320.54248046875,
+        0.0,
+        377.1861267089844,
+        241.73216247558594,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "d": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "distortion_model": "plumb_bob"
+    },
+    "T_c1_c2": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.04991826214932722
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "imu_clock_verified": false,
+    "camera_profile": "640x480x15:Y8",
+    "input_geometry": "rectified_confirmed",
+    "source_camera_info": {
+      "right": {
+        "header": {
+          "stamp": {
+            "sec": 1792247529,
+            "nanosec": 377114502
+          },
+          "frame_id": "camera_infra1_optical_frame"
+        },
+        "height": 480,
+        "width": 640,
+        "distortion_model": "plumb_bob",
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "k": [
+          377.1861267089844,
+          0.0,
+          320.54248046875,
+          0.0,
+          377.1861267089844,
+          241.73216247558594,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "r": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "p": [
+          377.1861267089844,
+          0.0,
+          320.54248046875,
+          -18.828475952148438,
+          0.0,
+          377.1861267089844,
+          241.73216247558594,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "binning_x": 0,
+        "binning_y": 0,
+        "roi": {
+          "x_offset": 0,
+          "y_offset": 0,
+          "height": 0,
+          "width": 0,
+          "do_rectify": false
+        }
+      },
+      "left": {
+        "header": {
+          "stamp": {
+            "sec": 1792247529,
+            "nanosec": 377114502
+          },
+          "frame_id": "camera_infra1_optical_frame"
+        },
+        "height": 480,
+        "width": 640,
+        "distortion_model": "plumb_bob",
+        "d": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "k": [
+          377.1861267089844,
+          0.0,
+          320.54248046875,
+          0.0,
+          377.1861267089844,
+          241.73216247558594,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "r": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "p": [
+          377.1861267089844,
+          0.0,
+          320.54248046875,
+          0.0,
+          0.0,
+          377.1861267089844,
+          241.73216247558594,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "binning_x": 0,
+        "binning_y": 0,
+        "roi": {
+          "x_offset": 0,
+          "y_offset": 0,
+          "height": 0,
+          "width": 0,
+          "do_rectify": false
+        }
+      }
+    },
+    "stereo_extrinsic_source": "rectified_CameraInfo_P",
+    "T_c1_base": [
+      [
+        4.011050774831955e-12,
+        -1.0,
+        -2.8085679886791408e-12,
+        0.024999999999541715
+      ],
+      [
+        -0.5735764363470225,
+        2.3976582776236423e-23,
+        -0.8191520442918092,
+        0.06351336570380364
+      ],
+      [
+        0.8191520442918091,
+        4.8965888601467475e-12,
+        -0.5735764363470225,
+        -0.09359297432401134
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "pitch_down_deg": 34.99999999971857,
+    "extrinsic_source": "urdf_provisional",
+    "extrinsic_verified": false,
+    "vocabulary_sha256": "f8dd027f7a6cb88129821341194d7f2c75b77b3394257ddd0d2229863d1a3570"
+  },
+  "urdf_sha256": "3c70150888955bb56e33dd45ec35e81c32449fcff2b7fe0bd7233c50aea162fa",
+  "pose_output": "base",
+  "atlas_load_requested": false,
+  "atlas_reuse_verified": false,
+  "orb_commit": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+  "imu_usage": "recording_receipt_only"
+}

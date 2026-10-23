@@ -1,0 +1,139 @@
+2026-10-22T22:27:18+09:00
+Linux raspberrypi 6.8.0-1065-raspi #69-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep  8 18:10:10 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+4
+ 22:27:18 up  1:22,  5 users,  load average: 0.83, 1.70, 1.45
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk0p2   29G   21G  6.6G  76% /
+04a7eaaaf3abef95c5a86ffb03d88fba3511a9164b097f41fedc08e36ca9f688  /home/pi/ksrc_final_20261022/deployment/ksrc/cli.py
+0e37273a947c0338f705d1f532c761c8f3712f063ac6da396fbbede15033e0a0  /home/pi/ksrc_final_20261022/deployment/ksrc/runner.py
+c9cab277636f0707e97229054e0be0064131bf6c7ee32a8ba284a14bcad4bb4d  /home/pi/ksrc_final_20261022/deployment/ksrc/record_load.sh
+{"pid": 51172, "starttime": "495523"}{
+  "runner": {
+    "pid": 51173,
+    "starttime": "495530",
+    "command": [
+      "taskset",
+      "-c",
+      "0",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runner.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json",
+      "--state-dir",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_222716",
+      "--plan-cpu",
+      "0"
+    ]
+  },
+  "gateway": {
+    "pid": 51174,
+    "starttime": "495530",
+    "command": [
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/handheld_mapping/control_gateway.py",
+      "--runner",
+      "127.0.0.1:5010"
+    ]
+  },
+  "camera": {
+    "pid": 51175,
+    "starttime": "495530",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "/opt/ros/jazzy/lib/realsense2_camera/realsense2_camera_node",
+      "--ros-args",
+      "-r",
+      "__ns:=/camera",
+      "-r",
+      "__node:=camera",
+      "-p",
+      "enable_color:=false",
+      "-p",
+      "enable_depth:=false",
+      "-p",
+      "enable_infra1:=true",
+      "-p",
+      "enable_infra2:=true",
+      "-p",
+      "depth_module.infra_profile:=640,480,15",
+      "-p",
+      "depth_module.infra1_format:=Y8",
+      "-p",
+      "depth_module.infra2_format:=Y8",
+      "-p",
+      "depth_module.emitter_enabled:=0",
+      "-p",
+      "enable_sync:=true"
+    ]
+  },
+  "inputs": {
+    "pid": 51178,
+    "starttime": "495530",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_inputs.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json"
+    ]
+  },
+  "policy": {
+    "pid": 51182,
+    "starttime": "495531",
+    "command": [
+      "taskset",
+      "-c",
+      "3",
+      "/home/pi/venv/bin/python",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/policy_telemetry.py",
+      "--config",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/local/real.json",
+      "--policy-script",
+      "/home/pi/ksrc/pi/policy/run_policy.py",
+      "--real",
+      "--",
+      "--policy",
+      "/home/pi/ksrc/pi/policy/res8_mlp_v3vo_rc4000",
+      "--cmd-udp",
+      "5005",
+      "--vo-port",
+      "5600",
+      "--seconds",
+      "3600.0",
+      "--rt",
+      "50",
+      "--gc-off",
+      "--log",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_222716/policy.npz"
+    ]
+  },
+  "orb": {
+    "pid": 51185,
+    "starttime": "495531",
+    "command": [
+      "bash",
+      "/home/pi/ksrc_final_20261022/deployment/ksrc/ros_env.sh",
+      "taskset",
+      "-c",
+      "1,2",
+      "/home/pi/handheld_mapping/ros2_ws/install/orbslam3_ros2/lib/orbslam3_ros2/orbslam3_stereo_inertial",
+      "--ros-args",
+      "-p",
+      "vocabulary_path:=/home/pi/handheld_mapping/runtime/ORBvoc.txt",
+      "-p",
+      "settings_path:=/home/pi/ksrc_final_20261022/deployment/ksrc/local/orb.yaml",
+      "-p",
+      "trajectory_dir:=/home/pi/ksrc_final_20261022/deployment/ksrc/state/field_S1_20261022_222716/orb_001",
+      "-p",
+      "sensor_mode:=stereo",
+      "-p",
+      "use_sim_time:=false",
+      "-p",
+      "left_topic:=/camera/camera/infra1/image_rect_raw",
+      "-p",
+      "right_topic:=/camera/camera/infra2/image_rect_raw"
+    ]
+  }
+}

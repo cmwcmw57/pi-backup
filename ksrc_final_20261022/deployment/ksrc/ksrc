@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# ================================================================
+# ksrc
+# 설명: 배포 폴더의 오프라인 CLI를 Pi venv 또는 지정 Python으로 실행한다.
+# 사용법: ./ksrc check; ./ksrc start; ./ksrc status
+# ================================================================
+set -euo pipefail
+KSRC_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+KSRC_INTERPRETER="${KSRC_PYTHON:-/home/pi/venv/bin/python}"
+if [[ ! -x "$KSRC_INTERPRETER" ]]; then KSRC_INTERPRETER=python3; fi
+export PYTHONNOUSERSITE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+exec "$KSRC_INTERPRETER" "$KSRC_DIR/cli.py" "$@"

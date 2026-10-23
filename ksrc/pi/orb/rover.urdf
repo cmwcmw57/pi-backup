@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rover">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.008015853218 0.003240341788 -0.025673826811" rpy="0 0 0" />
+      <mass value="0.847900053986" />
+      <inertia ixx="0.002302831138" ixy="-0.000113581036669" ixz="0.000108137936490" iyy="0.004180321839" iyz="0.000015141466736" izz="0.005334787938" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/base_link.stl" />
+      </geometry>
+      <material name="base_link_material">
+        <color rgba="0.95 0.4 0.05 1.0" />
+      </material>
+    </visual>
+    <collision name="base_link_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_rocker_arm">
+    <inertial>
+      <origin xyz="0.000041281766 0.055638256545 -0.022265167017" rpy="0 0 0" />
+      <mass value="0.186900033238" />
+      <inertia ixx="0.000095809929947" ixy="0.000000472580802" ixz="-0.000000167203869" iyy="0.001204701265" iyz="0.000027487080501" izz="0.001220632439" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/arm_l_link.stl" />
+      </geometry>
+      <material name="left_rocker_arm_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="left_rocker_arm_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/arm_l_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_rocker_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="left_rocker_arm" />
+    <origin xyz="-0.01830665319 0.06918739351 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.523598775598" upper="0.523598775598" effort="100" velocity="3.0" />
+    <dynamics damping="0.01" />
+  </joint>
+  <link name="right_rocker_arm">
+    <inertial>
+      <origin xyz="0.000045263438 -0.055653675439 -0.022209589971" rpy="0 0 0" />
+      <mass value="0.186899954875" />
+      <inertia ixx="0.000095650905168" ixy="-0.000000408041754" ixz="-0.000000163472263" iyy="0.001202966667" iyz="-0.000027393035014" izz="0.001218553662" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/arm_r_link.stl" />
+      </geometry>
+      <material name="right_rocker_arm_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="right_rocker_arm_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/arm_r_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_rocker_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="right_rocker_arm" />
+    <origin xyz="-0.01830665319 -0.06918739351 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.523598775598" upper="0.523598775598" effort="100" velocity="3.0" />
+    <dynamics damping="0.01" />
+    <mimic joint="left_rocker_joint" multiplier="-1" offset="0" />
+  </joint>
+  <link name="fl_leg">
+    <inertial>
+      <origin xyz="0.006757812092 0.037123406320 -0.066878858232" rpy="0 0 0" />
+      <mass value="0.225299994110" />
+      <inertia ixx="0.000117798243071" ixy="-0.000000391472486" ixz="0.000005555278691" iyy="0.000079323177632" iyz="0.000007931530746" izz="0.000076905189285" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_1.stl" />
+      </geometry>
+      <material name="fl_leg_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="fl_leg_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_steering_joint" type="revolute">
+    <parent link="left_rocker_arm" />
+    <child link="fl_leg" />
+    <origin xyz="0.10243139721 0.06331260649 -0.04531324865" rpy="0 0 3.14159265359" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.745329251994" upper="1.745329251994" effort="50" velocity="3.0" />
+  </joint>
+  <link name="rl_leg">
+    <inertial>
+      <origin xyz="-0.006757812092 -0.037123406320 -0.066878858232" rpy="0 0 0" />
+      <mass value="0.225299994110" />
+      <inertia ixx="0.000117798243071" ixy="-0.000000391472486" ixz="-0.000005555278691" iyy="0.000079323177632" iyz="-0.000007931530746" izz="0.000076905189285" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_3.stl" />
+      </geometry>
+      <material name="rl_leg_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="rl_leg_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rl_steering_joint" type="revolute">
+    <parent link="left_rocker_arm" />
+    <child link="rl_leg" />
+    <origin xyz="-0.10243139721 0.06331260649 -0.04531324865" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.745329251994" upper="1.745329251994" effort="50" velocity="3.0" />
+  </joint>
+  <link name="rr_leg">
+    <inertial>
+      <origin xyz="0.006757812092 0.037123406320 -0.066878858232" rpy="0 0 0" />
+      <mass value="0.225299994110" />
+      <inertia ixx="0.000117798243071" ixy="-0.000000391472486" ixz="0.000005555278691" iyy="0.000079323177632" iyz="0.000007931530746" izz="0.000076905189285" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_2.stl" />
+      </geometry>
+      <material name="rr_leg_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="rr_leg_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_steering_joint" type="revolute">
+    <parent link="right_rocker_arm" />
+    <child link="fr_leg" />
+    <origin xyz="0.10243139721 -0.06331260649 -0.04531324865" rpy="0 0 3.14159265359" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.745329251994" upper="1.745329251994" effort="50" velocity="3.0" />
+  </joint>
+  <link name="fr_leg">
+    <inertial>
+      <origin xyz="-0.006757812092 -0.037123406320 -0.066878858232" rpy="0 0 0" />
+      <mass value="0.225299994110" />
+      <inertia ixx="0.000117798243071" ixy="-0.000000391472486" ixz="-0.000005555278691" iyy="0.000079323177632" iyz="-0.000007931530746" izz="0.000076905189285" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_4.stl" />
+      </geometry>
+      <material name="fr_leg_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="fr_leg_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_link_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_steering_joint" type="revolute">
+    <parent link="right_rocker_arm" />
+    <child link="rr_leg" />
+    <origin xyz="-0.10243139721 -0.06331260649 -0.04531324865" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.745329251994" upper="1.745329251994" effort="50" velocity="3.0" />
+  </joint>
+  <link name="fl_wheel">
+    <inertial>
+      <origin xyz="0.000105436252 0.009184841148 0.000000044891" rpy="0 0 0" />
+      <mass value="0.049700283757" />
+      <inertia ixx="0.000036112445366" ixy="0.000000021731779" ixz="-0.000000000038044" iyy="0.000062381899087" iyz="0.000000000021673" izz="0.000035915321601" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_1.stl" />
+      </geometry>
+      <material name="fl_wheel_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="fl_wheel_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_wheel_joint" type="continuous">
+    <parent link="fl_leg" />
+    <child link="fl_wheel" />
+    <origin xyz="0 0 -0.0705" rpy="0 0 3.14159265359" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="fr_wheel">
+    <inertial>
+      <origin xyz="0.000105436252 0.009184841148 0.000000044891" rpy="0 0 0" />
+      <mass value="0.049700283757" />
+      <inertia ixx="0.000036112445366" ixy="0.000000021731779" ixz="-0.000000000038044" iyy="0.000062381899087" iyz="0.000000000021673" izz="0.000035915321601" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_2.stl" />
+      </geometry>
+      <material name="fr_wheel_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="fr_wheel_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_wheel_joint" type="continuous">
+    <parent link="fr_leg" />
+    <child link="fr_wheel" />
+    <origin xyz="0 0 -0.0705" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="rl_wheel">
+    <inertial>
+      <origin xyz="-0.000105517419 -0.009184812442 -0.000000000426" rpy="0 0 0" />
+      <mass value="0.049700327360" />
+      <inertia ixx="0.000036112478572" ixy="0.000000021752632" ixz="-0.000000000012088" iyy="0.000062381919386" iyz="-0.000000000001085" izz="0.000035915338505" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_3.stl" />
+      </geometry>
+      <material name="rl_wheel_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="rl_wheel_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rl_wheel_joint" type="continuous">
+    <parent link="rl_leg" />
+    <child link="rl_wheel" />
+    <origin xyz="0 0 -0.0705" rpy="0 0 3.14159265359" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rr_wheel">
+    <inertial>
+      <origin xyz="-0.000105517419 -0.009184812442 -0.000000000426" rpy="0 0 0" />
+      <mass value="0.049700327360" />
+      <inertia ixx="0.000036112478572" ixy="0.000000021752632" ixz="-0.000000000012088" iyy="0.000062381919386" iyz="-0.000000000001085" izz="0.000035915338505" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_4.stl" />
+      </geometry>
+      <material name="rr_wheel_material">
+        <color rgba="0.12 0.14 0.2 1.0" />
+      </material>
+    </visual>
+    <collision name="rr_wheel_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/wheel_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_wheel_joint" type="continuous">
+    <parent link="rr_leg" />
+    <child link="rr_wheel" />
+    <origin xyz="0 0 -0.0705" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0.000039949849 0.000108307373 -0.002011729835" rpy="0 0 0" />
+      <mass value="0.002400000279" />
+      <inertia ixx="0.000000056092954" ixy="-0.000000000148781" ixz="-0.000000000114852" iyy="0.000000136628269" iyz="-0.000000000005384" izz="0.000000188602298" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/IMU.stl" />
+      </geometry>
+      <material name="imu_link_material">
+        <color rgba="0.1 0.1 0.1 1.0" />
+      </material>
+    </visual>
+    <collision name="imu_link_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/IMU.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="-0.01800665319 0 -0.021473" rpy="0 0 0" />
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="-0.011811875567 0.008683428205 0.004231746168" rpy="0 0 0" />
+      <mass value="0.073299981594" />
+      <inertia ixx="0.000045771873705" ixy="0.000000388879236" ixz="0.000000069330944" iyy="0.000006626435639" iyz="-0.000000147048200" izz="0.000045944278179" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Camera.stl" />
+      </geometry>
+      <material name="camera_link_material">
+        <color rgba="0.1 0.1 0.1 1.0" />
+      </material>
+    </visual>
+    <collision name="camera_link_collision_0">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/Camera.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_to_camera" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_link" />
+    <origin xyz="0.12498574268 0.00747451631 0.01521787607" rpy="0 0.349066 0" />
+  </joint>
+  <link name="camera_left_optical_frame" />
+  <joint name="camera_to_left_optical_frame" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_left_optical_frame" />
+    <origin xyz="0 0.0175 0" rpy="-1.570796326795 0 -1.570796326795" />
+  </joint>
+  <link name="camera_right_optical_frame" />
+  <joint name="camera_to_right_optical_frame" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_right_optical_frame" />
+    <origin xyz="0 -0.0325 0" rpy="-1.570796326795 0 -1.570796326795" />
+  </joint>
+  <link name="camera_infra1_optical_frame" />
+  <joint name="alias_camera_infra1_optical_frame" type="fixed">
+    <parent link="camera_left_optical_frame" />
+    <child link="camera_infra1_optical_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_infra2_optical_frame" />
+  <joint name="alias_camera_infra2_optical_frame" type="fixed">
+    <parent link="camera_right_optical_frame" />
+    <child link="camera_infra2_optical_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="imu_sensor_frame" />
+  <joint name="alias_imu_sensor_frame" type="fixed">
+    <parent link="imu_link" />
+    <child link="imu_sensor_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+</robot>

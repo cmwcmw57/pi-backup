@@ -1,0 +1,795 @@
+{
+  "proposal_only": true,
+  "purpose": "mission_route_planning",
+  "source_usd": "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand.usd",
+  "source_asset_sha256": {
+    "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand.usd": "72fb3a7a193aeebd2a3ac64b175d7febd5bb80afcc908cd103736bde2fb7e5b0",
+    "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand_mm.stl": "88e731bd6205b48e89ac2935c288225e1ce1d869ae348cfc6ff1ec3e07578e16",
+    "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand_m.stl": "5e5db8a269d017af16a05fcc0a52809ab7df73ede467404af1a58d22e044c1c6"
+  },
+  "previous_regions": "/home/su/rover/outputs/codex_rlc_fit/sim_map_regions/regions.json",
+  "coordinate_frame": "source USD meters, Z-up; origin not rotated",
+  "grid_axis_order": "XY; zone_id[ix, iy]",
+  "regions": [
+    {
+      "id": 1,
+      "name": "입구·분기 평지",
+      "polygon_xy_m": [
+        [
+          2.401963387288942,
+          2.352079
+        ],
+        [
+          2.406592,
+          2.352079
+        ],
+        [
+          2.406592,
+          2.3215615892443995
+        ],
+        [
+          3.196592,
+          2.3215615892443995
+        ],
+        [
+          3.196592,
+          2.347079
+        ],
+        [
+          3.206592,
+          2.347079
+        ],
+        [
+          3.206592,
+          2.3331010289239287
+        ],
+        [
+          3.996592,
+          2.3331010289239287
+        ],
+        [
+          3.996592,
+          3.142079
+        ],
+        [
+          2.401963387288942,
+          3.142079
+        ]
+      ],
+      "label_xy_m": [
+        3.59,
+        2.78
+      ],
+      "color": "#61b8ef",
+      "nominal_route_grade_deg": 0,
+      "previous_name": "입구·분기 평지",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 1.29565,
+      "height_m_p10_p50_p90": [
+        0.291559100151062,
+        0.291559100151062,
+        0.291559100151062
+      ]
+    },
+    {
+      "id": 2,
+      "name": "30° 경사면",
+      "polygon_xy_m": [
+        [
+          2.406592,
+          1.6347322110187732
+        ],
+        [
+          3.196592,
+          1.6347322110187732
+        ],
+        [
+          3.196592,
+          2.3215615892443995
+        ],
+        [
+          2.406592,
+          2.3215615892443995
+        ]
+      ],
+      "label_xy_m": [
+        2.8,
+        1.97
+      ],
+      "color": "#ec7963",
+      "nominal_route_grade_deg": 30,
+      "previous_name": "30° 경사면",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 0.54115,
+      "height_m_p10_p50_p90": [
+        0.34009209275245667,
+        0.4902031719684601,
+        0.6403142809867859
+      ]
+    },
+    {
+      "id": 3,
+      "name": "15° 경사면",
+      "polygon_xy_m": [
+        [
+          3.206592,
+          0.8531891433896787
+        ],
+        [
+          3.996592,
+          0.8531891433896787
+        ],
+        [
+          3.996592,
+          2.3331010289239287
+        ],
+        [
+          3.206592,
+          2.3331010289239287
+        ]
+      ],
+      "label_xy_m": [
+        3.6,
+        1.6
+      ],
+      "color": "#eab74e",
+      "nominal_route_grade_deg": 15,
+      "previous_name": "15° 경사면",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 1.1692,
+      "height_m_p10_p50_p90": [
+        0.3344580411911018,
+        0.4893326610326767,
+        0.6442072808742504
+      ]
+    },
+    {
+      "id": 4,
+      "name": "정상 평탄부",
+      "polygon_xy_m": [
+        [
+          2.400716224464189,
+          0.005265
+        ],
+        [
+          3.996592,
+          0.005265
+        ],
+        [
+          3.996592,
+          0.8531891433896787
+        ],
+        [
+          3.206592,
+          0.8531891433896787
+        ],
+        [
+          3.206592,
+          0.795265
+        ],
+        [
+          3.196592,
+          0.795265
+        ],
+        [
+          3.196592,
+          1.6347322110187732
+        ],
+        [
+          2.406592,
+          1.6347322110187732
+        ],
+        [
+          2.406592,
+          0.795265
+        ],
+        [
+          2.400716224464189,
+          0.795265
+        ]
+      ],
+      "label_xy_m": [
+        2.8,
+        0.45
+      ],
+      "color": "#b59adf",
+      "nominal_route_grade_deg": 0,
+      "previous_name": "정상 평탄부",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 1.9710500000000002,
+      "height_m_p10_p50_p90": [
+        0.688100278377533,
+        0.688100278377533,
+        0.688100278377533
+      ]
+    },
+    {
+      "id": 5,
+      "name": "중앙 낮은 평지 · 벽으로 분리",
+      "polygon_xy_m": [
+        [
+          1.406592,
+          0.805269
+        ],
+        [
+          2.396592,
+          0.805269
+        ],
+        [
+          2.396592,
+          2.332079
+        ],
+        [
+          1.406592,
+          2.332079
+        ]
+      ],
+      "label_xy_m": [
+        1.9,
+        1.58
+      ],
+      "color": "#6ac9be",
+      "nominal_route_grade_deg": 0,
+      "previous_name": "중앙 낮은 평지",
+      "route_status": "isolated_by_divider_walls",
+      "surface_area_xy_m2": 1.5097500000000001,
+      "height_m_p10_p50_p90": [
+        0.2915584444999695,
+        0.2915584444999695,
+        0.2915584444999695
+      ]
+    },
+    {
+      "id": 6,
+      "name": "뒤쪽 연결 경사",
+      "polygon_xy_m": [
+        [
+          1.4418454840933659,
+          2.352079
+        ],
+        [
+          2.401963387288942,
+          2.352079
+        ],
+        [
+          2.401963387288942,
+          3.142079
+        ],
+        [
+          1.4418454840933659,
+          3.142079
+        ]
+      ],
+      "label_xy_m": [
+        1.92,
+        2.77
+      ],
+      "color": "#8fb270",
+      "nominal_route_grade_deg": 5,
+      "previous_name": "왼쪽 연결 경사",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 0.7584000000000001,
+      "height_m_p10_p50_p90": [
+        0.3011358976364136,
+        0.3337254226207733,
+        0.36631491780281067
+      ]
+    },
+    {
+      "id": 7,
+      "name": "뒤쪽 회전 평탄부",
+      "polygon_xy_m": [
+        [
+          0.606589,
+          2.3475983783098044
+        ],
+        [
+          1.396589,
+          2.3475983783098044
+        ],
+        [
+          1.396589,
+          2.352079
+        ],
+        [
+          1.4418454840933659,
+          2.352079
+        ],
+        [
+          1.4418454840933659,
+          3.142079
+        ],
+        [
+          0.606589,
+          3.142079
+        ]
+      ],
+      "label_xy_m": [
+        1.0,
+        2.78
+      ],
+      "color": "#c5a484",
+      "nominal_route_grade_deg": 0,
+      "previous_name": "왼쪽 회전 평탄부",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 0.6596500000000001,
+      "height_m_p10_p50_p90": [
+        0.3755584955215454,
+        0.3755584955215454,
+        0.3755584955215454
+      ]
+    },
+    {
+      "id": 8,
+      "name": "왼쪽 7° 경사면",
+      "polygon_xy_m": [
+        [
+          0.606589,
+          0.840784595549606
+        ],
+        [
+          1.396589,
+          0.840784595549606
+        ],
+        [
+          1.396589,
+          2.3475983783098044
+        ],
+        [
+          0.606589,
+          2.3475983783098044
+        ]
+      ],
+      "label_xy_m": [
+        1.0,
+        1.6
+      ],
+      "color": "#96a4d7",
+      "nominal_route_grade_deg": 7,
+      "previous_name": "하단 연결 경사",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 1.1929,
+      "height_m_p10_p50_p90": [
+        0.39521610736846924,
+        0.4679659605026245,
+        0.5407158136367798
+      ]
+    },
+    {
+      "id": 9,
+      "name": "앞쪽 회전 평탄부",
+      "polygon_xy_m": [
+        [
+          0.606589,
+          0.005265
+        ],
+        [
+          1.40104908326332,
+          0.005265
+        ],
+        [
+          1.40104908326332,
+          0.795265
+        ],
+        [
+          1.396589,
+          0.795265
+        ],
+        [
+          1.396589,
+          0.840784595549606
+        ],
+        [
+          0.606589,
+          0.840784595549606
+        ]
+      ],
+      "label_xy_m": [
+        1.0,
+        0.43
+      ],
+      "color": "#cc97ac",
+      "nominal_route_grade_deg": 0,
+      "previous_name": "오른쪽 회전 평탄부",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 0.6636000000000001,
+      "height_m_p10_p50_p90": [
+        0.5605719685554504,
+        0.5605719685554504,
+        0.5605719685554504
+      ]
+    },
+    {
+      "id": 10,
+      "name": "앞쪽 연결 경사",
+      "polygon_xy_m": [
+        [
+          1.40104908326332,
+          0.005265
+        ],
+        [
+          2.400716224464189,
+          0.005265
+        ],
+        [
+          2.400716224464189,
+          0.795265
+        ],
+        [
+          1.40104908326332,
+          0.795265
+        ]
+      ],
+      "label_xy_m": [
+        1.9,
+        0.43
+      ],
+      "color": "#91cdb3",
+      "nominal_route_grade_deg": 7.27,
+      "previous_name": "오른쪽 연결 경사",
+      "route_status": "geometric_portal_candidate",
+      "surface_area_xy_m2": 0.79,
+      "height_m_p10_p50_p90": [
+        0.574789822101593,
+        0.624223530292511,
+        0.6736571788787842
+      ]
+    },
+    {
+      "id": 11,
+      "name": "크레이터 지형",
+      "polygon_xy_m": [
+        [
+          0.005,
+          3.157831
+        ],
+        [
+          4.0,
+          3.157831
+        ],
+        [
+          4.0,
+          8.155
+        ],
+        [
+          0.005,
+          8.155
+        ]
+      ],
+      "label_xy_m": [
+        2.0,
+        4.55
+      ],
+      "color": "#a9bf86",
+      "nominal_route_grade_deg": null,
+      "previous_name": null,
+      "route_status": "entry_unverified",
+      "surface_area_xy_m2": 19.782375000000002,
+      "height_m_p10_p50_p90": [
+        0.2464705854654312,
+        0.35711345076560974,
+        0.4999792456626892
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "regions": [
+        1,
+        2
+      ],
+      "segment_xy_m": [
+        [
+          2.406592,
+          2.3215615892443995
+        ],
+        [
+          3.196592,
+          2.3215615892443995
+        ]
+      ],
+      "midpoint_xy_m": [
+        2.801592,
+        2.3215615892443995
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.0005773503446382389
+    },
+    {
+      "regions": [
+        1,
+        3
+      ],
+      "segment_xy_m": [
+        [
+          3.206592,
+          2.3331010289239287
+        ],
+        [
+          3.996592,
+          2.3331010289239287
+        ]
+      ],
+      "midpoint_xy_m": [
+        3.601592,
+        2.3331010289239287
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00026794918136852086
+    },
+    {
+      "regions": [
+        2,
+        4
+      ],
+      "segment_xy_m": [
+        [
+          2.406592,
+          1.6347322110187732
+        ],
+        [
+          3.196592,
+          1.6347322110187732
+        ]
+      ],
+      "midpoint_xy_m": [
+        2.801592,
+        1.6347322110187732
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.000577350344638794
+    },
+    {
+      "regions": [
+        3,
+        4
+      ],
+      "segment_xy_m": [
+        [
+          3.206592,
+          0.8531891433896787
+        ],
+        [
+          3.996592,
+          0.8531891433896787
+        ]
+      ],
+      "midpoint_xy_m": [
+        3.601592,
+        0.8531891433896787
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00026794918136852086
+    },
+    {
+      "regions": [
+        4,
+        10
+      ],
+      "segment_xy_m": [
+        [
+          2.400716224464189,
+          0.005265
+        ],
+        [
+          2.400716224464189,
+          0.795265
+        ]
+      ],
+      "midpoint_xy_m": [
+        2.400716224464189,
+        0.400265
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00012757077287628427
+    },
+    {
+      "regions": [
+        10,
+        9
+      ],
+      "segment_xy_m": [
+        [
+          1.40104908326332,
+          0.005265
+        ],
+        [
+          1.40104908326332,
+          0.795265
+        ]
+      ],
+      "midpoint_xy_m": [
+        1.40104908326332,
+        0.400265
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00012757077287628427
+    },
+    {
+      "regions": [
+        9,
+        8
+      ],
+      "segment_xy_m": [
+        [
+          0.606589,
+          0.840784595549606
+        ],
+        [
+          1.396589,
+          0.840784595549606
+        ]
+      ],
+      "midpoint_xy_m": [
+        1.001589,
+        0.840784595549606
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00012278456379333225
+    },
+    {
+      "regions": [
+        8,
+        7
+      ],
+      "segment_xy_m": [
+        [
+          0.606589,
+          2.3475983783098044
+        ],
+        [
+          1.396589,
+          2.3475983783098044
+        ]
+      ],
+      "midpoint_xy_m": [
+        1.001589,
+        2.3475983783098044
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 0.00012278456379327674
+    },
+    {
+      "regions": [
+        7,
+        6
+      ],
+      "segment_xy_m": [
+        [
+          1.4418454840933659,
+          2.352079
+        ],
+        [
+          1.4418454840933659,
+          3.142079
+        ]
+      ],
+      "midpoint_xy_m": [
+        1.4418454840933659,
+        2.747079
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 8.748862518959122e-05
+    },
+    {
+      "regions": [
+        6,
+        1
+      ],
+      "segment_xy_m": [
+        [
+          2.401963387288942,
+          2.352079
+        ],
+        [
+          2.401963387288942,
+          3.142079
+        ]
+      ],
+      "midpoint_xy_m": [
+        2.401963387288942,
+        2.747079
+      ],
+      "width_m": 0.79,
+      "status": "geometric_candidate_not_rover_validated",
+      "height_difference_over_2mm_m": 8.748862518959122e-05
+    }
+  ],
+  "adjacency": {
+    "1": [
+      2,
+      3,
+      6
+    ],
+    "2": [
+      1,
+      4
+    ],
+    "3": [
+      1,
+      4
+    ],
+    "4": [
+      2,
+      3,
+      10
+    ],
+    "5": [],
+    "6": [
+      7,
+      1
+    ],
+    "7": [
+      8,
+      6
+    ],
+    "8": [
+      9,
+      7
+    ],
+    "9": [
+      10,
+      8
+    ],
+    "10": [
+      4,
+      9
+    ],
+    "11": []
+  },
+  "isolated_region_ids": [
+    5
+  ],
+  "unverified_entry_region_ids": [
+    11
+  ],
+  "start_candidate_xy_m": [
+    3.58,
+    2.83
+  ],
+  "mission_region_sequences": {
+    "30deg_then_outer_return": [
+      1,
+      2,
+      4,
+      10,
+      9,
+      8,
+      7,
+      6,
+      1
+    ],
+    "15deg_fallback_then_outer_return": [
+      1,
+      3,
+      4,
+      10,
+      9,
+      8,
+      7,
+      6,
+      1
+    ],
+    "outer_ascent_if_both_fail": [
+      1,
+      6,
+      7,
+      8,
+      9,
+      10,
+      4
+    ]
+  },
+  "planner_runtime_integrated": false,
+  "rover_footprint_validated": false,
+  "note": "Semantic regions and geometric portal candidates. Cell ID does not imply traversability; crater/internal structures require obstacle-aware planning."
+}

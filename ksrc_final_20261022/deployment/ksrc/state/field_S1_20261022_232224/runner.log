@@ -1,0 +1,2 @@
+/home/pi/ksrc_final_20261022/deployment/ksrc/runtime/ksrc_runtime/site_sim/wall_yaw.py:62: RuntimeWarning: All-NaN slice encountered
+  return bool(np.nanmax(slope) <= max_slope_deg and np.nanmax(slope)-np.nanmin(slope) <= max_range_deg)

@@ -1,0 +1,11 @@
+{
+  "simulation_only": true,
+  "pose_source": "sim_ground_truth",
+  "source_stl": "/home/su/rover/outputs/ksrc_final_map/20261022_board_level_sand/KSRC_board_level_sand_m.stl",
+  "source_stl_sha256": "5e5db8a269d017af16a05fcc0a52809ab7df73ede467404af1a58d22e044c1c6",
+  "source_units": "m",
+  "flat_sand_level_m": null,
+  "sliver_face_max_height_m": 0.02,
+  "sliver_faces_dropped": 3364,
+  "surface_model": "fixed mesh; no deformable soil"
+}

@@ -1,0 +1,32 @@
+# Build output directories
+build/
+Debug/
+Release/
+
+# Compiled object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Binary files
+*.hex
+*.bin
+*.exe
+*.out
+*.app
+
+# Linker map and other output files
+*.map
+*.ilk
+*.exp
+
+# Dependency and listing files
+*.d
+*.lst
+
+# IDE and configuration specific files
+.settings/
+.vscode/
+.mxproject
+*.launch
